@@ -1,0 +1,4071 @@
+{
+  "protocol": "latency-investigation-v1",
+  "created_utc": "2026-11-15T13:09:20Z",
+  "hardware": {
+    "platform": "Linux-7.0.5-arch1-1-x86_64-with-glibc2.43",
+    "python": "3.12.12",
+    "cpu_count_logical": 16,
+    "onnxruntime": "1.24.4",
+    "lscpu_cpus": "16",
+    "cpu_model": "AMD Ryzen 7 5800H with Radeon Graphics"
+  },
+  "input_size": [
+    640,
+    640
+  ],
+  "thresh": 0.02,
+  "nms_thresh": 0.45,
+  "n_images": 24,
+  "image_ids": [
+    "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+    "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+    "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+    "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+    "36--Football/36_Football_Football_36_110.jpg",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+    "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+    "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+    "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+    "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+    "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+    "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+    "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+    "19--Couple/19_Couple_Couple_19_832.jpg",
+    "35--Basketball/35_Basketball_Basketball_35_185.jpg"
+  ],
+  "image_sha256": {
+    "35--Basketball/35_Basketball_playingbasketball_35_279.jpg": "b0b92f3dd489caf32bcb5e17c4989fa375de3059c91d09c3a674ccfb612cdf69",
+    "35--Basketball/35_Basketball_playingbasketball_35_199.jpg": "181bd8b9f7528ea3f565203cfaa032822e1a1e2baefdc77c6908b912981576e7",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg": "73d30b5e87ac17c2d05fa241a714c57fa2df1b5baca829fd5ba3ac6c9985b97a",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg": "7e5d3113b5be379dd9ca8d95d6c9c88e20bdfa0d64d56a6d09df4de401c11236",
+    "35--Basketball/35_Basketball_Basketball_35_653.jpg": "40b0df6445ad53010341b8c168788d3d588e5f76d18c517b1fc05c2c488cca6d",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg": "5fa57da37a2207da5e64c08ff81a01571a7b9e47fb29eca2ecf9316b0d178c39",
+    "35--Basketball/35_Basketball_playingbasketball_35_612.jpg": "484a65f2125abfb0b780645d3fd633707861f2a7e45813e0695de0ad192fbf1c",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg": "0c9be55beebc8546dcb8f650434d73dd0aafb64ea7bfdd769e1c2a00a0ee7b42",
+    "36--Football/36_Football_Football_36_110.jpg": "fe8c1f7518668e2e862411ae9d81df7d1abd61805825dc281b41c34b47560218",
+    "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg": "6b911c448c34fdba56b0187991363231feff50beeaedbec1f179aa3005d839d1",
+    "56--Voter/56_Voter_peoplevoting_56_644.jpg": "f564870aeff09052a0d08b67096b748346d0f5c70a5bc1c072f98b255b26d252",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg": "fe52cf281f3aab5aaa766407548287c4367d9794b4b6412fcf44811034c74964",
+    "56--Voter/56_Voter_peoplevoting_56_21.jpg": "5e53ac410f68b80b96a4fcea2b43df6b587e0d23e960fa49d83d359e1964202d",
+    "56--Voter/56_Voter_peoplevoting_56_796.jpg": "cd75284ce16d70086056dbf6e646bea85306f86493b7a499da40baff056002f6",
+    "36--Football/36_Football_americanfootball_ball_36_510.jpg": "08c96e6266ac9d567bd2cd806469295fafbe56010aef9f8fb2b4c6f2f3532272",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg": "0e25622e6bd71131c3c8add26a2ea9d5da86f6666a006f82bd1c97d96acd9832",
+    "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg": "4fc36e765e5ca8ebb87f6be52756324eed939a88cb5a79f886fe68258c120b96",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg": "232d5a90ef79deaee673b4fbb0ea1868d7b47deae8a76694446e8ca2c5c53eab",
+    "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg": "fa61ff99c1cfc1a0c0910d08583647c3d464b6ca3ea7d6fc5887909594fc9d8c",
+    "36--Football/36_Football_americanfootball_ball_36_38.jpg": "3f7b7c2e6abcede35df37cf8961dd5015877c5a0979480c24300635747d23ba5",
+    "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg": "9a225f390d4f23add885a15f4ae5ca2bffa63d10f49a0db3ccdd73089c20355b",
+    "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg": "7b02953bd63e6470d90c14f33848a06acdf3abcb009a48a51d3585d8b2c93976",
+    "19--Couple/19_Couple_Couple_19_832.jpg": "204ac5ea04605cf518c3949fb420b0e5b8267c8233c7421c1d0a8ad958d1dc13",
+    "35--Basketball/35_Basketball_Basketball_35_185.jpg": "2c2b7065f514ee5e16acc9fb130f5c642a45886824b385cd8a7d2be64e866016"
+  },
+  "variants": {
+    "A_baseline": "models/ablation/A_baseline.onnx",
+    "B_kps_only": "models/ablation/B_kps_only.onnx",
+    "C_svd_only": "models/ablation/C_svd_only.onnx",
+    "D_svd_nokps": "models/ablation/D_svd_nokps.onnx"
+  },
+  "preserves_prior": [
+    "wsp/analysis/ablation_benchmark.json",
+    "ABLATION_REPORT.md",
+    "BENCHMARK_RESULTS.csv"
+  ],
+  "no_weight_edits": true,
+  "ort_thread_sweep": {
+    "1": {
+      "intra_op_num_threads": 1,
+      "inter_op_num_threads": 1,
+      "n_trials": 3,
+      "n_images": 24,
+      "n_run_per_image": 3,
+      "per_variant": {
+        "A_baseline": {
+          "n": 216,
+          "mean_ms": 24.074929941249408,
+          "std_ms": 0.46101803111167916,
+          "median_ms": 23.89085351023823,
+          "p95_ms": 25.219828232366126,
+          "min_ms": 23.52806000271812,
+          "max_ms": 25.954712997190654,
+          "trial_medians_ms": [
+            24.033102003159,
+            23.85429450077936,
+            23.91713799443096
+          ],
+          "trial_median_of_medians_ms": 23.91713799443096,
+          "n_outputs": 9
+        },
+        "B_kps_only": {
+          "n": 216,
+          "mean_ms": 20.334825704291386,
+          "std_ms": 0.35709775549729866,
+          "median_ms": 20.218408011714928,
+          "p95_ms": 21.178818002226762,
+          "min_ms": 19.806555996183306,
+          "max_ms": 21.613300981698558,
+          "trial_medians_ms": [
+            20.283475489122793,
+            20.17209999030456,
+            20.21119400160387
+          ],
+          "trial_median_of_medians_ms": 20.21119400160387,
+          "n_outputs": 6
+        },
+        "C_svd_only": {
+          "n": 216,
+          "mean_ms": 22.874339624346856,
+          "std_ms": 0.5187651960515256,
+          "median_ms": 22.667793498840183,
+          "p95_ms": 24.02575574524235,
+          "min_ms": 22.302419994957745,
+          "max_ms": 24.662557989358902,
+          "trial_medians_ms": [
+            22.793295487645082,
+            22.635933506535366,
+            22.632571999565698
+          ],
+          "trial_median_of_medians_ms": 22.635933506535366,
+          "n_outputs": 9
+        },
+        "D_svd_nokps": {
+          "n": 216,
+          "mean_ms": 19.108144550786907,
+          "std_ms": 0.39716845627341224,
+          "median_ms": 18.976126491907053,
+          "p95_ms": 19.917406018066686,
+          "min_ms": 18.60804800526239,
+          "max_ms": 20.775562996277586,
+          "trial_medians_ms": [
+            19.06453850097023,
+            19.04704049229622,
+            18.906555487774312
+          ],
+          "trial_median_of_medians_ms": 19.04704049229622,
+          "n_outputs": 6
+        }
+      }
+    },
+    "2": {
+      "intra_op_num_threads": 2,
+      "inter_op_num_threads": 1,
+      "n_trials": 3,
+      "n_images": 24,
+      "n_run_per_image": 3,
+      "per_variant": {
+        "A_baseline": {
+          "n": 216,
+          "mean_ms": 13.982916722145294,
+          "std_ms": 0.49784624179450826,
+          "median_ms": 13.822679495206103,
+          "p95_ms": 15.022969491838012,
+          "min_ms": 13.3988710003905,
+          "max_ms": 15.856362006161362,
+          "trial_medians_ms": [
+            13.999477494508028,
+            13.724204007303342,
+            13.749351492151618
+          ],
+          "trial_median_of_medians_ms": 13.749351492151618,
+          "n_outputs": 9
+        },
+        "B_kps_only": {
+          "n": 216,
+          "mean_ms": 11.572773022770114,
+          "std_ms": 0.5169767835579905,
+          "median_ms": 11.392981512472034,
+          "p95_ms": 12.770158500643447,
+          "min_ms": 11.007233988493681,
+          "max_ms": 13.389202998951077,
+          "trial_medians_ms": [
+            11.576241508009844,
+            11.361946992110461,
+            11.288764493656345
+          ],
+          "trial_median_of_medians_ms": 11.361946992110461,
+          "n_outputs": 6
+        },
+        "C_svd_only": {
+          "n": 216,
+          "mean_ms": 13.285253397852001,
+          "std_ms": 0.4651246262941767,
+          "median_ms": 13.134027001797222,
+          "p95_ms": 14.295061984739732,
+          "min_ms": 12.795994989573956,
+          "max_ms": 15.292760013835505,
+          "trial_medians_ms": [
+            13.36877400171943,
+            12.999868995393626,
+            13.037159500527196
+          ],
+          "trial_median_of_medians_ms": 13.037159500527196,
+          "n_outputs": 9
+        },
+        "D_svd_nokps": {
+          "n": 216,
+          "mean_ms": 10.824471717502025,
+          "std_ms": 0.41412587831767467,
+          "median_ms": 10.671190000721253,
+          "p95_ms": 11.80502423812868,
+          "min_ms": 10.401812003692612,
+          "max_ms": 12.315628991927952,
+          "trial_medians_ms": [
+            10.742038502939977,
+            10.629516502376646,
+            10.647756498656236
+          ],
+          "trial_median_of_medians_ms": 10.647756498656236,
+          "n_outputs": 6
+        }
+      }
+    },
+    "4": {
+      "intra_op_num_threads": 4,
+      "inter_op_num_threads": 1,
+      "n_trials": 3,
+      "n_images": 24,
+      "n_run_per_image": 3,
+      "per_variant": {
+        "A_baseline": {
+          "n": 216,
+          "mean_ms": 8.55321024479323,
+          "std_ms": 0.5894682934853237,
+          "median_ms": 8.377798003493808,
+          "p95_ms": 9.62666475243168,
+          "min_ms": 7.882213976699859,
+          "max_ms": 10.878300992771983,
+          "trial_medians_ms": [
+            8.467472493066452,
+            8.514661501976661,
+            8.202714016078971
+          ],
+          "trial_median_of_medians_ms": 8.467472493066452,
+          "n_outputs": 9
+        },
+        "B_kps_only": {
+          "n": 216,
+          "mean_ms": 6.811351493929073,
+          "std_ms": 0.6051411218076306,
+          "median_ms": 6.598344989470206,
+          "p95_ms": 7.992333747097291,
+          "min_ms": 6.127967993961647,
+          "max_ms": 8.858493994921446,
+          "trial_medians_ms": [
+            6.661990002612583,
+            6.817468005465344,
+            6.33013500191737
+          ],
+          "trial_median_of_medians_ms": 6.661990002612583,
+          "n_outputs": 6
+        },
+        "C_svd_only": {
+          "n": 216,
+          "mean_ms": 8.14166349004221,
+          "std_ms": 0.5194171253760786,
+          "median_ms": 7.905042482889257,
+          "p95_ms": 9.096823261643294,
+          "min_ms": 7.56917500984855,
+          "max_ms": 10.192368004936725,
+          "trial_medians_ms": [
+            8.23352650331799,
+            7.818098500138149,
+            7.812938507413492
+          ],
+          "trial_median_of_medians_ms": 7.818098500138149,
+          "n_outputs": 9
+        },
+        "D_svd_nokps": {
+          "n": 216,
+          "mean_ms": 6.369113111927787,
+          "std_ms": 0.4862468913961655,
+          "median_ms": 6.138202981674112,
+          "p95_ms": 7.2894252589321695,
+          "min_ms": 5.839594989083707,
+          "max_ms": 7.930766005301848,
+          "trial_medians_ms": [
+            6.172908004373312,
+            6.252558494452387,
+            5.989677491015755
+          ],
+          "trial_median_of_medians_ms": 6.172908004373312,
+          "n_outputs": 6
+        }
+      }
+    },
+    "8": {
+      "intra_op_num_threads": 8,
+      "inter_op_num_threads": 1,
+      "n_trials": 3,
+      "n_images": 24,
+      "n_run_per_image": 3,
+      "per_variant": {
+        "A_baseline": {
+          "n": 216,
+          "mean_ms": 6.1867322923111105,
+          "std_ms": 0.7894624281648404,
+          "median_ms": 6.02534000063315,
+          "p95_ms": 7.605467755638529,
+          "min_ms": 5.208404996665195,
+          "max_ms": 8.243625983595848,
+          "trial_medians_ms": [
+            5.731671495595947,
+            6.4154305146075785,
+            5.981767506455071
+          ],
+          "trial_median_of_medians_ms": 5.981767506455071,
+          "n_outputs": 9
+        },
+        "B_kps_only": {
+          "n": 216,
+          "mean_ms": 4.387781708592903,
+          "std_ms": 0.5444900117330759,
+          "median_ms": 4.138999996939674,
+          "p95_ms": 5.427525749837514,
+          "min_ms": 3.845345985610038,
+          "max_ms": 6.888200994580984,
+          "trial_medians_ms": [
+            4.106207998120226,
+            4.114318493520841,
+            4.21359550091438
+          ],
+          "trial_median_of_medians_ms": 4.114318493520841,
+          "n_outputs": 6
+        },
+        "C_svd_only": {
+          "n": 216,
+          "mean_ms": 5.725595638068626,
+          "std_ms": 0.6069182653129868,
+          "median_ms": 5.49008599773515,
+          "p95_ms": 6.783112999983132,
+          "min_ms": 5.052893015090376,
+          "max_ms": 7.74987498880364,
+          "trial_medians_ms": [
+            5.468485498568043,
+            5.4717664897907525,
+            5.49008599773515
+          ],
+          "trial_median_of_medians_ms": 5.4717664897907525,
+          "n_outputs": 9
+        },
+        "D_svd_nokps": {
+          "n": 216,
+          "mean_ms": 4.444876341612717,
+          "std_ms": 0.658219986328934,
+          "median_ms": 4.400642996188253,
+          "p95_ms": 5.414298495452385,
+          "min_ms": 3.632555977674201,
+          "max_ms": 6.6654909751378,
+          "trial_medians_ms": [
+            4.2959309939760715,
+            4.260358997271396,
+            4.467458988074213
+          ],
+          "trial_median_of_medians_ms": 4.2959309939760715,
+          "n_outputs": 6
+        }
+      }
+    }
+  },
+  "stage_profile": {
+    "threads": 4,
+    "order": [
+      "D_svd_nokps",
+      "B_kps_only",
+      "A_baseline",
+      "C_svd_only"
+    ],
+    "preprocess_letterbox_ms": {
+      "n": 72,
+      "mean_ms": 0.2862192636207005,
+      "std_ms": 0.08393410518328147,
+      "median_ms": 0.2894455101341009,
+      "p95_ms": 0.4182722565019504,
+      "min_ms": 0.18280401127412915,
+      "max_ms": 0.5517489917110652
+    },
+    "variants": {
+      "D_svd_nokps": {
+        "use_kps": false,
+        "n_samples": 72,
+        "stages_ms": {
+          "blob": {
+            "n": 72,
+            "mean_ms": 2.4144642063927475,
+            "std_ms": 0.31940226522519044,
+            "median_ms": 2.384669496677816,
+            "p95_ms": 2.9663421344594103,
+            "min_ms": 2.020838001044467,
+            "max_ms": 3.777087986236438
+          },
+          "ort": {
+            "n": 72,
+            "mean_ms": 7.8651468049631355,
+            "std_ms": 0.6279127249292948,
+            "median_ms": 7.656750007299706,
+            "p95_ms": 8.868324945797212,
+            "min_ms": 7.194078003522009,
+            "max_ms": 10.796517017297447
+          },
+          "thresh": {
+            "n": 72,
+            "mean_ms": 0.040395248813890956,
+            "std_ms": 0.008128988340097105,
+            "median_ms": 0.03920347080565989,
+            "p95_ms": 0.05838063661940397,
+            "min_ms": 0.029475020710378885,
+            "max_ms": 0.06704599945805967
+          },
+          "box_decode": {
+            "n": 72,
+            "mean_ms": 0.1719600428865912,
+            "std_ms": 0.032553971367274975,
+            "median_ms": 0.15990750398486853,
+            "p95_ms": 0.2504919088096359,
+            "min_ms": 0.14671700773760676,
+            "max_ms": 0.30821096152067184
+          },
+          "kps_decode": {
+            "n": 72,
+            "mean_ms": 0.0,
+            "std_ms": 0.0,
+            "median_ms": 0.0,
+            "p95_ms": 0.0,
+            "min_ms": 0.0,
+            "max_ms": 0.0
+          },
+          "assemble": {
+            "n": 72,
+            "mean_ms": 0.10651548412473251,
+            "std_ms": 0.05395718704068737,
+            "median_ms": 0.0855209946166724,
+            "p95_ms": 0.1961523012141697,
+            "min_ms": 0.0487020006403327,
+            "max_ms": 0.26152300415560603
+          },
+          "nms": {
+            "n": 72,
+            "mean_ms": 14.106309054720137,
+            "std_ms": 17.144146206747035,
+            "median_ms": 5.276909490930848,
+            "p95_ms": 47.40960619819816,
+            "min_ms": 1.2117229925934225,
+            "max_ms": 71.50338200153783
+          },
+          "total_post": {
+            "n": 72,
+            "mean_ms": 14.425179830545353,
+            "std_ms": 17.201323561299247,
+            "median_ms": 5.575512986979447,
+            "p95_ms": 47.79348610318266,
+            "min_ms": 1.4628679491579533,
+            "max_ms": 71.89933699555695
+          },
+          "total_infer_plus_post": {
+            "n": 72,
+            "mean_ms": 22.29032663550849,
+            "std_ms": 17.31635875918208,
+            "median_ms": 14.28317250974942,
+            "p95_ms": 55.59118899254827,
+            "min_ms": 8.88462393777445,
+            "max_ms": 79.92340900818817
+          },
+          "total_with_blob": {
+            "n": 72,
+            "mean_ms": 24.704790841901236,
+            "std_ms": 17.280742842312943,
+            "median_ms": 16.667996998876333,
+            "p95_ms": 57.756335656449664,
+            "min_ms": 11.275088938418776,
+            "max_ms": 82.69391200155951
+          }
+        },
+        "counts": {
+          "n_anchors_mean": 16800.0,
+          "n_post_thresh": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 478.2083333333333,
+            "std_ms": 476.2675175401834,
+            "median_ms": 231.5,
+            "p95_ms": 1405.0,
+            "min_ms": 65.0,
+            "max_ms": 1868.0
+          },
+          "per_image_mean_post_thresh": {
+            "35--Basketball/35_Basketball_playingbasketball_35_279.jpg": 342.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_199.jpg": 151.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg": 2252.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg": 2847.0,
+            "35--Basketball/35_Basketball_Basketball_35_653.jpg": 1893.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg": 643.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_612.jpg": 152.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg": 206.0,
+            "36--Football/36_Football_Football_36_110.jpg": 995.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg": 250.0,
+            "56--Voter/56_Voter_peoplevoting_56_644.jpg": 420.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg": 137.0,
+            "56--Voter/56_Voter_peoplevoting_56_21.jpg": 2501.0,
+            "56--Voter/56_Voter_peoplevoting_56_796.jpg": 217.0,
+            "36--Football/36_Football_americanfootball_ball_36_510.jpg": 2880.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg": 211.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg": 1066.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg": 3426.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg": 1571.0,
+            "36--Football/36_Football_americanfootball_ball_36_38.jpg": 2156.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg": 429.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg": 166.0,
+            "19--Couple/19_Couple_Couple_19_832.jpg": 531.0,
+            "35--Basketball/35_Basketball_Basketball_35_185.jpg": 1445.0
+          }
+        },
+        "per_image": [
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+            "n_post_thresh_mean": 342.0,
+            "n_post_nms_mean": 148.0,
+            "nms_ms_mean": 3.0617766606155783,
+            "ort_ms_mean": 7.893345338137199,
+            "post_ms_mean": 3.377555316546932
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+            "n_post_thresh_mean": 151.0,
+            "n_post_nms_mean": 65.0,
+            "nms_ms_mean": 1.3103223269960533,
+            "ort_ms_mean": 7.5018510009006905,
+            "post_ms_mean": 1.5614393147795151
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+            "n_post_thresh_mean": 2252.0,
+            "n_post_nms_mean": 953.0,
+            "nms_ms_mean": 28.21545032202266,
+            "ort_ms_mean": 8.637614664621651,
+            "post_ms_mean": 28.657356995002676
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+            "n_post_thresh_mean": 2847.0,
+            "n_post_nms_mean": 1405.0,
+            "nms_ms_mean": 47.3315053289601,
+            "ort_ms_mean": 7.806471665389836,
+            "post_ms_mean": 47.736274311318994
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+            "n_post_thresh_mean": 1893.0,
+            "n_post_nms_mean": 640.0,
+            "nms_ms_mean": 17.227042000740767,
+            "ort_ms_mean": 7.787172003493954,
+            "post_ms_mean": 17.585206670143332
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+            "n_post_thresh_mean": 643.0,
+            "n_post_nms_mean": 321.0,
+            "nms_ms_mean": 7.1235446763845784,
+            "ort_ms_mean": 7.622749001408617,
+            "post_ms_mean": 7.415919661677132
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+            "n_post_thresh_mean": 152.0,
+            "n_post_nms_mean": 75.0,
+            "nms_ms_mean": 1.4034250052645802,
+            "ort_ms_mean": 7.5716296657143785,
+            "post_ms_mean": 1.647404336836189
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+            "n_post_thresh_mean": 206.0,
+            "n_post_nms_mean": 121.0,
+            "nms_ms_mean": 2.3023856532139084,
+            "ort_ms_mean": 7.333333662245423,
+            "post_ms_mean": 2.5445156497880816
+          },
+          {
+            "id": "36--Football/36_Football_Football_36_110.jpg",
+            "n_post_thresh_mean": 995.0,
+            "n_post_nms_mean": 370.0,
+            "nms_ms_mean": 8.533287997124717,
+            "ort_ms_mean": 7.945533667225391,
+            "post_ms_mean": 8.8870549807325
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+            "n_post_thresh_mean": 250.0,
+            "n_post_nms_mean": 100.0,
+            "nms_ms_mean": 1.963102666195482,
+            "ort_ms_mean": 8.472991321468726,
+            "post_ms_mean": 2.208446016690383
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+            "n_post_thresh_mean": 420.0,
+            "n_post_nms_mean": 168.0,
+            "nms_ms_mean": 3.347983341276025,
+            "ort_ms_mean": 7.3478709867534535,
+            "post_ms_mean": 3.609917349725341
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+            "n_post_thresh_mean": 137.0,
+            "n_post_nms_mean": 77.0,
+            "nms_ms_mean": 1.4804003391570102,
+            "ort_ms_mean": 7.948896653639774,
+            "post_ms_mean": 1.744121031758065
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+            "n_post_thresh_mean": 2501.0,
+            "n_post_nms_mean": 962.0,
+            "nms_ms_mean": 29.410689341602847,
+            "ort_ms_mean": 7.865235995268449,
+            "post_ms_mean": 29.778519014750298
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+            "n_post_thresh_mean": 217.0,
+            "n_post_nms_mean": 117.0,
+            "nms_ms_mean": 2.221806993475184,
+            "ort_ms_mean": 7.697099004872143,
+            "post_ms_mean": 2.489174638564388
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+            "n_post_thresh_mean": 2880.0,
+            "n_post_nms_mean": 973.0,
+            "nms_ms_mean": 30.81204666523263,
+            "ort_ms_mean": 7.696725010949497,
+            "post_ms_mean": 31.20360064591902
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+            "n_post_thresh_mean": 211.0,
+            "n_post_nms_mean": 109.0,
+            "nms_ms_mean": 2.0919056745090834,
+            "ort_ms_mean": 7.518859997314091,
+            "post_ms_mean": 2.3322146638141326
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+            "n_post_thresh_mean": 1066.0,
+            "n_post_nms_mean": 294.0,
+            "nms_ms_mean": 6.709955002103622,
+            "ort_ms_mean": 7.564529010172312,
+            "post_ms_mean": 7.034410014360522
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+            "n_post_thresh_mean": 3426.0,
+            "n_post_nms_mean": 1868.0,
+            "nms_ms_mean": 70.94318567154308,
+            "ort_ms_mean": 8.322854662158838,
+            "post_ms_mean": 71.40772401665647
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+            "n_post_thresh_mean": 1571.0,
+            "n_post_nms_mean": 723.0,
+            "nms_ms_mean": 19.764366996241733,
+            "ort_ms_mean": 8.185769993967066,
+            "post_ms_mean": 20.133219339186326
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+            "n_post_thresh_mean": 2156.0,
+            "n_post_nms_mean": 813.0,
+            "nms_ms_mean": 24.20938731908488,
+            "ort_ms_mean": 7.681943660524364,
+            "post_ms_mean": 24.59083597447413
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+            "n_post_thresh_mean": 429.0,
+            "n_post_nms_mean": 167.0,
+            "nms_ms_mean": 3.3654759948452315,
+            "ort_ms_mean": 7.753692334517837,
+            "post_ms_mean": 3.644965977097551
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+            "n_post_thresh_mean": 166.0,
+            "n_post_nms_mean": 70.0,
+            "nms_ms_mean": 1.3120060126918058,
+            "ort_ms_mean": 7.951632015950357,
+            "post_ms_mean": 1.5717200197589893
+          },
+          {
+            "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+            "n_post_thresh_mean": 531.0,
+            "n_post_nms_mean": 169.0,
+            "nms_ms_mean": 3.623685333877802,
+            "ort_ms_mean": 8.834476000629365,
+            "post_ms_mean": 3.9403756672982126
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+            "n_post_thresh_mean": 1445.0,
+            "n_post_nms_mean": 769.0,
+            "nms_ms_mean": 20.786679990123957,
+            "ort_ms_mean": 7.82124600179183,
+            "post_ms_mean": 21.102344326209277
+          }
+        ]
+      },
+      "B_kps_only": {
+        "use_kps": false,
+        "n_samples": 72,
+        "stages_ms": {
+          "blob": {
+            "n": 72,
+            "mean_ms": 2.3958657786554087,
+            "std_ms": 0.28621994740803164,
+            "median_ms": 2.33171449508518,
+            "p95_ms": 3.0242585882660933,
+            "min_ms": 1.907014026073739,
+            "max_ms": 3.4769430058076978
+          },
+          "ort": {
+            "n": 72,
+            "mean_ms": 8.15889957003593,
+            "std_ms": 0.6329536956298945,
+            "median_ms": 7.972268998855725,
+            "p95_ms": 9.438306292577181,
+            "min_ms": 7.347295992076397,
+            "max_ms": 9.625119011616334
+          },
+          "thresh": {
+            "n": 72,
+            "mean_ms": 0.03954158374755126,
+            "std_ms": 0.007246411780208451,
+            "median_ms": 0.03700001980178058,
+            "p95_ms": 0.04994192568119615,
+            "min_ms": 0.029928021831437945,
+            "max_ms": 0.07371901301667094
+          },
+          "box_decode": {
+            "n": 72,
+            "mean_ms": 0.16663937640259974,
+            "std_ms": 0.027919323977743608,
+            "median_ms": 0.15822902787476778,
+            "p95_ms": 0.2034829754848034,
+            "min_ms": 0.14712699339725077,
+            "max_ms": 0.3552190028131008
+          },
+          "kps_decode": {
+            "n": 72,
+            "mean_ms": 0.0,
+            "std_ms": 0.0,
+            "median_ms": 0.0,
+            "p95_ms": 0.0,
+            "min_ms": 0.0,
+            "max_ms": 0.0
+          },
+          "assemble": {
+            "n": 72,
+            "mean_ms": 0.10634958258985232,
+            "std_ms": 0.04866949001309579,
+            "median_ms": 0.08627249917481095,
+            "p95_ms": 0.19931630085920918,
+            "min_ms": 0.05109701305627823,
+            "max_ms": 0.21537599968723953
+          },
+          "nms": {
+            "n": 72,
+            "mean_ms": 14.504479900804451,
+            "std_ms": 17.291985175601543,
+            "median_ms": 6.8032959825359285,
+            "p95_ms": 50.40650190494489,
+            "min_ms": 0.9531959949526936,
+            "max_ms": 69.60192800033838
+          },
+          "total_post": {
+            "n": 72,
+            "mean_ms": 14.817010443544454,
+            "std_ms": 17.341501219667993,
+            "median_ms": 7.1390444645658135,
+            "p95_ms": 50.7912734450656,
+            "min_ms": 1.1896619980689138,
+            "max_ms": 70.11236998368986
+          },
+          "total_infer_plus_post": {
+            "n": 72,
+            "mean_ms": 22.975910013580386,
+            "std_ms": 17.563525047921154,
+            "median_ms": 15.239628497511148,
+            "p95_ms": 59.74425944878021,
+            "min_ms": 8.67187199764885,
+            "max_ms": 79.44909497746266
+          },
+          "total_with_blob": {
+            "n": 72,
+            "mean_ms": 25.371775792235795,
+            "std_ms": 17.53637351216937,
+            "median_ms": 17.61803550471086,
+            "p95_ms": 62.2032983446843,
+            "min_ms": 11.015391035471112,
+            "max_ms": 81.9716899713967
+          }
+        },
+        "counts": {
+          "n_anchors_mean": 16800.0,
+          "n_post_thresh": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 492.8333333333333,
+            "std_ms": 480.88465930569635,
+            "median_ms": 302.5,
+            "p95_ms": 1476.0,
+            "min_ms": 50.0,
+            "max_ms": 1863.0
+          },
+          "per_image_mean_post_thresh": {
+            "35--Basketball/35_Basketball_playingbasketball_35_279.jpg": 502.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_199.jpg": 190.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg": 2097.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg": 2877.0,
+            "35--Basketball/35_Basketball_Basketball_35_653.jpg": 1650.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg": 655.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_612.jpg": 154.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg": 308.0,
+            "36--Football/36_Football_Football_36_110.jpg": 869.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg": 232.0,
+            "56--Voter/56_Voter_peoplevoting_56_644.jpg": 698.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg": 230.0,
+            "56--Voter/56_Voter_peoplevoting_56_21.jpg": 2780.0,
+            "56--Voter/56_Voter_peoplevoting_56_796.jpg": 160.0,
+            "36--Football/36_Football_americanfootball_ball_36_510.jpg": 3055.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg": 216.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg": 1228.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg": 3166.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg": 1442.0,
+            "36--Football/36_Football_americanfootball_ball_36_38.jpg": 1916.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg": 646.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg": 206.0,
+            "19--Couple/19_Couple_Couple_19_832.jpg": 757.0,
+            "35--Basketball/35_Basketball_Basketball_35_185.jpg": 1473.0
+          }
+        },
+        "per_image": [
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+            "n_post_thresh_mean": 502.0,
+            "n_post_nms_mean": 198.0,
+            "nms_ms_mean": 4.163432992451514,
+            "ort_ms_mean": 8.008595672436059,
+            "post_ms_mean": 4.513780324487016
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+            "n_post_thresh_mean": 190.0,
+            "n_post_nms_mean": 50.0,
+            "nms_ms_mean": 0.9605036660407981,
+            "ort_ms_mean": 7.5024720087337,
+            "post_ms_mean": 1.2102273273436974
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+            "n_post_thresh_mean": 2097.0,
+            "n_post_nms_mean": 876.0,
+            "nms_ms_mean": 25.754201672195148,
+            "ort_ms_mean": 8.643846318591386,
+            "post_ms_mean": 26.108488634539146
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+            "n_post_thresh_mean": 2877.0,
+            "n_post_nms_mean": 1476.0,
+            "nms_ms_mean": 50.31145734634871,
+            "ort_ms_mean": 8.75925766498161,
+            "post_ms_mean": 50.716350718478985
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+            "n_post_thresh_mean": 1650.0,
+            "n_post_nms_mean": 540.0,
+            "nms_ms_mean": 13.746278661225611,
+            "ort_ms_mean": 8.179992340349903,
+            "post_ms_mean": 14.092073019128293
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+            "n_post_thresh_mean": 655.0,
+            "n_post_nms_mean": 344.0,
+            "nms_ms_mean": 7.673821654558803,
+            "ort_ms_mean": 7.928024327460055,
+            "post_ms_mean": 7.958219978415097
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+            "n_post_thresh_mean": 154.0,
+            "n_post_nms_mean": 65.0,
+            "nms_ms_mean": 1.2295773291649919,
+            "ort_ms_mean": 7.8775519990207,
+            "post_ms_mean": 1.4731669895506154
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+            "n_post_thresh_mean": 308.0,
+            "n_post_nms_mean": 150.0,
+            "nms_ms_mean": 2.990141986326004,
+            "ort_ms_mean": 7.57390633225441,
+            "post_ms_mean": 3.2594656319512674
+          },
+          {
+            "id": "36--Football/36_Football_Football_36_110.jpg",
+            "n_post_thresh_mean": 869.0,
+            "n_post_nms_mean": 333.0,
+            "nms_ms_mean": 7.425423323487242,
+            "ort_ms_mean": 8.866209003220623,
+            "post_ms_mean": 7.710229983786121
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+            "n_post_thresh_mean": 232.0,
+            "n_post_nms_mean": 100.0,
+            "nms_ms_mean": 1.9108309934381396,
+            "ort_ms_mean": 8.408282679738477,
+            "post_ms_mean": 2.150558323288957
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+            "n_post_thresh_mean": 698.0,
+            "n_post_nms_mean": 281.0,
+            "nms_ms_mean": 6.143313997502749,
+            "ort_ms_mean": 8.068879328978559,
+            "post_ms_mean": 6.4552879678861546
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+            "n_post_thresh_mean": 230.0,
+            "n_post_nms_mean": 113.0,
+            "nms_ms_mean": 2.265592678061997,
+            "ort_ms_mean": 7.68125566537492,
+            "post_ms_mean": 2.5503500073682517
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+            "n_post_thresh_mean": 2780.0,
+            "n_post_nms_mean": 1110.0,
+            "nms_ms_mean": 35.85486000520177,
+            "ort_ms_mean": 8.542040993537134,
+            "post_ms_mean": 36.23030733433552
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+            "n_post_thresh_mean": 160.0,
+            "n_post_nms_mean": 76.0,
+            "nms_ms_mean": 1.4562176656909287,
+            "ort_ms_mean": 8.076938334852457,
+            "post_ms_mean": 1.719704664234693
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+            "n_post_thresh_mean": 3055.0,
+            "n_post_nms_mean": 1058.0,
+            "nms_ms_mean": 34.29236199978428,
+            "ort_ms_mean": 8.071364000594864,
+            "post_ms_mean": 34.69506365945563
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+            "n_post_thresh_mean": 216.0,
+            "n_post_nms_mean": 104.0,
+            "nms_ms_mean": 1.9969630035726975,
+            "ort_ms_mean": 7.85319966962561,
+            "post_ms_mean": 2.2562780165268728
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+            "n_post_thresh_mean": 1228.0,
+            "n_post_nms_mean": 324.0,
+            "nms_ms_mean": 7.655483660831426,
+            "ort_ms_mean": 8.117387663029755,
+            "post_ms_mean": 7.962960352112229
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+            "n_post_thresh_mean": 3166.0,
+            "n_post_nms_mean": 1863.0,
+            "nms_ms_mean": 69.33062998966004,
+            "ort_ms_mean": 8.516793333304426,
+            "post_ms_mean": 69.77144764581074
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+            "n_post_thresh_mean": 1442.0,
+            "n_post_nms_mean": 711.0,
+            "nms_ms_mean": 19.01989066391252,
+            "ort_ms_mean": 8.36725500994362,
+            "post_ms_mean": 19.34801203121121
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+            "n_post_thresh_mean": 1916.0,
+            "n_post_nms_mean": 754.0,
+            "nms_ms_mean": 21.35800666292198,
+            "ort_ms_mean": 8.507619670126587,
+            "post_ms_mean": 21.69794398165929
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+            "n_post_thresh_mean": 646.0,
+            "n_post_nms_mean": 233.0,
+            "nms_ms_mean": 5.090403331754108,
+            "ort_ms_mean": 7.9278803314082325,
+            "post_ms_mean": 5.37468635593541
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+            "n_post_thresh_mean": 206.0,
+            "n_post_nms_mean": 75.0,
+            "nms_ms_mean": 1.7724840048079689,
+            "ort_ms_mean": 8.34397500148043,
+            "post_ms_mean": 2.02363301650621
+          },
+          {
+            "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+            "n_post_thresh_mean": 757.0,
+            "n_post_nms_mean": 205.0,
+            "nms_ms_mean": 4.43548199837096,
+            "ort_ms_mean": 7.673294002112622,
+            "post_ms_mean": 4.723906361808379
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+            "n_post_thresh_mean": 1473.0,
+            "n_post_nms_mean": 789.0,
+            "nms_ms_mean": 21.270158331996452,
+            "ort_ms_mean": 8.317568329706168,
+            "post_ms_mean": 21.60610831924714
+          }
+        ]
+      },
+      "A_baseline": {
+        "use_kps": true,
+        "n_samples": 72,
+        "stages_ms": {
+          "blob": {
+            "n": 72,
+            "mean_ms": 2.444235751075515,
+            "std_ms": 0.4005640719016944,
+            "median_ms": 2.328709015273489,
+            "p95_ms": 3.41602642001817,
+            "min_ms": 1.976735016796738,
+            "max_ms": 3.6494880041573197
+          },
+          "ort": {
+            "n": 72,
+            "mean_ms": 10.027626985700206,
+            "std_ms": 0.6759037891685429,
+            "median_ms": 9.783541987417266,
+            "p95_ms": 11.534263541398104,
+            "min_ms": 9.309073007898405,
+            "max_ms": 12.256268004421145
+          },
+          "thresh": {
+            "n": 72,
+            "mean_ms": 0.04509163773036562,
+            "std_ms": 0.007429274103306773,
+            "median_ms": 0.044469008571468294,
+            "p95_ms": 0.057844458206091076,
+            "min_ms": 0.034685974242165685,
+            "max_ms": 0.06820898852311075
+          },
+          "box_decode": {
+            "n": 72,
+            "mean_ms": 0.17166840633662003,
+            "std_ms": 0.02339598069788874,
+            "median_ms": 0.16376949497498572,
+            "p95_ms": 0.22878810996189713,
+            "min_ms": 0.15153500135056674,
+            "max_ms": 0.2633669937495142
+          },
+          "kps_decode": {
+            "n": 72,
+            "mean_ms": 0.46621344598760417,
+            "std_ms": 0.06975467316036182,
+            "median_ms": 0.44611599878408015,
+            "p95_ms": 0.6017489024088718,
+            "min_ms": 0.38305099587887526,
+            "max_ms": 0.6428509659599513
+          },
+          "assemble": {
+            "n": 72,
+            "mean_ms": 0.10883572233271682,
+            "std_ms": 0.04986159518447448,
+            "median_ms": 0.09303499246016145,
+            "p95_ms": 0.19334071257617325,
+            "min_ms": 0.052377989050000906,
+            "max_ms": 0.21534599363803864
+          },
+          "nms": {
+            "n": 72,
+            "mean_ms": 14.625168025506557,
+            "std_ms": 17.451078342636045,
+            "median_ms": 6.801788491429761,
+            "p95_ms": 50.26370444975328,
+            "min_ms": 0.9488890063948929,
+            "max_ms": 73.89927699114196
+          },
+          "total_post": {
+            "n": 72,
+            "mean_ms": 15.416977237893864,
+            "std_ms": 17.549754363256266,
+            "median_ms": 7.550316469860263,
+            "p95_ms": 51.2105572517612,
+            "min_ms": 1.5970510139595717,
+            "max_ms": 74.88193799508736
+          },
+          "total_infer_plus_post": {
+            "n": 72,
+            "mean_ms": 25.44460422359407,
+            "std_ms": 17.61329139620665,
+            "median_ms": 17.744008495355956,
+            "p95_ms": 61.12251325539547,
+            "min_ms": 11.068360065110028,
+            "max_ms": 86.70745400013402
+          },
+          "total_with_blob": {
+            "n": 72,
+            "mean_ms": 27.888839974669583,
+            "std_ms": 17.595678555039736,
+            "median_ms": 19.96825498645194,
+            "p95_ms": 63.46780858293642,
+            "min_ms": 13.3465230173897,
+            "max_ms": 90.18450701842085
+          }
+        },
+        "counts": {
+          "n_anchors_mean": 16800.0,
+          "n_post_thresh": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 492.8333333333333,
+            "std_ms": 480.88465930569635,
+            "median_ms": 302.5,
+            "p95_ms": 1476.0,
+            "min_ms": 50.0,
+            "max_ms": 1863.0
+          },
+          "per_image_mean_post_thresh": {
+            "35--Basketball/35_Basketball_playingbasketball_35_279.jpg": 502.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_199.jpg": 190.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg": 2097.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg": 2877.0,
+            "35--Basketball/35_Basketball_Basketball_35_653.jpg": 1650.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg": 655.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_612.jpg": 154.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg": 308.0,
+            "36--Football/36_Football_Football_36_110.jpg": 869.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg": 232.0,
+            "56--Voter/56_Voter_peoplevoting_56_644.jpg": 698.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg": 230.0,
+            "56--Voter/56_Voter_peoplevoting_56_21.jpg": 2780.0,
+            "56--Voter/56_Voter_peoplevoting_56_796.jpg": 160.0,
+            "36--Football/36_Football_americanfootball_ball_36_510.jpg": 3055.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg": 216.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg": 1228.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg": 3166.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg": 1442.0,
+            "36--Football/36_Football_americanfootball_ball_36_38.jpg": 1916.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg": 646.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg": 206.0,
+            "19--Couple/19_Couple_Couple_19_832.jpg": 757.0,
+            "35--Basketball/35_Basketball_Basketball_35_185.jpg": 1473.0
+          }
+        },
+        "per_image": [
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+            "n_post_thresh_mean": 502.0,
+            "n_post_nms_mean": 198.0,
+            "nms_ms_mean": 4.395790669756631,
+            "ort_ms_mean": 10.134181657728428,
+            "post_ms_mean": 5.203292646910995
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+            "n_post_thresh_mean": 190.0,
+            "n_post_nms_mean": 50.0,
+            "nms_ms_mean": 0.9597859946855655,
+            "ort_ms_mean": 9.536772335801894,
+            "post_ms_mean": 1.6125796634393434
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+            "n_post_thresh_mean": 2097.0,
+            "n_post_nms_mean": 876.0,
+            "nms_ms_mean": 25.450492665792506,
+            "ort_ms_mean": 9.754906321177259,
+            "post_ms_mean": 26.38779431193446
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+            "n_post_thresh_mean": 2877.0,
+            "n_post_nms_mean": 1476.0,
+            "nms_ms_mean": 50.093657666972526,
+            "ort_ms_mean": 9.89524465209494,
+            "post_ms_mean": 51.04057402544034
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+            "n_post_thresh_mean": 1650.0,
+            "n_post_nms_mean": 540.0,
+            "nms_ms_mean": 13.739860335287327,
+            "ort_ms_mean": 10.16195434688901,
+            "post_ms_mean": 14.571127316836888
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+            "n_post_thresh_mean": 655.0,
+            "n_post_nms_mean": 344.0,
+            "nms_ms_mean": 7.471262991505985,
+            "ort_ms_mean": 9.856428010001158,
+            "post_ms_mean": 8.224537324470779
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+            "n_post_thresh_mean": 154.0,
+            "n_post_nms_mean": 65.0,
+            "nms_ms_mean": 1.2249153126807262,
+            "ort_ms_mean": 9.890893328702077,
+            "post_ms_mean": 1.8626143670796107
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+            "n_post_thresh_mean": 308.0,
+            "n_post_nms_mean": 150.0,
+            "nms_ms_mean": 2.979859011247754,
+            "ort_ms_mean": 9.849678327251846,
+            "post_ms_mean": 3.669064666610211
+          },
+          {
+            "id": "36--Football/36_Football_Football_36_110.jpg",
+            "n_post_thresh_mean": 869.0,
+            "n_post_nms_mean": 333.0,
+            "nms_ms_mean": 7.451335327156509,
+            "ort_ms_mean": 9.981417000138512,
+            "post_ms_mean": 8.181776337247962
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+            "n_post_thresh_mean": 232.0,
+            "n_post_nms_mean": 100.0,
+            "nms_ms_mean": 2.0152710009521493,
+            "ort_ms_mean": 10.627594989879677,
+            "post_ms_mean": 2.7555766476628683
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+            "n_post_thresh_mean": 698.0,
+            "n_post_nms_mean": 281.0,
+            "nms_ms_mean": 6.14228534201781,
+            "ort_ms_mean": 10.333293670555577,
+            "post_ms_mean": 6.896411020231123
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+            "n_post_thresh_mean": 230.0,
+            "n_post_nms_mean": 113.0,
+            "nms_ms_mean": 2.178889660475155,
+            "ort_ms_mean": 9.784632672866186,
+            "post_ms_mean": 2.8278353662850955
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+            "n_post_thresh_mean": 2780.0,
+            "n_post_nms_mean": 1110.0,
+            "nms_ms_mean": 36.56897599770067,
+            "ort_ms_mean": 9.975836660790568,
+            "post_ms_mean": 37.536666330803804
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+            "n_post_thresh_mean": 160.0,
+            "n_post_nms_mean": 76.0,
+            "nms_ms_mean": 1.4349780006644626,
+            "ort_ms_mean": 9.85942732465143,
+            "post_ms_mean": 2.1558136601621904
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+            "n_post_thresh_mean": 3055.0,
+            "n_post_nms_mean": 1058.0,
+            "nms_ms_mean": 34.29553132931081,
+            "ort_ms_mean": 9.763363001790518,
+            "post_ms_mean": 35.331229688987754
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+            "n_post_thresh_mean": 216.0,
+            "n_post_nms_mean": 104.0,
+            "nms_ms_mean": 1.987415647211795,
+            "ort_ms_mean": 9.717085670369366,
+            "post_ms_mean": 2.6468956493772566
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+            "n_post_thresh_mean": 1228.0,
+            "n_post_nms_mean": 324.0,
+            "nms_ms_mean": 9.592287339425335,
+            "ort_ms_mean": 10.989637327535698,
+            "post_ms_mean": 10.543349684060862
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+            "n_post_thresh_mean": 3166.0,
+            "n_post_nms_mean": 1863.0,
+            "nms_ms_mean": 70.57684233101706,
+            "ort_ms_mean": 10.557910679684332,
+            "post_ms_mean": 71.58217133837752
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+            "n_post_thresh_mean": 1442.0,
+            "n_post_nms_mean": 711.0,
+            "nms_ms_mean": 18.804487995415304,
+            "ort_ms_mean": 9.803294679538036,
+            "post_ms_mean": 19.586405377291765
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+            "n_post_thresh_mean": 1916.0,
+            "n_post_nms_mean": 754.0,
+            "nms_ms_mean": 21.229641997100163,
+            "ort_ms_mean": 9.931349331357827,
+            "post_ms_mean": 22.047720616683364
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+            "n_post_thresh_mean": 646.0,
+            "n_post_nms_mean": 233.0,
+            "nms_ms_mean": 5.236154664695884,
+            "ort_ms_mean": 10.104299008768672,
+            "post_ms_mean": 5.988099660802011
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+            "n_post_thresh_mean": 206.0,
+            "n_post_nms_mean": 75.0,
+            "nms_ms_mean": 1.4427459973376244,
+            "ort_ms_mean": 9.966094987854982,
+            "post_ms_mean": 2.0902523441084973
+          },
+          {
+            "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+            "n_post_thresh_mean": 757.0,
+            "n_post_nms_mean": 205.0,
+            "nms_ms_mean": 4.50860300528196,
+            "ort_ms_mean": 10.183795345559096,
+            "post_ms_mean": 5.23518500267528
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+            "n_post_thresh_mean": 1473.0,
+            "n_post_nms_mean": 789.0,
+            "nms_ms_mean": 21.222962328465655,
+            "ort_ms_mean": 10.003956325817853,
+            "post_ms_mean": 22.030480661972735
+          }
+        ]
+      },
+      "C_svd_only": {
+        "use_kps": true,
+        "n_samples": 72,
+        "stages_ms": {
+          "blob": {
+            "n": 72,
+            "mean_ms": 2.350910431737753,
+            "std_ms": 0.2526723780974414,
+            "median_ms": 2.358059005928226,
+            "p95_ms": 2.786746896163095,
+            "min_ms": 1.974051003344357,
+            "max_ms": 3.2465179974678904
+          },
+          "ort": {
+            "n": 72,
+            "mean_ms": 9.664856947994041,
+            "std_ms": 0.4505584945581244,
+            "median_ms": 9.503510009380989,
+            "p95_ms": 10.568519202934112,
+            "min_ms": 9.112353000091389,
+            "max_ms": 11.29853300517425
+          },
+          "thresh": {
+            "n": 72,
+            "mean_ms": 0.045772003634030826,
+            "std_ms": 0.008211540349315916,
+            "median_ms": 0.04555149644147605,
+            "p95_ms": 0.06450587243307382,
+            "min_ms": 0.03513498813845217,
+            "max_ms": 0.07038100739009678
+          },
+          "box_decode": {
+            "n": 72,
+            "mean_ms": 0.1769512374367979,
+            "std_ms": 0.028593561814555062,
+            "median_ms": 0.16538549971301109,
+            "p95_ms": 0.24647357931826266,
+            "min_ms": 0.1513659954071045,
+            "max_ms": 0.26431799051351845
+          },
+          "kps_decode": {
+            "n": 72,
+            "mean_ms": 0.46023122195038013,
+            "std_ms": 0.0706436733181261,
+            "median_ms": 0.4483394877752289,
+            "p95_ms": 0.600296254560817,
+            "min_ms": 0.37482602056115866,
+            "max_ms": 0.6861230067443103
+          },
+          "assemble": {
+            "n": 72,
+            "mean_ms": 0.10779927631827174,
+            "std_ms": 0.05399541603981651,
+            "median_ms": 0.09265948028769344,
+            "p95_ms": 0.20324990764493125,
+            "min_ms": 0.052229006541892886,
+            "max_ms": 0.2487689780537039
+          },
+          "nms": {
+            "n": 72,
+            "mean_ms": 14.02197909717668,
+            "std_ms": 17.072682739376265,
+            "median_ms": 5.109819510835223,
+            "p95_ms": 47.03443829494063,
+            "min_ms": 1.216943986946717,
+            "max_ms": 71.06303199543618
+          },
+          "total_post": {
+            "n": 72,
+            "mean_ms": 14.81273283651616,
+            "std_ms": 17.188150284029366,
+            "median_ms": 5.845652500283904,
+            "p95_ms": 48.220749947358854,
+            "min_ms": 1.8463989545125514,
+            "max_ms": 72.06779599073343
+          },
+          "total_infer_plus_post": {
+            "n": 72,
+            "mean_ms": 24.4775897845102,
+            "std_ms": 17.23007775738341,
+            "median_ms": 15.515950988628902,
+            "p95_ms": 58.40812014066614,
+            "min_ms": 11.132912040920928,
+            "max_ms": 82.58968300651759
+          },
+          "total_with_blob": {
+            "n": 72,
+            "mean_ms": 26.828500216247953,
+            "std_ms": 17.160049658195152,
+            "median_ms": 17.955118499230593,
+            "p95_ms": 60.66472638776759,
+            "min_ms": 13.487169053405523,
+            "max_ms": 84.66730802319944
+          }
+        },
+        "counts": {
+          "n_anchors_mean": 16800.0,
+          "n_post_thresh": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 478.2083333333333,
+            "std_ms": 476.2675175401834,
+            "median_ms": 231.5,
+            "p95_ms": 1405.0,
+            "min_ms": 65.0,
+            "max_ms": 1868.0
+          },
+          "per_image_mean_post_thresh": {
+            "35--Basketball/35_Basketball_playingbasketball_35_279.jpg": 342.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_199.jpg": 151.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg": 2252.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg": 2847.0,
+            "35--Basketball/35_Basketball_Basketball_35_653.jpg": 1893.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg": 643.0,
+            "35--Basketball/35_Basketball_playingbasketball_35_612.jpg": 152.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg": 206.0,
+            "36--Football/36_Football_Football_36_110.jpg": 995.0,
+            "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg": 250.0,
+            "56--Voter/56_Voter_peoplevoting_56_644.jpg": 420.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg": 137.0,
+            "56--Voter/56_Voter_peoplevoting_56_21.jpg": 2501.0,
+            "56--Voter/56_Voter_peoplevoting_56_796.jpg": 217.0,
+            "36--Football/36_Football_americanfootball_ball_36_510.jpg": 2880.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg": 211.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg": 1066.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg": 3426.0,
+            "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg": 1571.0,
+            "36--Football/36_Football_americanfootball_ball_36_38.jpg": 2156.0,
+            "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg": 429.0,
+            "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg": 166.0,
+            "19--Couple/19_Couple_Couple_19_832.jpg": 531.0,
+            "35--Basketball/35_Basketball_Basketball_35_185.jpg": 1445.0
+          }
+        },
+        "per_image": [
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+            "n_post_thresh_mean": 342.0,
+            "n_post_nms_mean": 148.0,
+            "nms_ms_mean": 2.8982016568382583,
+            "ort_ms_mean": 9.395039000082761,
+            "post_ms_mean": 3.5708563324684897
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+            "n_post_thresh_mean": 151.0,
+            "n_post_nms_mean": 65.0,
+            "nms_ms_mean": 1.228388660820201,
+            "ort_ms_mean": 9.805983339902014,
+            "post_ms_mean": 1.9075049979922671
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+            "n_post_thresh_mean": 2252.0,
+            "n_post_nms_mean": 953.0,
+            "nms_ms_mean": 28.208750668757904,
+            "ort_ms_mean": 9.344346675788984,
+            "post_ms_mean": 29.075277678202838
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+            "n_post_thresh_mean": 2847.0,
+            "n_post_nms_mean": 1405.0,
+            "nms_ms_mean": 46.99143066924686,
+            "ort_ms_mean": 9.966402334005883,
+            "post_ms_mean": 48.100703357098006
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+            "n_post_thresh_mean": 1893.0,
+            "n_post_nms_mean": 640.0,
+            "nms_ms_mean": 17.106314674795914,
+            "ort_ms_mean": 9.55926465879505,
+            "post_ms_mean": 18.015798336515825
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+            "n_post_thresh_mean": 643.0,
+            "n_post_nms_mean": 321.0,
+            "nms_ms_mean": 7.035344674174364,
+            "ort_ms_mean": 9.39768367485764,
+            "post_ms_mean": 7.775238327061136
+          },
+          {
+            "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+            "n_post_thresh_mean": 152.0,
+            "n_post_nms_mean": 75.0,
+            "nms_ms_mean": 1.412932654299463,
+            "ort_ms_mean": 9.920098343476033,
+            "post_ms_mean": 2.105029998347163
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+            "n_post_thresh_mean": 206.0,
+            "n_post_nms_mean": 121.0,
+            "nms_ms_mean": 2.3140006621057787,
+            "ort_ms_mean": 9.519583341898397,
+            "post_ms_mean": 2.9661416386564574
+          },
+          {
+            "id": "36--Football/36_Football_Football_36_110.jpg",
+            "n_post_thresh_mean": 995.0,
+            "n_post_nms_mean": 370.0,
+            "nms_ms_mean": 8.510274667060003,
+            "ort_ms_mean": 10.08128533915927,
+            "post_ms_mean": 9.249380023296302
+          },
+          {
+            "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+            "n_post_thresh_mean": 250.0,
+            "n_post_nms_mean": 100.0,
+            "nms_ms_mean": 1.9776606544231374,
+            "ort_ms_mean": 9.526519667512426,
+            "post_ms_mean": 2.678284014109522
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+            "n_post_thresh_mean": 420.0,
+            "n_post_nms_mean": 168.0,
+            "nms_ms_mean": 3.4299266699235886,
+            "ort_ms_mean": 9.58669334067963,
+            "post_ms_mean": 4.185362010806178
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+            "n_post_thresh_mean": 137.0,
+            "n_post_nms_mean": 77.0,
+            "nms_ms_mean": 1.4722476771567017,
+            "ort_ms_mean": 10.072702338220552,
+            "post_ms_mean": 2.154108980903402
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+            "n_post_thresh_mean": 2501.0,
+            "n_post_nms_mean": 962.0,
+            "nms_ms_mean": 29.38943900517188,
+            "ort_ms_mean": 9.3980980066893,
+            "post_ms_mean": 30.315355009709794
+          },
+          {
+            "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+            "n_post_thresh_mean": 217.0,
+            "n_post_nms_mean": 117.0,
+            "nms_ms_mean": 2.2265593288466334,
+            "ort_ms_mean": 9.418222335322449,
+            "post_ms_mean": 2.8862333565484732
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+            "n_post_thresh_mean": 2880.0,
+            "n_post_nms_mean": 973.0,
+            "nms_ms_mean": 30.56211266084574,
+            "ort_ms_mean": 9.491393662756309,
+            "post_ms_mean": 31.587775301886722
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+            "n_post_thresh_mean": 211.0,
+            "n_post_nms_mean": 109.0,
+            "nms_ms_mean": 2.142307348549366,
+            "ort_ms_mean": 9.57521834061481,
+            "post_ms_mean": 2.867309046753993
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+            "n_post_thresh_mean": 1066.0,
+            "n_post_nms_mean": 294.0,
+            "nms_ms_mean": 6.718605009761329,
+            "ort_ms_mean": 9.314116003224626,
+            "post_ms_mean": 7.465976319508627
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+            "n_post_thresh_mean": 3426.0,
+            "n_post_nms_mean": 1868.0,
+            "nms_ms_mean": 70.82234466603647,
+            "ort_ms_mean": 9.92487401041823,
+            "post_ms_mean": 71.86250834881018
+          },
+          {
+            "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+            "n_post_thresh_mean": 1571.0,
+            "n_post_nms_mean": 723.0,
+            "nms_ms_mean": 19.632538334311295,
+            "ort_ms_mean": 9.88378599868156,
+            "post_ms_mean": 20.427309655739617
+          },
+          {
+            "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+            "n_post_thresh_mean": 2156.0,
+            "n_post_nms_mean": 813.0,
+            "nms_ms_mean": 23.59479899556997,
+            "ort_ms_mean": 9.670981671661139,
+            "post_ms_mean": 24.512244708603248
+          },
+          {
+            "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+            "n_post_thresh_mean": 429.0,
+            "n_post_nms_mean": 167.0,
+            "nms_ms_mean": 3.3562556685258946,
+            "ort_ms_mean": 9.463557663063208,
+            "post_ms_mean": 4.061518314604958
+          },
+          {
+            "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+            "n_post_thresh_mean": 166.0,
+            "n_post_nms_mean": 70.0,
+            "nms_ms_mean": 1.3971429919668783,
+            "ort_ms_mean": 9.888702663981045,
+            "post_ms_mean": 2.185540991680076
+          },
+          {
+            "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+            "n_post_thresh_mean": 531.0,
+            "n_post_nms_mean": 169.0,
+            "nms_ms_mean": 3.4954003349412233,
+            "ort_ms_mean": 9.939799007649222,
+            "post_ms_mean": 4.163628997048363
+          },
+          {
+            "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+            "n_post_thresh_mean": 1445.0,
+            "n_post_nms_mean": 769.0,
+            "nms_ms_mean": 20.604519998111453,
+            "ort_ms_mean": 9.812215333416438,
+            "post_ms_mean": 21.386502330036212
+          }
+        ]
+      }
+    }
+  },
+  "controlled_candidate_caps": {
+    "threads": 4,
+    "caps": {
+      "50": {
+        "A_baseline": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.8554632095329,
+            "std_ms": 0.5603654443858547,
+            "median_ms": 9.558578502037562,
+            "p95_ms": 10.955797020869795,
+            "min_ms": 9.305966988904402,
+            "max_ms": 11.267835012404248
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.2242659712566011,
+            "std_ms": 0.1020738004415422,
+            "median_ms": 0.20778150064870715,
+            "p95_ms": 0.3906956655555407,
+            "min_ms": 0.08522099233232439,
+            "max_ms": 0.7064410019665956
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.9585128419631574,
+            "std_ms": 0.1455309391631444,
+            "median_ms": 0.9466150222579017,
+            "p95_ms": 1.2353853366221303,
+            "min_ms": 0.7143040129449219,
+            "max_ms": 1.3500320201274008
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 10.813976051496057,
+            "std_ms": 0.6026908998633649,
+            "median_ms": 10.596073960186914,
+            "p95_ms": 11.894434678833932,
+            "min_ms": 10.092862998135388,
+            "max_ms": 12.427702022250742
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 50.0,
+            "std_ms": 0.0,
+            "median_ms": 50.0,
+            "p95_ms": 50.0,
+            "min_ms": 50.0,
+            "max_ms": 50.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 10.125,
+            "std_ms": 4.728570079844435,
+            "median_ms": 9.5,
+            "p95_ms": 17.0,
+            "min_ms": 3.0,
+            "max_ms": 23.0
+          }
+        },
+        "B_kps_only": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.935198318995794,
+            "std_ms": 0.5917531497197293,
+            "median_ms": 7.594146503834054,
+            "p95_ms": 8.961223952064756,
+            "min_ms": 7.390958984615281,
+            "max_ms": 10.258283000439405
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.21674123490811326,
+            "std_ms": 0.08599253070701696,
+            "median_ms": 0.20738599414471537,
+            "p95_ms": 0.3520387515891344,
+            "min_ms": 0.08380800136364996,
+            "max_ms": 0.4389169916976243
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.5311741535681196,
+            "std_ms": 0.12087947719547452,
+            "median_ms": 0.5334445013431832,
+            "p95_ms": 0.6976954377023503,
+            "min_ms": 0.31848205253481865,
+            "max_ms": 0.868967006681487
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 8.466372472563913,
+            "std_ms": 0.6234523039411489,
+            "median_ms": 8.179235010175034,
+            "p95_ms": 9.598045266466215,
+            "min_ms": 7.769602962071076,
+            "max_ms": 10.85632896865718
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 50.0,
+            "std_ms": 0.0,
+            "median_ms": 50.0,
+            "p95_ms": 50.0,
+            "min_ms": 50.0,
+            "max_ms": 50.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 10.125,
+            "std_ms": 4.728570079844435,
+            "median_ms": 9.5,
+            "p95_ms": 17.0,
+            "min_ms": 3.0,
+            "max_ms": 23.0
+          }
+        },
+        "C_svd_only": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.589436349213226,
+            "std_ms": 0.5504287448659175,
+            "median_ms": 9.292592003475875,
+            "p95_ms": 10.68668075313326,
+            "min_ms": 8.955986995715648,
+            "max_ms": 11.208923999220133
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.2151806814557252,
+            "std_ms": 0.08491562424446968,
+            "median_ms": 0.2113484952133149,
+            "p95_ms": 0.3746678994502872,
+            "min_ms": 0.08392799645662308,
+            "max_ms": 0.4224959993734956
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.9540206932191116,
+            "std_ms": 0.1432406865729906,
+            "median_ms": 0.9629194828448817,
+            "p95_ms": 1.2306958436965942,
+            "min_ms": 0.7333119574468583,
+            "max_ms": 1.3203679700382054
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 10.543457042432339,
+            "std_ms": 0.5827756071871172,
+            "median_ms": 10.310576995834708,
+            "p95_ms": 11.625375902804082,
+            "min_ms": 9.787963965209201,
+            "max_ms": 12.245145015185699
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 50.0,
+            "std_ms": 0.0,
+            "median_ms": 50.0,
+            "p95_ms": 50.0,
+            "min_ms": 50.0,
+            "max_ms": 50.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 9.916666666666666,
+            "std_ms": 4.517712056143266,
+            "median_ms": 10.0,
+            "p95_ms": 19.0,
+            "min_ms": 3.0,
+            "max_ms": 20.0
+          }
+        },
+        "D_svd_nokps": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.650487291458477,
+            "std_ms": 0.6237032480591935,
+            "median_ms": 7.343574005062692,
+            "p95_ms": 8.874833307345398,
+            "min_ms": 7.034287002170458,
+            "max_ms": 10.526066005695611
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.21288695926260617,
+            "std_ms": 0.08279828552796475,
+            "median_ms": 0.21626747911795974,
+            "p95_ms": 0.3649303413112648,
+            "min_ms": 0.07989001460373402,
+            "max_ms": 0.4047719994559884
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.5192050852605866,
+            "std_ms": 0.11536376051756247,
+            "median_ms": 0.5259210156509653,
+            "p95_ms": 0.6955186574487016,
+            "min_ms": 0.33282602089457214,
+            "max_ms": 0.7246760360430926
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 8.169692376719063,
+            "std_ms": 0.6499113089427188,
+            "median_ms": 7.9187474912032485,
+            "p95_ms": 9.278443100629374,
+            "min_ms": 7.461973029421642,
+            "max_ms": 11.223552050068974
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 50.0,
+            "std_ms": 0.0,
+            "median_ms": 50.0,
+            "p95_ms": 50.0,
+            "min_ms": 50.0,
+            "max_ms": 50.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 9.916666666666666,
+            "std_ms": 4.517712056143266,
+            "median_ms": 10.0,
+            "p95_ms": 19.0,
+            "min_ms": 3.0,
+            "max_ms": 20.0
+          }
+        }
+      },
+      "100": {
+        "A_baseline": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.849010155044702,
+            "std_ms": 0.660171027672794,
+            "median_ms": 9.49804398987908,
+            "p95_ms": 11.372046411270276,
+            "min_ms": 9.31061600567773,
+            "max_ms": 11.8055579951033
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.4786057236035251,
+            "std_ms": 0.1813863202661547,
+            "median_ms": 0.45646500075235963,
+            "p95_ms": 0.8420012614806183,
+            "min_ms": 0.1420079788658768,
+            "max_ms": 0.8963989967014641
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.2075692393409554,
+            "std_ms": 0.18279826112847397,
+            "median_ms": 1.2123500346206129,
+            "p95_ms": 1.514897053129971,
+            "min_ms": 0.8223880140576512,
+            "max_ms": 1.622368989046663
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 11.056579394385658,
+            "std_ms": 0.669832566883518,
+            "median_ms": 10.832277970621362,
+            "p95_ms": 12.422716194123495,
+            "min_ms": 10.199122014455497,
+            "max_ms": 13.082855031825602
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 100.0,
+            "std_ms": 0.0,
+            "median_ms": 100.0,
+            "p95_ms": 100.0,
+            "min_ms": 100.0,
+            "max_ms": 100.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 24.041666666666668,
+            "std_ms": 10.006161296365798,
+            "median_ms": 23.0,
+            "p95_ms": 44.0,
+            "min_ms": 6.0,
+            "max_ms": 47.0
+          }
+        },
+        "B_kps_only": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 8.141180930882305,
+            "std_ms": 0.8009220297009028,
+            "median_ms": 7.713505998253822,
+            "p95_ms": 9.581007501401473,
+            "min_ms": 7.339461008086801,
+            "max_ms": 10.97813798696734
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.4782569162166005,
+            "std_ms": 0.1856642718964208,
+            "median_ms": 0.45373001194093376,
+            "p95_ms": 0.8455770861473866,
+            "min_ms": 0.14047499280422926,
+            "max_ms": 0.9415450040251017
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.7847094182377785,
+            "std_ms": 0.1809878740783278,
+            "median_ms": 0.7827105146134272,
+            "p95_ms": 1.1299659206997603,
+            "min_ms": 0.40180800715461373,
+            "max_ms": 1.2351369950920343
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 8.925890349120083,
+            "std_ms": 0.8923542677079472,
+            "median_ms": 8.4926554991398,
+            "p95_ms": 10.542574434657581,
+            "min_ms": 8.01676994888112,
+            "max_ms": 11.827656941022724
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 100.0,
+            "std_ms": 0.0,
+            "median_ms": 100.0,
+            "p95_ms": 100.0,
+            "min_ms": 100.0,
+            "max_ms": 100.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 24.041666666666668,
+            "std_ms": 10.006161296365798,
+            "median_ms": 23.0,
+            "p95_ms": 44.0,
+            "min_ms": 6.0,
+            "max_ms": 47.0
+          }
+        },
+        "C_svd_only": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.533476862998214,
+            "std_ms": 0.506238282858408,
+            "median_ms": 9.293975017499179,
+            "p95_ms": 10.636630296357907,
+            "min_ms": 9.055956004885957,
+            "max_ms": 11.081723001552746
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.49395641649930944,
+            "std_ms": 0.22123837183879352,
+            "median_ms": 0.42801149538718164,
+            "p95_ms": 0.961811249726452,
+            "min_ms": 0.20584798767231405,
+            "max_ms": 1.1943709978368133
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.2305343617400568,
+            "std_ms": 0.23757516313754679,
+            "median_ms": 1.160216997959651,
+            "p95_ms": 1.715283923840616,
+            "min_ms": 0.8549409976694733,
+            "max_ms": 2.1602219785563648
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 10.76401122473827,
+            "std_ms": 0.5527494626325969,
+            "median_ms": 10.551554936682805,
+            "p95_ms": 11.865675124863628,
+            "min_ms": 10.038647975306958,
+            "max_ms": 12.460021040169522
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 100.0,
+            "std_ms": 0.0,
+            "median_ms": 100.0,
+            "p95_ms": 100.0,
+            "min_ms": 100.0,
+            "max_ms": 100.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 24.875,
+            "std_ms": 11.790930483497334,
+            "median_ms": 21.5,
+            "p95_ms": 50.0,
+            "min_ms": 10.0,
+            "max_ms": 56.0
+          }
+        },
+        "D_svd_nokps": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.639805903131168,
+            "std_ms": 0.5240981892077763,
+            "median_ms": 7.37242799368687,
+            "p95_ms": 8.693462489463855,
+            "min_ms": 7.1102899964898825,
+            "max_ms": 9.0129459858872
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 0.4938055264776469,
+            "std_ms": 0.21622661510373287,
+            "median_ms": 0.42995500552933663,
+            "p95_ms": 0.9577403907314874,
+            "min_ms": 0.2092240029014647,
+            "max_ms": 1.0710190108511597
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 0.8074803267340435,
+            "std_ms": 0.21141914780422172,
+            "median_ms": 0.7674304797546938,
+            "p95_ms": 1.2199645367218181,
+            "min_ms": 0.4652479838114232,
+            "max_ms": 1.3087750121485442
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 8.447286229865211,
+            "std_ms": 0.5947381645538928,
+            "median_ms": 8.24447104241699,
+            "p95_ms": 9.591833854210563,
+            "min_ms": 7.711163023486733,
+            "max_ms": 10.119849030161276
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 100.0,
+            "std_ms": 0.0,
+            "median_ms": 100.0,
+            "p95_ms": 100.0,
+            "min_ms": 100.0,
+            "max_ms": 100.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 24.875,
+            "std_ms": 11.790930483497334,
+            "median_ms": 21.5,
+            "p95_ms": 50.0,
+            "min_ms": 10.0,
+            "max_ms": 56.0
+          }
+        }
+      },
+      "200": {
+        "A_baseline": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.855808182085942,
+            "std_ms": 0.577746684705623,
+            "median_ms": 9.594401519279927,
+            "p95_ms": 10.924946710292716,
+            "min_ms": 9.332237008493394,
+            "max_ms": 12.45298798312433
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 1.0910657777761419,
+            "std_ms": 0.4557629968367038,
+            "median_ms": 1.0897334868786857,
+            "p95_ms": 1.8806488864356652,
+            "min_ms": 0.3840130229946226,
+            "max_ms": 1.978168002096936
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.828579789920089,
+            "std_ms": 0.4484808399297501,
+            "median_ms": 1.8116425053449348,
+            "p95_ms": 2.576461705029942,
+            "min_ms": 1.0320360015612096,
+            "max_ms": 2.879584993934259
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 11.68438797200603,
+            "std_ms": 0.7260323094526743,
+            "median_ms": 11.588969980948605,
+            "p95_ms": 13.076702099351678,
+            "min_ms": 10.508172010304406,
+            "max_ms": 14.052681915927678
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 196.0,
+            "std_ms": 11.958260743101398,
+            "median_ms": 200.0,
+            "p95_ms": 200.0,
+            "min_ms": 154.0,
+            "max_ms": 200.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 55.708333333333336,
+            "std_ms": 24.34556627442094,
+            "median_ms": 56.0,
+            "p95_ms": 98.0,
+            "min_ms": 18.0,
+            "max_ms": 99.0
+          }
+        },
+        "B_kps_only": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.860023804823868,
+            "std_ms": 0.4844469906412607,
+            "median_ms": 7.577364493045025,
+            "p95_ms": 8.786148446961306,
+            "min_ms": 7.376802008366212,
+            "max_ms": 9.278234996600077
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 1.090717818846719,
+            "std_ms": 0.45669582463986974,
+            "median_ms": 1.0909210104728118,
+            "p95_ms": 1.8772439914755523,
+            "min_ms": 0.38368298555724323,
+            "max_ms": 1.9198180234525353
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.4013957483661619,
+            "std_ms": 0.43873418667949626,
+            "median_ms": 1.3770199875580147,
+            "p95_ms": 2.129021925793495,
+            "min_ms": 0.6608660041820258,
+            "max_ms": 2.21691801561974
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 9.26141955319003,
+            "std_ms": 0.6584160389999978,
+            "median_ms": 9.21146446489729,
+            "p95_ms": 10.452258672739845,
+            "min_ms": 8.166029991116375,
+            "max_ms": 10.769838962005451
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 196.0,
+            "std_ms": 11.958260743101398,
+            "median_ms": 200.0,
+            "p95_ms": 200.0,
+            "min_ms": 154.0,
+            "max_ms": 200.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 55.708333333333336,
+            "std_ms": 24.34556627442094,
+            "median_ms": 56.0,
+            "p95_ms": 98.0,
+            "min_ms": 18.0,
+            "max_ms": 99.0
+          }
+        },
+        "C_svd_only": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.478676056056024,
+            "std_ms": 0.43140588077683,
+            "median_ms": 9.239612496457994,
+            "p95_ms": 10.454003949416801,
+            "min_ms": 9.041468991199508,
+            "max_ms": 10.581641981843859
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 1.144286930260326,
+            "std_ms": 0.5141269700129262,
+            "median_ms": 1.1105985176982358,
+            "p95_ms": 2.0443552974029444,
+            "min_ms": 0.40704800630919635,
+            "max_ms": 2.2897660091985017
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.900131624602687,
+            "std_ms": 0.4889487922247687,
+            "median_ms": 1.8394880171399564,
+            "p95_ms": 2.7543176198378205,
+            "min_ms": 1.1375220492482185,
+            "max_ms": 2.953395014628768
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 11.378807680658712,
+            "std_ms": 0.6795449882846444,
+            "median_ms": 11.221953434869647,
+            "p95_ms": 12.821315464680083,
+            "min_ms": 10.34570494084619,
+            "max_ms": 13.091683096718043
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 191.91666666666666,
+            "std_ms": 18.55378817264969,
+            "median_ms": 200.0,
+            "p95_ms": 200.0,
+            "min_ms": 137.0,
+            "max_ms": 200.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 58.333333333333336,
+            "std_ms": 27.435783608678324,
+            "median_ms": 56.5,
+            "p95_ms": 106.0,
+            "min_ms": 19.0,
+            "max_ms": 119.0
+          }
+        },
+        "D_svd_nokps": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.63017838875789,
+            "std_ms": 0.549421063925906,
+            "median_ms": 7.352891509071924,
+            "p95_ms": 8.789864003483672,
+            "min_ms": 7.089700986398384,
+            "max_ms": 9.430172009160742
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 1.1380760552128777,
+            "std_ms": 0.508976565267035,
+            "median_ms": 1.0978990030707791,
+            "p95_ms": 2.0316050431574695,
+            "min_ms": 0.4063259984832257,
+            "max_ms": 2.2784640023019165
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 1.4510086257359944,
+            "std_ms": 0.47481109885350015,
+            "median_ms": 1.4630825171479955,
+            "p95_ms": 2.269175762194209,
+            "min_ms": 0.7330690277740359,
+            "max_ms": 2.521060989238322
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 9.081187014493885,
+            "std_ms": 0.7200567784092605,
+            "median_ms": 8.947367023210973,
+            "p95_ms": 10.474597629217897,
+            "min_ms": 7.969228987349197,
+            "max_ms": 10.884343006182462
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 191.91666666666666,
+            "std_ms": 18.55378817264969,
+            "median_ms": 200.0,
+            "p95_ms": 200.0,
+            "min_ms": 137.0,
+            "max_ms": 200.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 58.333333333333336,
+            "std_ms": 27.435783608678324,
+            "median_ms": 56.5,
+            "p95_ms": 106.0,
+            "min_ms": 19.0,
+            "max_ms": 119.0
+          }
+        }
+      },
+      "500": {
+        "A_baseline": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.83723635929184,
+            "std_ms": 0.5486109092511265,
+            "median_ms": 9.554890988511033,
+            "p95_ms": 10.972688952460885,
+            "min_ms": 9.281361009925604,
+            "max_ms": 11.372671986464411
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 2.6944687079877543,
+            "std_ms": 1.1517028801756846,
+            "median_ms": 2.567388510215096,
+            "p95_ms": 4.846414084022399,
+            "min_ms": 0.9512630058452487,
+            "max_ms": 5.275000992696732
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 3.440275899871873,
+            "std_ms": 1.1737779407276727,
+            "median_ms": 3.361934461281635,
+            "p95_ms": 5.750010430347175,
+            "min_ms": 1.5859889681451023,
+            "max_ms": 6.064686982426792
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 13.277512259163712,
+            "std_ms": 1.3103273019118586,
+            "median_ms": 13.125976547598839,
+            "p95_ms": 15.48604600247927,
+            "min_ms": 10.995011078193784,
+            "max_ms": 16.63425608421676
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 404.0,
+            "std_ms": 138.27990936261614,
+            "median_ms": 500.0,
+            "p95_ms": 500.0,
+            "min_ms": 154.0,
+            "max_ms": 500.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 131.875,
+            "std_ms": 53.934615121768815,
+            "median_ms": 125.5,
+            "p95_ms": 234.0,
+            "min_ms": 50.0,
+            "max_ms": 250.0
+          }
+        },
+        "B_kps_only": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.990307472937275,
+            "std_ms": 0.6277440739105504,
+            "median_ms": 7.706012518610805,
+            "p95_ms": 9.040701940830331,
+            "min_ms": 7.4456820148043334,
+            "max_ms": 10.841541981790215
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 2.6971695406246,
+            "std_ms": 1.1524173074137771,
+            "median_ms": 2.5641824904596433,
+            "p95_ms": 4.816052447131369,
+            "min_ms": 0.9511230164207518,
+            "max_ms": 5.176254984689876
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 3.0080202126959596,
+            "std_ms": 1.1710323731013708,
+            "median_ms": 2.883365494199097,
+            "p95_ms": 5.252998218929861,
+            "min_ms": 1.181197032565251,
+            "max_ms": 5.448326992336661
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 10.998327685633235,
+            "std_ms": 1.4159021295783674,
+            "median_ms": 10.736902971984819,
+            "p95_ms": 13.463343148760034,
+            "min_ms": 8.736131974728778,
+            "max_ms": 15.211307007120922
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 404.0,
+            "std_ms": 138.27990936261614,
+            "median_ms": 500.0,
+            "p95_ms": 500.0,
+            "min_ms": 154.0,
+            "max_ms": 500.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 131.875,
+            "std_ms": 53.934615121768815,
+            "median_ms": 125.5,
+            "p95_ms": 234.0,
+            "min_ms": 50.0,
+            "max_ms": 250.0
+          }
+        },
+        "C_svd_only": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.847055845764569,
+            "std_ms": 0.5711348469113108,
+            "median_ms": 9.63431150012184,
+            "p95_ms": 10.847483635006938,
+            "min_ms": 9.145595016889274,
+            "max_ms": 11.262724990956485
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 2.6077253051981746,
+            "std_ms": 1.0453449361702334,
+            "median_ms": 2.4591690016677603,
+            "p95_ms": 4.857959348009899,
+            "min_ms": 1.222934020916,
+            "max_ms": 5.231969989836216
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 3.3512118772907544,
+            "std_ms": 1.0638714733363523,
+            "median_ms": 3.21407153387554,
+            "p95_ms": 5.606915672251489,
+            "min_ms": 1.8938890134450048,
+            "max_ms": 6.0149259807076305
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 13.198267723055324,
+            "std_ms": 1.2620100012665658,
+            "median_ms": 13.130149047356099,
+            "p95_ms": 15.304758935235443,
+            "min_ms": 11.069349013268948,
+            "max_ms": 17.035915981978178
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 382.5416666666667,
+            "std_ms": 144.92324956296312,
+            "median_ms": 500.0,
+            "p95_ms": 500.0,
+            "min_ms": 137.0,
+            "max_ms": 500.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 128.33333333333334,
+            "std_ms": 48.68749554271838,
+            "median_ms": 120.0,
+            "p95_ms": 230.0,
+            "min_ms": 65.0,
+            "max_ms": 243.0
+          }
+        },
+        "D_svd_nokps": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.8521826960948395,
+            "std_ms": 0.5825564978036638,
+            "median_ms": 7.614193993504159,
+            "p95_ms": 8.881771689630114,
+            "min_ms": 7.098207017406821,
+            "max_ms": 9.501194988843054
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 2.608548610118709,
+            "std_ms": 1.0430140767348006,
+            "median_ms": 2.4329255102202296,
+            "p95_ms": 4.801955648872536,
+            "min_ms": 1.2247879931237549,
+            "max_ms": 5.263939994620159
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 2.9188277480392975,
+            "std_ms": 1.0627823066972932,
+            "median_ms": 2.759821494692005,
+            "p95_ms": 5.134113515669014,
+            "min_ms": 1.4644509938079864,
+            "max_ms": 5.6446369853802025
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 10.771010444134138,
+            "std_ms": 1.170796678863404,
+            "median_ms": 10.574441475910135,
+            "p95_ms": 12.888161985029,
+            "min_ms": 8.734582021133974,
+            "max_ms": 13.974605011753738
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 382.5416666666667,
+            "std_ms": 144.92324956296312,
+            "median_ms": 500.0,
+            "p95_ms": 500.0,
+            "min_ms": 137.0,
+            "max_ms": 500.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 128.33333333333334,
+            "std_ms": 48.68749554271838,
+            "median_ms": 120.0,
+            "p95_ms": 230.0,
+            "min_ms": 65.0,
+            "max_ms": 243.0
+          }
+        }
+      },
+      "natural": {
+        "A_baseline": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.956317736699324,
+            "std_ms": 0.5968439335608511,
+            "median_ms": 9.669301987742074,
+            "p95_ms": 11.104659935517702,
+            "min_ms": 9.315724979387596,
+            "max_ms": 11.476999003207311
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 14.482541389346201,
+            "std_ms": 17.309623746714884,
+            "median_ms": 6.82995151146315,
+            "p95_ms": 50.16139455983648,
+            "min_ms": 0.9439190034754574,
+            "max_ms": 69.78069499018602
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 15.258711992323192,
+            "std_ms": 17.419556078343465,
+            "median_ms": 7.547733548562974,
+            "p95_ms": 51.224623156304006,
+            "min_ms": 1.5909880166873336,
+            "max_ms": 70.7689969567582
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 25.215029729022515,
+            "std_ms": 17.55298667861593,
+            "median_ms": 17.76788449205924,
+            "p95_ms": 62.219895541784354,
+            "min_ms": 10.959093022393063,
+            "max_ms": 81.44957196782343
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 492.8333333333333,
+            "std_ms": 480.88465930569635,
+            "median_ms": 302.5,
+            "p95_ms": 1476.0,
+            "min_ms": 50.0,
+            "max_ms": 1863.0
+          }
+        },
+        "B_kps_only": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.990534042215182,
+            "std_ms": 0.514602581750815,
+            "median_ms": 7.787951501086354,
+            "p95_ms": 9.098407563578803,
+            "min_ms": 7.4187810241710395,
+            "max_ms": 9.548975009238347
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 14.509054986572462,
+            "std_ms": 17.3402191090601,
+            "median_ms": 6.827772507676855,
+            "p95_ms": 50.280968242441304,
+            "min_ms": 0.953937997110188,
+            "max_ms": 69.95460297912359
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 14.806824212428182,
+            "std_ms": 17.386727498195246,
+            "median_ms": 7.112435007002205,
+            "p95_ms": 50.6812442879891,
+            "min_ms": 1.1818679922726005,
+            "max_ms": 70.35438594175503
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 22.797358254643363,
+            "std_ms": 17.510626918246803,
+            "median_ms": 15.14201499230694,
+            "p95_ms": 59.03351779707009,
+            "min_ms": 8.968110952991992,
+            "max_ms": 79.90336095099337
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 1146.125,
+            "std_ms": 993.1756018155434,
+            "median_ms": 727.5,
+            "p95_ms": 3055.0,
+            "min_ms": 154.0,
+            "max_ms": 3166.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 492.8333333333333,
+            "std_ms": 480.88465930569635,
+            "median_ms": 302.5,
+            "p95_ms": 1476.0,
+            "min_ms": 50.0,
+            "max_ms": 1863.0
+          }
+        },
+        "C_svd_only": {
+          "use_kps": true,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 9.519083946037831,
+            "std_ms": 0.47074062568101566,
+            "median_ms": 9.319342498201877,
+            "p95_ms": 10.636279112077318,
+            "min_ms": 9.021491016028449,
+            "max_ms": 10.919527994701639
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 14.024766598595306,
+            "std_ms": 17.04817282160505,
+            "median_ms": 5.067234509624541,
+            "p95_ms": 47.11998749116901,
+            "min_ms": 1.2218220217619091,
+            "max_ms": 70.62986501841806
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 14.810480023798947,
+            "std_ms": 17.16104829257539,
+            "median_ms": 5.806611487059854,
+            "p95_ms": 48.086450531263836,
+            "min_ms": 1.8741329840850085,
+            "max_ms": 71.77775906166062
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 24.329563969836776,
+            "std_ms": 17.12746898037989,
+            "median_ms": 15.683510995586403,
+            "p95_ms": 57.59891282359604,
+            "min_ms": 11.099748051492497,
+            "max_ms": 81.32176505750977
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 478.2083333333333,
+            "std_ms": 476.2675175401834,
+            "median_ms": 231.5,
+            "p95_ms": 1405.0,
+            "min_ms": 65.0,
+            "max_ms": 1868.0
+          }
+        },
+        "D_svd_nokps": {
+          "use_kps": false,
+          "ort_ms": {
+            "n": 72,
+            "mean_ms": 7.829046931874473,
+            "std_ms": 0.5160593407265586,
+            "median_ms": 7.621482989634387,
+            "p95_ms": 8.99688744393643,
+            "min_ms": 7.221438980195671,
+            "max_ms": 9.248129004845396
+          },
+          "nms_ms": {
+            "n": 72,
+            "mean_ms": 14.024241002011372,
+            "std_ms": 17.055062947910944,
+            "median_ms": 5.168159492313862,
+            "p95_ms": 46.833167255681474,
+            "min_ms": 1.2267720012459904,
+            "max_ms": 70.95128099899739
+          },
+          "total_post_ms": {
+            "n": 72,
+            "mean_ms": 14.339960960771553,
+            "std_ms": 17.107278165772648,
+            "median_ms": 5.4939785186434165,
+            "p95_ms": 47.21567766973749,
+            "min_ms": 1.4610020152758807,
+            "max_ms": 71.35489096981473
+          },
+          "ort_plus_post_ms": {
+            "n": 72,
+            "mean_ms": 22.169007892646025,
+            "std_ms": 17.239448045613006,
+            "median_ms": 13.3876585168764,
+            "p95_ms": 56.106395048846025,
+            "min_ms": 8.818377071293071,
+            "max_ms": 79.73585501895286
+          },
+          "n_post_thresh_natural": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_thresh_used": {
+            "n": 72,
+            "mean_ms": 1120.2916666666667,
+            "std_ms": 1035.179754083265,
+            "median_ms": 587.0,
+            "p95_ms": 2880.0,
+            "min_ms": 137.0,
+            "max_ms": 3426.0
+          },
+          "n_post_nms": {
+            "n": 72,
+            "mean_ms": 478.2083333333333,
+            "std_ms": 476.2675175401834,
+            "median_ms": 231.5,
+            "p95_ms": 1405.0,
+            "min_ms": 65.0,
+            "max_ms": 1868.0
+          }
+        }
+      }
+    },
+    "note": "candidate_cap=None means natural post-thresh count; finite caps keep only top-K scores before NMS"
+  },
+  "e2e_detect_real_images": {
+    "A_baseline": {
+      "detect_e2e_ms": {
+        "n": 72,
+        "mean_ms": 27.899837235761677,
+        "std_ms": 17.547683771283513,
+        "median_ms": 19.8421134846285,
+        "p95_ms": 64.9268494991702,
+        "min_ms": 13.779558008536696,
+        "max_ms": 83.87040699017234
+      },
+      "n_final_dets": {
+        "n": 72,
+        "mean_ms": 492.8333333333333,
+        "std_ms": 480.88465930569635,
+        "median_ms": 302.5,
+        "p95_ms": 1476.0,
+        "min_ms": 50.0,
+        "max_ms": 1863.0
+      },
+      "use_kps": true,
+      "threads": 4
+    },
+    "B_kps_only": {
+      "detect_e2e_ms": {
+        "n": 72,
+        "mean_ms": 25.807833336229024,
+        "std_ms": 17.427132696841475,
+        "median_ms": 18.02422248874791,
+        "p95_ms": 62.4028761027148,
+        "min_ms": 11.43606100231409,
+        "max_ms": 81.63954300107434
+      },
+      "n_final_dets": {
+        "n": 72,
+        "mean_ms": 492.8333333333333,
+        "std_ms": 480.88465930569635,
+        "median_ms": 302.5,
+        "p95_ms": 1476.0,
+        "min_ms": 50.0,
+        "max_ms": 1863.0
+      },
+      "use_kps": false,
+      "threads": 4
+    },
+    "C_svd_only": {
+      "detect_e2e_ms": {
+        "n": 72,
+        "mean_ms": 28.639761875739268,
+        "std_ms": 17.722671316664144,
+        "median_ms": 19.97239899355918,
+        "p95_ms": 64.84271098597674,
+        "min_ms": 14.574386004824191,
+        "max_ms": 89.85258100437932
+      },
+      "n_final_dets": {
+        "n": 72,
+        "mean_ms": 478.2083333333333,
+        "std_ms": 476.2675175401834,
+        "median_ms": 231.5,
+        "p95_ms": 1405.0,
+        "min_ms": 65.0,
+        "max_ms": 1868.0
+      },
+      "use_kps": true,
+      "threads": 4
+    },
+    "D_svd_nokps": {
+      "detect_e2e_ms": {
+        "n": 72,
+        "mean_ms": 24.899236417695647,
+        "std_ms": 17.323683251732856,
+        "median_ms": 16.373181002563797,
+        "p95_ms": 59.34265299292747,
+        "min_ms": 11.07523200334981,
+        "max_ms": 83.31749599892646
+      },
+      "n_final_dets": {
+        "n": 72,
+        "mean_ms": 478.2083333333333,
+        "std_ms": 476.2675175401834,
+        "median_ms": 231.5,
+        "p95_ms": 1405.0,
+        "min_ms": 65.0,
+        "max_ms": 1868.0
+      },
+      "use_kps": false,
+      "threads": 4
+    }
+  },
+  "count_latency_correlation": {
+    "pearson_r_n_post_thresh_vs_nms_ms": 0.9327734441101999,
+    "n_pairs": 96,
+    "by_variant_means": {
+      "A_baseline": {
+        "mean_n_post_thresh": 1146.125,
+        "mean_n_post_nms": 492.8333333333333,
+        "mean_nms_ms": 14.625168025506559,
+        "mean_ort_ms": 10.027626985700206,
+        "mean_post_ms": 15.416977237893866
+      },
+      "B_kps_only": {
+        "mean_n_post_thresh": 1146.125,
+        "mean_n_post_nms": 492.8333333333333,
+        "mean_nms_ms": 14.50447990080445,
+        "mean_ort_ms": 8.15889957003593,
+        "mean_post_ms": 14.817010443544454
+      },
+      "C_svd_only": {
+        "mean_n_post_thresh": 1120.2916666666667,
+        "mean_n_post_nms": 478.2083333333333,
+        "mean_nms_ms": 14.021979097176681,
+        "mean_ort_ms": 9.664856947994041,
+        "mean_post_ms": 14.812732836516162
+      },
+      "D_svd_nokps": {
+        "mean_n_post_thresh": 1120.2916666666667,
+        "mean_n_post_nms": 478.2083333333333,
+        "mean_nms_ms": 14.106309054720137,
+        "mean_ort_ms": 7.865146804963135,
+        "mean_post_ms": 14.425179830545353
+      }
+    }
+  },
+  "count_latency_rows": [
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+      "n_post_thresh": 342.0,
+      "n_post_nms": 148.0,
+      "nms_ms": 3.0617766606155783,
+      "ort_ms": 7.893345338137199,
+      "post_ms": 3.377555316546932
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+      "n_post_thresh": 151.0,
+      "n_post_nms": 65.0,
+      "nms_ms": 1.3103223269960533,
+      "ort_ms": 7.5018510009006905,
+      "post_ms": 1.5614393147795151
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+      "n_post_thresh": 2252.0,
+      "n_post_nms": 953.0,
+      "nms_ms": 28.21545032202266,
+      "ort_ms": 8.637614664621651,
+      "post_ms": 28.657356995002676
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+      "n_post_thresh": 2847.0,
+      "n_post_nms": 1405.0,
+      "nms_ms": 47.3315053289601,
+      "ort_ms": 7.806471665389836,
+      "post_ms": 47.736274311318994
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+      "n_post_thresh": 1893.0,
+      "n_post_nms": 640.0,
+      "nms_ms": 17.227042000740767,
+      "ort_ms": 7.787172003493954,
+      "post_ms": 17.585206670143332
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+      "n_post_thresh": 643.0,
+      "n_post_nms": 321.0,
+      "nms_ms": 7.1235446763845784,
+      "ort_ms": 7.622749001408617,
+      "post_ms": 7.415919661677132
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+      "n_post_thresh": 152.0,
+      "n_post_nms": 75.0,
+      "nms_ms": 1.4034250052645802,
+      "ort_ms": 7.5716296657143785,
+      "post_ms": 1.647404336836189
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+      "n_post_thresh": 206.0,
+      "n_post_nms": 121.0,
+      "nms_ms": 2.3023856532139084,
+      "ort_ms": 7.333333662245423,
+      "post_ms": 2.5445156497880816
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "36--Football/36_Football_Football_36_110.jpg",
+      "n_post_thresh": 995.0,
+      "n_post_nms": 370.0,
+      "nms_ms": 8.533287997124717,
+      "ort_ms": 7.945533667225391,
+      "post_ms": 8.8870549807325
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+      "n_post_thresh": 250.0,
+      "n_post_nms": 100.0,
+      "nms_ms": 1.963102666195482,
+      "ort_ms": 8.472991321468726,
+      "post_ms": 2.208446016690383
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+      "n_post_thresh": 420.0,
+      "n_post_nms": 168.0,
+      "nms_ms": 3.347983341276025,
+      "ort_ms": 7.3478709867534535,
+      "post_ms": 3.609917349725341
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+      "n_post_thresh": 137.0,
+      "n_post_nms": 77.0,
+      "nms_ms": 1.4804003391570102,
+      "ort_ms": 7.948896653639774,
+      "post_ms": 1.744121031758065
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+      "n_post_thresh": 2501.0,
+      "n_post_nms": 962.0,
+      "nms_ms": 29.410689341602847,
+      "ort_ms": 7.865235995268449,
+      "post_ms": 29.778519014750298
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+      "n_post_thresh": 217.0,
+      "n_post_nms": 117.0,
+      "nms_ms": 2.221806993475184,
+      "ort_ms": 7.697099004872143,
+      "post_ms": 2.489174638564388
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+      "n_post_thresh": 2880.0,
+      "n_post_nms": 973.0,
+      "nms_ms": 30.81204666523263,
+      "ort_ms": 7.696725010949497,
+      "post_ms": 31.20360064591902
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+      "n_post_thresh": 211.0,
+      "n_post_nms": 109.0,
+      "nms_ms": 2.0919056745090834,
+      "ort_ms": 7.518859997314091,
+      "post_ms": 2.3322146638141326
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+      "n_post_thresh": 1066.0,
+      "n_post_nms": 294.0,
+      "nms_ms": 6.709955002103622,
+      "ort_ms": 7.564529010172312,
+      "post_ms": 7.034410014360522
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+      "n_post_thresh": 3426.0,
+      "n_post_nms": 1868.0,
+      "nms_ms": 70.94318567154308,
+      "ort_ms": 8.322854662158838,
+      "post_ms": 71.40772401665647
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+      "n_post_thresh": 1571.0,
+      "n_post_nms": 723.0,
+      "nms_ms": 19.764366996241733,
+      "ort_ms": 8.185769993967066,
+      "post_ms": 20.133219339186326
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+      "n_post_thresh": 2156.0,
+      "n_post_nms": 813.0,
+      "nms_ms": 24.20938731908488,
+      "ort_ms": 7.681943660524364,
+      "post_ms": 24.59083597447413
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+      "n_post_thresh": 429.0,
+      "n_post_nms": 167.0,
+      "nms_ms": 3.3654759948452315,
+      "ort_ms": 7.753692334517837,
+      "post_ms": 3.644965977097551
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+      "n_post_thresh": 166.0,
+      "n_post_nms": 70.0,
+      "nms_ms": 1.3120060126918058,
+      "ort_ms": 7.951632015950357,
+      "post_ms": 1.5717200197589893
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+      "n_post_thresh": 531.0,
+      "n_post_nms": 169.0,
+      "nms_ms": 3.623685333877802,
+      "ort_ms": 8.834476000629365,
+      "post_ms": 3.9403756672982126
+    },
+    {
+      "variant": "D_svd_nokps",
+      "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+      "n_post_thresh": 1445.0,
+      "n_post_nms": 769.0,
+      "nms_ms": 20.786679990123957,
+      "ort_ms": 7.82124600179183,
+      "post_ms": 21.102344326209277
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+      "n_post_thresh": 502.0,
+      "n_post_nms": 198.0,
+      "nms_ms": 4.163432992451514,
+      "ort_ms": 8.008595672436059,
+      "post_ms": 4.513780324487016
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+      "n_post_thresh": 190.0,
+      "n_post_nms": 50.0,
+      "nms_ms": 0.9605036660407981,
+      "ort_ms": 7.5024720087337,
+      "post_ms": 1.2102273273436974
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+      "n_post_thresh": 2097.0,
+      "n_post_nms": 876.0,
+      "nms_ms": 25.754201672195148,
+      "ort_ms": 8.643846318591386,
+      "post_ms": 26.108488634539146
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+      "n_post_thresh": 2877.0,
+      "n_post_nms": 1476.0,
+      "nms_ms": 50.31145734634871,
+      "ort_ms": 8.75925766498161,
+      "post_ms": 50.716350718478985
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+      "n_post_thresh": 1650.0,
+      "n_post_nms": 540.0,
+      "nms_ms": 13.746278661225611,
+      "ort_ms": 8.179992340349903,
+      "post_ms": 14.092073019128293
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+      "n_post_thresh": 655.0,
+      "n_post_nms": 344.0,
+      "nms_ms": 7.673821654558803,
+      "ort_ms": 7.928024327460055,
+      "post_ms": 7.958219978415097
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+      "n_post_thresh": 154.0,
+      "n_post_nms": 65.0,
+      "nms_ms": 1.2295773291649919,
+      "ort_ms": 7.8775519990207,
+      "post_ms": 1.4731669895506154
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+      "n_post_thresh": 308.0,
+      "n_post_nms": 150.0,
+      "nms_ms": 2.990141986326004,
+      "ort_ms": 7.57390633225441,
+      "post_ms": 3.2594656319512674
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "36--Football/36_Football_Football_36_110.jpg",
+      "n_post_thresh": 869.0,
+      "n_post_nms": 333.0,
+      "nms_ms": 7.425423323487242,
+      "ort_ms": 8.866209003220623,
+      "post_ms": 7.710229983786121
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+      "n_post_thresh": 232.0,
+      "n_post_nms": 100.0,
+      "nms_ms": 1.9108309934381396,
+      "ort_ms": 8.408282679738477,
+      "post_ms": 2.150558323288957
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+      "n_post_thresh": 698.0,
+      "n_post_nms": 281.0,
+      "nms_ms": 6.143313997502749,
+      "ort_ms": 8.068879328978559,
+      "post_ms": 6.4552879678861546
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+      "n_post_thresh": 230.0,
+      "n_post_nms": 113.0,
+      "nms_ms": 2.265592678061997,
+      "ort_ms": 7.68125566537492,
+      "post_ms": 2.5503500073682517
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+      "n_post_thresh": 2780.0,
+      "n_post_nms": 1110.0,
+      "nms_ms": 35.85486000520177,
+      "ort_ms": 8.542040993537134,
+      "post_ms": 36.23030733433552
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+      "n_post_thresh": 160.0,
+      "n_post_nms": 76.0,
+      "nms_ms": 1.4562176656909287,
+      "ort_ms": 8.076938334852457,
+      "post_ms": 1.719704664234693
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+      "n_post_thresh": 3055.0,
+      "n_post_nms": 1058.0,
+      "nms_ms": 34.29236199978428,
+      "ort_ms": 8.071364000594864,
+      "post_ms": 34.69506365945563
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+      "n_post_thresh": 216.0,
+      "n_post_nms": 104.0,
+      "nms_ms": 1.9969630035726975,
+      "ort_ms": 7.85319966962561,
+      "post_ms": 2.2562780165268728
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+      "n_post_thresh": 1228.0,
+      "n_post_nms": 324.0,
+      "nms_ms": 7.655483660831426,
+      "ort_ms": 8.117387663029755,
+      "post_ms": 7.962960352112229
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+      "n_post_thresh": 3166.0,
+      "n_post_nms": 1863.0,
+      "nms_ms": 69.33062998966004,
+      "ort_ms": 8.516793333304426,
+      "post_ms": 69.77144764581074
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+      "n_post_thresh": 1442.0,
+      "n_post_nms": 711.0,
+      "nms_ms": 19.01989066391252,
+      "ort_ms": 8.36725500994362,
+      "post_ms": 19.34801203121121
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+      "n_post_thresh": 1916.0,
+      "n_post_nms": 754.0,
+      "nms_ms": 21.35800666292198,
+      "ort_ms": 8.507619670126587,
+      "post_ms": 21.69794398165929
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+      "n_post_thresh": 646.0,
+      "n_post_nms": 233.0,
+      "nms_ms": 5.090403331754108,
+      "ort_ms": 7.9278803314082325,
+      "post_ms": 5.37468635593541
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+      "n_post_thresh": 206.0,
+      "n_post_nms": 75.0,
+      "nms_ms": 1.7724840048079689,
+      "ort_ms": 8.34397500148043,
+      "post_ms": 2.02363301650621
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+      "n_post_thresh": 757.0,
+      "n_post_nms": 205.0,
+      "nms_ms": 4.43548199837096,
+      "ort_ms": 7.673294002112622,
+      "post_ms": 4.723906361808379
+    },
+    {
+      "variant": "B_kps_only",
+      "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+      "n_post_thresh": 1473.0,
+      "n_post_nms": 789.0,
+      "nms_ms": 21.270158331996452,
+      "ort_ms": 8.317568329706168,
+      "post_ms": 21.60610831924714
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+      "n_post_thresh": 502.0,
+      "n_post_nms": 198.0,
+      "nms_ms": 4.395790669756631,
+      "ort_ms": 10.134181657728428,
+      "post_ms": 5.203292646910995
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+      "n_post_thresh": 190.0,
+      "n_post_nms": 50.0,
+      "nms_ms": 0.9597859946855655,
+      "ort_ms": 9.536772335801894,
+      "post_ms": 1.6125796634393434
+    },
+    {
+      "variant": "A_baseline",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+      "n_post_thresh": 2097.0,
+      "n_post_nms": 876.0,
+      "nms_ms": 25.450492665792506,
+      "ort_ms": 9.754906321177259,
+      "post_ms": 26.38779431193446
+    },
+    {
+      "variant": "A_baseline",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+      "n_post_thresh": 2877.0,
+      "n_post_nms": 1476.0,
+      "nms_ms": 50.093657666972526,
+      "ort_ms": 9.89524465209494,
+      "post_ms": 51.04057402544034
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+      "n_post_thresh": 1650.0,
+      "n_post_nms": 540.0,
+      "nms_ms": 13.739860335287327,
+      "ort_ms": 10.16195434688901,
+      "post_ms": 14.571127316836888
+    },
+    {
+      "variant": "A_baseline",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+      "n_post_thresh": 655.0,
+      "n_post_nms": 344.0,
+      "nms_ms": 7.471262991505985,
+      "ort_ms": 9.856428010001158,
+      "post_ms": 8.224537324470779
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+      "n_post_thresh": 154.0,
+      "n_post_nms": 65.0,
+      "nms_ms": 1.2249153126807262,
+      "ort_ms": 9.890893328702077,
+      "post_ms": 1.8626143670796107
+    },
+    {
+      "variant": "A_baseline",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+      "n_post_thresh": 308.0,
+      "n_post_nms": 150.0,
+      "nms_ms": 2.979859011247754,
+      "ort_ms": 9.849678327251846,
+      "post_ms": 3.669064666610211
+    },
+    {
+      "variant": "A_baseline",
+      "id": "36--Football/36_Football_Football_36_110.jpg",
+      "n_post_thresh": 869.0,
+      "n_post_nms": 333.0,
+      "nms_ms": 7.451335327156509,
+      "ort_ms": 9.981417000138512,
+      "post_ms": 8.181776337247962
+    },
+    {
+      "variant": "A_baseline",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+      "n_post_thresh": 232.0,
+      "n_post_nms": 100.0,
+      "nms_ms": 2.0152710009521493,
+      "ort_ms": 10.627594989879677,
+      "post_ms": 2.7555766476628683
+    },
+    {
+      "variant": "A_baseline",
+      "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+      "n_post_thresh": 698.0,
+      "n_post_nms": 281.0,
+      "nms_ms": 6.14228534201781,
+      "ort_ms": 10.333293670555577,
+      "post_ms": 6.896411020231123
+    },
+    {
+      "variant": "A_baseline",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+      "n_post_thresh": 230.0,
+      "n_post_nms": 113.0,
+      "nms_ms": 2.178889660475155,
+      "ort_ms": 9.784632672866186,
+      "post_ms": 2.8278353662850955
+    },
+    {
+      "variant": "A_baseline",
+      "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+      "n_post_thresh": 2780.0,
+      "n_post_nms": 1110.0,
+      "nms_ms": 36.56897599770067,
+      "ort_ms": 9.975836660790568,
+      "post_ms": 37.536666330803804
+    },
+    {
+      "variant": "A_baseline",
+      "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+      "n_post_thresh": 160.0,
+      "n_post_nms": 76.0,
+      "nms_ms": 1.4349780006644626,
+      "ort_ms": 9.85942732465143,
+      "post_ms": 2.1558136601621904
+    },
+    {
+      "variant": "A_baseline",
+      "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+      "n_post_thresh": 3055.0,
+      "n_post_nms": 1058.0,
+      "nms_ms": 34.29553132931081,
+      "ort_ms": 9.763363001790518,
+      "post_ms": 35.331229688987754
+    },
+    {
+      "variant": "A_baseline",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+      "n_post_thresh": 216.0,
+      "n_post_nms": 104.0,
+      "nms_ms": 1.987415647211795,
+      "ort_ms": 9.717085670369366,
+      "post_ms": 2.6468956493772566
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+      "n_post_thresh": 1228.0,
+      "n_post_nms": 324.0,
+      "nms_ms": 9.592287339425335,
+      "ort_ms": 10.989637327535698,
+      "post_ms": 10.543349684060862
+    },
+    {
+      "variant": "A_baseline",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+      "n_post_thresh": 3166.0,
+      "n_post_nms": 1863.0,
+      "nms_ms": 70.57684233101706,
+      "ort_ms": 10.557910679684332,
+      "post_ms": 71.58217133837752
+    },
+    {
+      "variant": "A_baseline",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+      "n_post_thresh": 1442.0,
+      "n_post_nms": 711.0,
+      "nms_ms": 18.804487995415304,
+      "ort_ms": 9.803294679538036,
+      "post_ms": 19.586405377291765
+    },
+    {
+      "variant": "A_baseline",
+      "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+      "n_post_thresh": 1916.0,
+      "n_post_nms": 754.0,
+      "nms_ms": 21.229641997100163,
+      "ort_ms": 9.931349331357827,
+      "post_ms": 22.047720616683364
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+      "n_post_thresh": 646.0,
+      "n_post_nms": 233.0,
+      "nms_ms": 5.236154664695884,
+      "ort_ms": 10.104299008768672,
+      "post_ms": 5.988099660802011
+    },
+    {
+      "variant": "A_baseline",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+      "n_post_thresh": 206.0,
+      "n_post_nms": 75.0,
+      "nms_ms": 1.4427459973376244,
+      "ort_ms": 9.966094987854982,
+      "post_ms": 2.0902523441084973
+    },
+    {
+      "variant": "A_baseline",
+      "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+      "n_post_thresh": 757.0,
+      "n_post_nms": 205.0,
+      "nms_ms": 4.50860300528196,
+      "ort_ms": 10.183795345559096,
+      "post_ms": 5.23518500267528
+    },
+    {
+      "variant": "A_baseline",
+      "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+      "n_post_thresh": 1473.0,
+      "n_post_nms": 789.0,
+      "nms_ms": 21.222962328465655,
+      "ort_ms": 10.003956325817853,
+      "post_ms": 22.030480661972735
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_279.jpg",
+      "n_post_thresh": 342.0,
+      "n_post_nms": 148.0,
+      "nms_ms": 2.8982016568382583,
+      "ort_ms": 9.395039000082761,
+      "post_ms": 3.5708563324684897
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_199.jpg",
+      "n_post_thresh": 151.0,
+      "n_post_nms": 65.0,
+      "nms_ms": 1.228388660820201,
+      "ort_ms": 9.805983339902014,
+      "post_ms": 1.9075049979922671
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_283.jpg",
+      "n_post_thresh": 2252.0,
+      "n_post_nms": 953.0,
+      "nms_ms": 28.208750668757904,
+      "ort_ms": 9.344346675788984,
+      "post_ms": 29.075277678202838
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_762.jpg",
+      "n_post_thresh": 2847.0,
+      "n_post_nms": 1405.0,
+      "nms_ms": 46.99143066924686,
+      "ort_ms": 9.966402334005883,
+      "post_ms": 48.100703357098006
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_Basketball_35_653.jpg",
+      "n_post_thresh": 1893.0,
+      "n_post_nms": 640.0,
+      "nms_ms": 17.106314674795914,
+      "ort_ms": 9.55926465879505,
+      "post_ms": 18.015798336515825
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_1038.jpg",
+      "n_post_thresh": 643.0,
+      "n_post_nms": 321.0,
+      "nms_ms": 7.035344674174364,
+      "ort_ms": 9.39768367485764,
+      "post_ms": 7.775238327061136
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_playingbasketball_35_612.jpg",
+      "n_post_thresh": 152.0,
+      "n_post_nms": 75.0,
+      "nms_ms": 1.412932654299463,
+      "ort_ms": 9.920098343476033,
+      "post_ms": 2.105029998347163
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_894.jpg",
+      "n_post_thresh": 206.0,
+      "n_post_nms": 121.0,
+      "nms_ms": 2.3140006621057787,
+      "ort_ms": 9.519583341898397,
+      "post_ms": 2.9661416386564574
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "36--Football/36_Football_Football_36_110.jpg",
+      "n_post_thresh": 995.0,
+      "n_post_nms": 370.0,
+      "nms_ms": 8.510274667060003,
+      "ort_ms": 10.08128533915927,
+      "post_ms": 9.249380023296302
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "40--Gymnastics/40_Gymnastics_Gymnastics_40_138.jpg",
+      "n_post_thresh": 250.0,
+      "n_post_nms": 100.0,
+      "nms_ms": 1.9776606544231374,
+      "ort_ms": 9.526519667512426,
+      "post_ms": 2.678284014109522
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_644.jpg",
+      "n_post_thresh": 420.0,
+      "n_post_nms": 168.0,
+      "nms_ms": 3.4299266699235886,
+      "ort_ms": 9.58669334067963,
+      "post_ms": 4.185362010806178
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_764.jpg",
+      "n_post_thresh": 137.0,
+      "n_post_nms": 77.0,
+      "nms_ms": 1.4722476771567017,
+      "ort_ms": 10.072702338220552,
+      "post_ms": 2.154108980903402
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_21.jpg",
+      "n_post_thresh": 2501.0,
+      "n_post_nms": 962.0,
+      "nms_ms": 29.38943900517188,
+      "ort_ms": 9.3980980066893,
+      "post_ms": 30.315355009709794
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "56--Voter/56_Voter_peoplevoting_56_796.jpg",
+      "n_post_thresh": 217.0,
+      "n_post_nms": 117.0,
+      "nms_ms": 2.2265593288466334,
+      "ort_ms": 9.418222335322449,
+      "post_ms": 2.8862333565484732
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "36--Football/36_Football_americanfootball_ball_36_510.jpg",
+      "n_post_thresh": 2880.0,
+      "n_post_nms": 973.0,
+      "nms_ms": 30.56211266084574,
+      "ort_ms": 9.491393662756309,
+      "post_ms": 31.587775301886722
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_262.jpg",
+      "n_post_thresh": 211.0,
+      "n_post_nms": 109.0,
+      "nms_ms": 2.142307348549366,
+      "ort_ms": 9.57521834061481,
+      "post_ms": 2.867309046753993
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_133.jpg",
+      "n_post_thresh": 1066.0,
+      "n_post_nms": 294.0,
+      "nms_ms": 6.718605009761329,
+      "ort_ms": 9.314116003224626,
+      "post_ms": 7.465976319508627
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_birthdayparty_50_75.jpg",
+      "n_post_thresh": 3426.0,
+      "n_post_nms": 1868.0,
+      "nms_ms": 70.82234466603647,
+      "ort_ms": 9.92487401041823,
+      "post_ms": 71.86250834881018
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "50--Celebration_Or_Party/50_Celebration_Or_Party_houseparty_50_173.jpg",
+      "n_post_thresh": 1571.0,
+      "n_post_nms": 723.0,
+      "nms_ms": 19.632538334311295,
+      "ort_ms": 9.88378599868156,
+      "post_ms": 20.427309655739617
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "36--Football/36_Football_americanfootball_ball_36_38.jpg",
+      "n_post_thresh": 2156.0,
+      "n_post_nms": 813.0,
+      "nms_ms": 23.59479899556997,
+      "ort_ms": 9.670981671661139,
+      "post_ms": 24.512244708603248
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_basketballgame_ball_35_542.jpg",
+      "n_post_thresh": 429.0,
+      "n_post_nms": 167.0,
+      "nms_ms": 3.3562556685258946,
+      "ort_ms": 9.463557663063208,
+      "post_ms": 4.061518314604958
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "32--Worker_Laborer/32_Worker_Laborer_Worker_Laborer_32_169.jpg",
+      "n_post_thresh": 166.0,
+      "n_post_nms": 70.0,
+      "nms_ms": 1.3971429919668783,
+      "ort_ms": 9.888702663981045,
+      "post_ms": 2.185540991680076
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "19--Couple/19_Couple_Couple_19_832.jpg",
+      "n_post_thresh": 531.0,
+      "n_post_nms": 169.0,
+      "nms_ms": 3.4954003349412233,
+      "ort_ms": 9.939799007649222,
+      "post_ms": 4.163628997048363
+    },
+    {
+      "variant": "C_svd_only",
+      "id": "35--Basketball/35_Basketball_Basketball_35_185.jpg",
+      "n_post_thresh": 1445.0,
+      "n_post_nms": 769.0,
+      "nms_ms": 20.604519998111453,
+      "ort_ms": 9.812215333416438,
+      "post_ms": 21.386502330036212
+    }
+  ]
+}

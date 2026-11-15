@@ -115,6 +115,8 @@ Absolute = after − before. Percent = relative to the “before” side. AP in 
 
 \*Large e2e speedups for SVD variants are **observed** but **not explained by ORT forward GMACs/latency** on this machine. Treat e2e as a composite metric (NMS load / score distribution / decode), not as validated neural-forward speedup.
 
+**Follow-up (appended, does not rewrite tables above):** a controlled investigation on real WIDER images with fixed thread counts showed the prior multi× e2e gap was dominated by **post-threshold candidate count → NMS cost**, especially under the original **synthetic-noise** timing inputs. See **[LATENCY_INVESTIGATION.md](LATENCY_INVESTIGATION.md)**.
+
 Additive check (params):  
 `(A→B) + (A→C) = −34,622 − 138,240 = −172,862 = (A→D)` ✓
 

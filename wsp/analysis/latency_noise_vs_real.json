@@ -1,0 +1,71 @@
+{
+  "real_wider": {
+    "A_baseline": {
+      "n_post_thresh_median": 578.5,
+      "n_post_thresh_mean": 1042.0625,
+      "nms_ms_median": 5.2463620086200535,
+      "ort_ms_median": 9.73707000957802,
+      "post_ms_median": 5.955097018158995,
+      "ort_plus_post_median": 15.71662699279841
+    },
+    "B_kps_only": {
+      "n_post_thresh_median": 578.5,
+      "n_post_thresh_mean": 1042.0625,
+      "nms_ms_median": 5.135658502695151,
+      "ort_ms_median": 8.057970509980805,
+      "post_ms_median": 5.4004674893803895,
+      "ort_plus_post_median": 13.970839441753924
+    },
+    "C_svd_only": {
+      "n_post_thresh_median": 381.0,
+      "n_post_thresh_mean": 1006.0625,
+      "nms_ms_median": 3.1666474969824776,
+      "ort_ms_median": 9.302049991674721,
+      "post_ms_median": 3.8994639762677252,
+      "ort_plus_post_median": 13.164394476916641
+    },
+    "D_svd_nokps": {
+      "n_post_thresh_median": 381.0,
+      "n_post_thresh_mean": 1006.0625,
+      "nms_ms_median": 3.2537514925934374,
+      "ort_ms_median": 7.559170509921387,
+      "post_ms_median": 3.5247829655418172,
+      "ort_plus_post_median": 11.848518974147737
+    }
+  },
+  "synthetic_noise_640": {
+    "A_baseline": {
+      "n_post_thresh_median": 1313.0,
+      "n_post_thresh_mean": 1285.125,
+      "nms_ms_median": 25.752206493052654,
+      "ort_ms_median": 9.59600399073679,
+      "post_ms_median": 26.606777479173616,
+      "ort_plus_post_median": 36.970623026718386
+    },
+    "B_kps_only": {
+      "n_post_thresh_median": 1313.0,
+      "n_post_thresh_mean": 1285.125,
+      "nms_ms_median": 25.734472495969385,
+      "ort_ms_median": 8.083518507191911,
+      "post_ms_median": 26.07705800619442,
+      "ort_plus_post_median": 34.366324500297196
+    },
+    "C_svd_only": {
+      "n_post_thresh_median": 84.5,
+      "n_post_thresh_mean": 90.75,
+      "nms_ms_median": 1.2614970037247986,
+      "ort_ms_median": 9.282066996092908,
+      "post_ms_median": 1.909127997350879,
+      "ort_plus_post_median": 11.327668456942774
+    },
+    "D_svd_nokps": {
+      "n_post_thresh_median": 84.5,
+      "n_post_thresh_mean": 90.75,
+      "nms_ms_median": 1.2592280108947307,
+      "ort_ms_median": 7.37475800269749,
+      "post_ms_median": 1.4891655009705573,
+      "ort_plus_post_median": 8.842653493047692
+    }
+  },
+  "note": "Explains prior ablation e2e gap: random noise yields huge post-thresh counts for A/B, inflating NMS"
+}

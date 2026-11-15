@@ -81,10 +81,13 @@ same machine class:
 | C | 6.55 | 13.20 | detect + landmarks |
 | D | 9.40 | 12.00 | detect only |
 
-On this run, **SVD did not reduce ORT `session.run` median**. Large e2e drops for
-C/D are composite (decode/NMS/score behavior) and must not be equated to neural
-forward speedup. Prefer params, GMACs, and matched-pipeline ORT when claiming
-compute wins.
+On the original ablation timing inputs, **SVD did not show a reliable large ORT
+`session.run` win**, and large e2e drops for C/D were composite. A follow-up
+investigation ([LATENCY_INVESTIGATION.md](LATENCY_INVESTIGATION.md)) confirmed
+the multi× e2e gap was mostly **fewer post-threshold boxes → cheaper NMS**,
+especially on synthetic noise; with fixed threads and equalized candidate caps on
+real WIDER images, that gap does not survive as a network-speed claim. Prefer
+params, GMACs, and matched-pipeline ORT when claiming compute wins.
 
 ## What failed (honest negatives)
 

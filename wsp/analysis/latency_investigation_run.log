@@ -1,0 +1,56 @@
+Loading 24 WIDER DEV images...
+=== 1) ORT thread sweep ===
+[ORT] threads=1
+  trial 1/3 order=['C_svd_only', 'B_kps_only', 'D_svd_nokps', 'A_baseline']
+  trial 2/3 order=['D_svd_nokps', 'C_svd_only', 'A_baseline', 'B_kps_only']
+  trial 3/3 order=['B_kps_only', 'D_svd_nokps', 'C_svd_only', 'A_baseline']
+[ORT] threads=2
+  trial 1/3 order=['B_kps_only', 'C_svd_only', 'A_baseline', 'D_svd_nokps']
+  trial 2/3 order=['B_kps_only', 'C_svd_only', 'D_svd_nokps', 'A_baseline']
+  trial 3/3 order=['B_kps_only', 'D_svd_nokps', 'C_svd_only', 'A_baseline']
+[ORT] threads=4
+  trial 1/3 order=['C_svd_only', 'B_kps_only', 'A_baseline', 'D_svd_nokps']
+  trial 2/3 order=['B_kps_only', 'D_svd_nokps', 'A_baseline', 'C_svd_only']
+  trial 3/3 order=['A_baseline', 'C_svd_only', 'B_kps_only', 'D_svd_nokps']
+[ORT] threads=8
+  trial 1/3 order=['C_svd_only', 'D_svd_nokps', 'A_baseline', 'B_kps_only']
+  trial 2/3 order=['C_svd_only', 'B_kps_only', 'D_svd_nokps', 'A_baseline']
+  trial 3/3 order=['D_svd_nokps', 'C_svd_only', 'B_kps_only', 'A_baseline']
+=== 2/3/4) Stage profile + counts on real images ===
+[STAGE] D_svd_nokps: ort_med=7.66 nms_med=5.28 post_thresh_med=587 (count)
+[STAGE] B_kps_only: ort_med=7.97 nms_med=6.80 post_thresh_med=728 (count)
+[STAGE] A_baseline: ort_med=9.78 nms_med=6.80 post_thresh_med=728 (count)
+[STAGE] C_svd_only: ort_med=9.50 nms_med=5.11 post_thresh_med=587 (count)
+=== 5) Controlled candidate-cap experiment ===
+[CAP] candidate_cap=50
+  A_baseline: ort+post_med=10.60 nms_med=0.21 used_cand_med=50
+  B_kps_only: ort+post_med=8.18 nms_med=0.21 used_cand_med=50
+  C_svd_only: ort+post_med=10.31 nms_med=0.21 used_cand_med=50
+  D_svd_nokps: ort+post_med=7.92 nms_med=0.22 used_cand_med=50
+[CAP] candidate_cap=100
+  A_baseline: ort+post_med=10.83 nms_med=0.46 used_cand_med=100
+  B_kps_only: ort+post_med=8.49 nms_med=0.45 used_cand_med=100
+  C_svd_only: ort+post_med=10.55 nms_med=0.43 used_cand_med=100
+  D_svd_nokps: ort+post_med=8.24 nms_med=0.43 used_cand_med=100
+[CAP] candidate_cap=200
+  A_baseline: ort+post_med=11.59 nms_med=1.09 used_cand_med=200
+  B_kps_only: ort+post_med=9.21 nms_med=1.09 used_cand_med=200
+  C_svd_only: ort+post_med=11.22 nms_med=1.11 used_cand_med=200
+  D_svd_nokps: ort+post_med=8.95 nms_med=1.10 used_cand_med=200
+[CAP] candidate_cap=500
+  A_baseline: ort+post_med=13.13 nms_med=2.57 used_cand_med=500
+  B_kps_only: ort+post_med=10.74 nms_med=2.56 used_cand_med=500
+  C_svd_only: ort+post_med=13.13 nms_med=2.46 used_cand_med=500
+  D_svd_nokps: ort+post_med=10.57 nms_med=2.43 used_cand_med=500
+[CAP] candidate_cap=natural
+  A_baseline: ort+post_med=17.77 nms_med=6.83 used_cand_med=728
+  B_kps_only: ort+post_med=15.14 nms_med=6.83 used_cand_med=728
+  C_svd_only: ort+post_med=15.68 nms_med=5.07 used_cand_med=587
+  D_svd_nokps: ort+post_med=13.39 nms_med=5.17 used_cand_med=587
+=== E2E SCRFD.detect on real images ===
+[E2E] A_baseline: med=19.84 dets_med=302.5
+[E2E] B_kps_only: med=18.02 dets_med=302.5
+[E2E] C_svd_only: med=19.97 dets_med=231.5
+[E2E] D_svd_nokps: med=16.37 dets_med=231.5
+Wrote /home/prinshu/exp/weightSpace/scrfd/wsp/analysis/latency_investigation.json
+Wrote /home/prinshu/exp/weightSpace/scrfd/wsp/analysis/latency_ort_threads.csv

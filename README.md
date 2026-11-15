@@ -11,6 +11,7 @@ validated ORT forward speedup on the ablation CPU.
 | Doc | Contents |
 |-----|----------|
 | **[ABLATION_REPORT.md](ABLATION_REPORT.md)** | Four-way A/B/C/D results + contribution math |
+| **[LATENCY_INVESTIGATION.md](LATENCY_INVESTIGATION.md)** | Why e2e “SVD speedup” was NMS/candidate artifact |
 | **[EXPERIMENT_AUDIT.md](EXPERIMENT_AUDIT.md)** | Protocol, hashes, limitations |
 | **[BENCHMARK_RESULTS.csv](BENCHMARK_RESULTS.csv)** | Machine-readable metrics |
 | **[COMPRESS.md](COMPRESS.md)** | Method history + negatives |

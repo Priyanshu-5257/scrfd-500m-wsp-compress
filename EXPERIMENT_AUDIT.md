@@ -96,7 +96,18 @@ python wsp/run_ablation_benchmark.py
 
 ---
 
-## 6. Corrected final conclusion (for README / COMPRESS)
+## 6. Latency follow-up (appended)
+
+Protocol `latency-investigation-v1` (`LATENCY_INVESTIGATION.md`, `wsp/analysis/latency_investigation.json`):
+
+- Fixed threads {1,2,4,8}, shuffled variant order, 24 real WIDER DEV images.
+- Stage split: preprocess / blob / ORT / box decode / KPS decode / NMS.
+- Candidate counts + top-K capped NMS equalization.
+- Noise-vs-real contrast explains prior e2e artifact (baseline ~1313 post-thresh boxes on noise vs SVD ~84).
+
+Prior ablation CSVs/JSON were **not modified**; this audit appends the latency resolution only.
+
+## 7. Corrected final conclusion (for README / COMPRESS)
 
 Of the shipped combined compression (A→D):
 
