@@ -1,0 +1,17 @@
+{
+  "request_id": "r087_S3",
+  "purpose": "structural_S3_multi_svd",
+  "utc": "2026-11-15T13:21:43.589481+00:00",
+  "candidate_hash": "b6e722df435aba3a4076cd1103a5f61c9395082b4a6e0bc54424f40db074da25",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 237969,
+  "infer_seconds": 20.297536647995003,
+  "ap": {
+    "easy": 86.33727055933895,
+    "medium": 84.18491412035758,
+    "hard": 62.33385061303112
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

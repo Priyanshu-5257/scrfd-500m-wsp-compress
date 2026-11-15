@@ -1,26 +1,28 @@
 # SCRFD-500M parameter compression (no training)
 
-Weight-space **COMPRESS** run after Hard-AP repair failed to transfer. Goal: cut
-parameters while keeping WIDER Face AP within ±2.0 of baseline on DEV, then
-confirm on holdout.
+Weight-space **COMPRESS** history after Hard-AP repair failed to transfer.
+Structural / channel-prune work is a **declared extension** to strict
+fixed-architecture WSP.
 
-**Corrected interpretation (ablation):** see
-**[ABLATION_REPORT.md](ABLATION_REPORT.md)** and
-**[EXPERIMENT_AUDIT.md](EXPERIMENT_AUDIT.md)**. The shipped combined model mixes
-two orthogonal edits; this document keeps the historical compress narrative and
-marks claims that the four-way ablation revised.
+For the current validated summary see **[README.md](README.md)**.  
+Ablation: [ABLATION_REPORT.md](ABLATION_REPORT.md) · Latency:
+[LATENCY_INVESTIGATION.md](LATENCY_INVESTIGATION.md) ·
+[PHASE1_LATENCY_BENCHMARK.csv](PHASE1_LATENCY_BENCHMARK.csv).
 
-## Result (selected combined = variant D)
+---
 
-| | Baseline `det_500m.onnx` (A) | **H44b** compressed (D) |
+## Historical selected artifact (variant D = SVD r=96 + KPS strip)
+
+| | Baseline (A) | **H44b / D** |
 |--|--:|--:|
 | **Params** | 626,332 | **453,470 (−27.6%)** |
 | **Conv GMACs** @640 | 0.734 | **0.581 (−20.7%)** |
-| **ORT forward** (CPU) | see ablation | **not a validated speedup** (see below) |
+| **Landmarks** | yes | **no (detection-only)** |
+| **CONFIRMATION E/M/H** | 90.65 / 88.37 / 68.59 | 90.22 / 88.01 / 67.88 |
 
 Artifact: [`models/compressed/det_500m_svd96_nokps.onnx`](models/compressed/det_500m_svd96_nokps.onnx)
 
-### Accuracy
+### Accuracy (historical measurements; preserved)
 
 | Split | Easy | Medium | Hard | Δ Hard vs base |
 |-------|-----:|-------:|-----:|---------------:|
@@ -30,64 +32,58 @@ Artifact: [`models/compressed/det_500m_svd96_nokps.onnx`](models/compressed/det_
 
 Baseline DEV: 91.20 / 87.27 / 67.06 · CONFIRMATION: 90.65 / 88.37 / 68.59
 
-Ablation DEV confirms A=B and C=D on box AP: **all Hard drop is from SVD**, not
-KPS strip.
+---
 
-## Method
+## Isolated contributions (ablation — verified)
 
-1. **SVD low-rank PW factorization (H41b / variant C)**  
-   The late MobileNet stage has five `288×288` pointwise convs (~66% of params).
-   Each weight `W` is replaced by two `1×1` convs `B (r×288) → A (288×r)` with
-   `A @ B ≈ SVD_r(W)`, **r = 96**, no fine-tuning. Retains KPS outputs.
+| Transition | Params | GMACs | DEV Hard | Functionality |
+|------------|-------:|------:|---------:|---------------|
+| **A→B** KPS alone | −5.5% | −13.2% | 0.00 pp | loses landmarks |
+| **A→C** SVD alone | −22.1% | −7.5% | −0.66 pp | keeps landmarks |
+| **A→D** Combined | −27.6% | −20.7% | −0.66 pp | loses landmarks |
 
-2. **Strip KPS head (H44 / variant B)**  
-   Landmark outputs are unused for WIDER Easy/Medium/Hard AP (~35k params).
-   Removing them does not change detection AP. It **does** remove three Conv
-   heads (~13% GMACs) and changes the e2e pipeline (no landmark decode).
+Param deltas are additive. Hard AP change is **entirely** from SVD.
 
-3. **Combined (H44b / variant D)** = (1) then (2).
+---
 
-Reproduce:
+## Latency — finalized (Phase-1)
+
+**Protocol:** 96 real WIDER DEV images, `intra_op_num_threads=4`,
+`inter_op_num_threads=1`, ORT 1.24.4, CPU Ryzen 7 5800H. Bootstrap 95% CI on
+ORT median.
+
+| Variant | ORT median [CI] | e2e detect median | Pipeline |
+|---------|----------------:|------------------:|----------|
+| A | **8.12** [8.08, 8.16] | 21.99 | detect+landmarks |
+| B | **6.27** [6.26, 6.29] | 19.43 | detect_only |
+| C | **8.15** [8.04, 8.29] | 21.48 | detect+landmarks |
+| D | **5.98** [5.96, 6.01] | 18.74 | detect_only |
+
+**SVD-only (C) does not beat A on ORT forward.** D’s ORT win vs A mixes KPS
+removal with SVD; apples-to-apples landmark-preserving compare is A vs C (~0%).
+
+### Superseded historical latency claims
+
+| Claim | Status |
+|-------|--------|
+| ORT ~1.35× for H44b vs baseline | **Superseded** — not replicated under fixed threads |
+| Ablation e2e A~52 ms vs C/D~12 ms on random noise | **Artifact** — noise post-thresh counts (~1313 vs ~84); see latency investigation |
+
+---
+
+## Method (combined artifact)
+
+1. **SVD low-rank PW factorization (H41b / C)** — five late `288×288` PW convs →
+   `B(r×288)→A(288×r)`, **r=96**, no fine-tuning. KPS retained.
+2. **Strip KPS head (H44 / B)** — removes landmark outs (~35k params, −13% GMACs).
+3. **Combined (H44b / D)** = (1)+(2). Detection-only product.
 
 ```bash
-python wsp/build_ablation_variants.py   # A/B/C/D from same baseline
-python wsp/run_ablation_benchmark.py
-# or use the shipped ONNX:
-python scripts/run_widerface_eval.py \
-  --model models/compressed/det_500m_svd96_nokps.onnx --cpu
+python wsp/build_ablation_variants.py
+python wsp/run_phase1_latency_benchmark.py
 ```
 
-## Isolated contributions (measured)
-
-| Transition | Params | GMACs | DEV Hard | Notes |
-|------------|-------:|------:|---------:|-------|
-| A→B KPS alone | −5.5% | −13.2% | 0.00 pp | Different product (no landmarks) |
-| A→C SVD alone | −22.1% | −7.5% | −0.66 pp | Landmarks retained |
-| A→D Combined | −27.6% | −20.7% | −0.66 pp | Params additive |
-
-Full tables: [BENCHMARK_RESULTS.csv](BENCHMARK_RESULTS.csv),
-[BENCHMARK_CONTRIBUTIONS.csv](BENCHMARK_CONTRIBUTIONS.csv).
-
-## Latency — corrected stance
-
-An earlier note in this file cited ~7.7 → ~5.7 ms ORT (~1.35×) for H44b vs
-baseline. That figure is **superseded** by the controlled A–D ablation on the
-same machine class:
-
-| Variant | ORT median ms | Detect e2e median ms | Pipeline |
-|---------|--------------:|---------------------:|----------|
-| A | 6.26 | 51.63 | detect + landmarks |
-| B | 5.13 | 43.82 | detect only |
-| C | 6.55 | 13.20 | detect + landmarks |
-| D | 9.40 | 12.00 | detect only |
-
-On the original ablation timing inputs, **SVD did not show a reliable large ORT
-`session.run` win**, and large e2e drops for C/D were composite. A follow-up
-investigation ([LATENCY_INVESTIGATION.md](LATENCY_INVESTIGATION.md)) confirmed
-the multi× e2e gap was mostly **fewer post-threshold boxes → cheaper NMS**,
-especially on synthetic noise; with fixed threads and equalized candidate caps on
-real WIDER images, that gap does not survive as a network-speed claim. Prefer
-params, GMACs, and matched-pipeline ORT when claiming compute wins.
+---
 
 ## What failed (honest negatives)
 
@@ -96,32 +92,15 @@ params, GMACs, and matched-pipeline ORT when claiming compute wins.
 | H39 | Structured width prune 288→256/224/192 | Hard −4.5 to −18 |
 | H40/H42 | Delete entire 288-ch DW+PW blocks | Hard ~−22 |
 | H43 | Replace PW with Identity | Hard ~−23 |
-| H41c | SVD rank 64 | Easy/Hard outside ±2 budget |
+| H41c | SVD rank 64 on PW288 | Easy/Hard outside ±2 DEV budget |
 
-None of the four 288-ch mixers are near-identity; deleting any without
-retraining collapses the detector. Low-rank **approximation** of the PW maps
-is what preserved accuracy.
+Phase-2 weight analysis (no near-duplicate filters, no unfused BN, PW not ≈ I)
+is in [STRUCTURAL_ANALYSIS.md](STRUCTURAL_ANALYSIS.md).
 
-## Layout
-
-```
-models/det_500m.onnx
-models/compressed/det_500m_svd96_nokps.onnx
-models/ablation/{A_baseline,B_kps_only,C_svd_only,D_svd_nokps}.onnx
-wsp/svd_factor_pw.py
-wsp/build_ablation_variants.py
-wsp/run_ablation_benchmark.py
-wsp/structured_prune.py              # width-prune tool (negative result)
-wsp/harness.py
-wsp/analysis/ablation_*.json
-ABLATION_REPORT.md · EXPERIMENT_AUDIT.md
-```
+---
 
 ## Notes
 
-- Protocol: strict WSP (no gradients / training / distillation).
-- Architecture change was **declared** for COMPRESS (not frozen-graph REPAIR).
-- Official WIDER Face **test** GT is not public; holdout used here is the
-  CONFIRMATION split plus full val.
-- Landmark **accuracy** was never measured (no GT in workspace); only capability.
-- B/C CONFIRMATION AP was **not** re-executed in the ablation; do not invent it.
+- Protocol: no gradients / training / distillation / output regression.
+- Landmark **accuracy** unmeasured (no GT in workspace).
+- B/C CONFIRMATION AP not re-run in ablation — do not invent.

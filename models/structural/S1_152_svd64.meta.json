@@ -1,0 +1,31 @@
+{
+  "name": "S1_152_svd64",
+  "path": "models/structural/S1_152_svd64.onnx",
+  "sha256": "e586bdce8718c8b8e29b59aefb458f3fc7a97d5fb02126a2676f71299fb11cc7",
+  "bytes": 2510399,
+  "params": 622684,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "has_kps": true,
+  "num_outputs": 9,
+  "meta": {
+    "hypothesis": "H_S6",
+    "justification": "PW152 (610) spectrum: rank@90% energy = 63; choose r=64 (pre-registered). r < 152/2 so factorization reduces params. Analytic SVD truncation only.",
+    "layers_changed": [
+      "610"
+    ],
+    "factor": {
+      "weight": "610",
+      "rank": 64,
+      "shape": [
+        152,
+        152
+      ],
+      "rel_frob": 0.30600472432653203,
+      "params_before_layer": 23104,
+      "params_after_layer": 19456
+    },
+    "params_before": 626332,
+    "params_after": 622684
+  }
+}

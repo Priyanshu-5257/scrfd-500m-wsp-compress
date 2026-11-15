@@ -1,0 +1,42 @@
+{
+  "name": "S4_ch286",
+  "path": "models/structural/S4_ch286.onnx",
+  "sha256": "52177906277856dece0d504af7c38bc7a06eef549e0a3be7cda03a9e74819eb8",
+  "bytes": 2500065,
+  "params": 620144,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "has_kps": true,
+  "num_outputs": 9,
+  "meta": {
+    "hypothesis": "H_S5",
+    "justification": "Linear-dependence / L1 analysis: only tiny null space; drop 2 weakest L1 channels (288\u2192286) with analytic in/out slicing of expand, DW, PW, and lateral. Prior H39 showed large width cuts fail \u2014 this tests whether a minimal cut is harmless (expected savings <<20%).",
+    "layers_changed": [
+      "618",
+      "622",
+      "630",
+      "638",
+      "646",
+      "654",
+      "626",
+      "634",
+      "642",
+      "650",
+      "658",
+      "neck.lateral_convs.2.conv.weight"
+    ],
+    "channel_slice": {
+      "keep_c": 286,
+      "dropped_channels": [
+        2,
+        168
+      ],
+      "dropped_scores": [
+        172.5885656233877,
+        170.37606497015804
+      ]
+    },
+    "params_before": 626332,
+    "params_after": 620144
+  }
+}

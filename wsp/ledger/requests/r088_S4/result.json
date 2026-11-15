@@ -1,0 +1,17 @@
+{
+  "request_id": "r088_S4",
+  "purpose": "structural_S4_ch286",
+  "utc": "2026-11-15T13:22:19.535083+00:00",
+  "candidate_hash": "52177906277856dece0d504af7c38bc7a06eef549e0a3be7cda03a9e74819eb8",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 288977,
+  "infer_seconds": 23.265603000007104,
+  "ap": {
+    "easy": 90.9649970473441,
+    "medium": 87.40594152212007,
+    "hard": 66.94982305074024
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

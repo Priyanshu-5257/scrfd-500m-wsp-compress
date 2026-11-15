@@ -107,7 +107,15 @@ Protocol `latency-investigation-v1` (`LATENCY_INVESTIGATION.md`, `wsp/analysis/l
 
 Prior ablation CSVs/JSON were **not modified**; this audit appends the latency resolution only.
 
-## 7. Corrected final conclusion (for README / COMPRESS)
+## 7. Structural phase (appended)
+
+- Analysis: `weight-algebra` only → `STRUCTURAL_ANALYSIS.md`
+- Candidates S1–S4 retain KPS; ranks pre-registered from spectra (not AP-tuned)
+- DEV eval r085–r088; **no CONFIRMATION** (no gate-passing freeze)
+- Research latency target **not met**; reported negative/inconclusive in
+  `BENCHMARK_COMPARISON.md`
+
+## 8. Corrected final conclusion (for README / COMPRESS)
 
 Of the shipped combined compression (A→D):
 

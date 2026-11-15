@@ -1,0 +1,31 @@
+{
+  "name": "S2_expand_svd70",
+  "path": "models/structural/S2_expand_svd70.onnx",
+  "sha256": "807a0df4ee896d9ae0fee8e38e54bf2ed92a6acce8b22e523a2eaf89302d6cc0",
+  "bytes": 2473095,
+  "params": 613356,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "has_kps": true,
+  "num_outputs": 9,
+  "meta": {
+    "hypothesis": "H_S6_expand",
+    "justification": "Expand 618 (288\u00d7152) rank@90% energy = 70; factor at r=70. Break-even r\u224899; r=70 reduces params. KPS untouched.",
+    "layers_changed": [
+      "618"
+    ],
+    "factor": {
+      "weight": "618",
+      "rank": 70,
+      "shape": [
+        288,
+        152
+      ],
+      "rel_frob": 0.31291034844157783,
+      "params_before_layer": 43776,
+      "params_after_layer": 30800
+    },
+    "params_before": 626332,
+    "params_after": 613356
+  }
+}

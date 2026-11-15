@@ -1,0 +1,620 @@
+{
+  "protocol": "structural-analysis-v1",
+  "observation_profile": "weight-algebra",
+  "extension_class": "Structural compression (channel prune / block rewrite) is an **extension** to strict fixed-architecture WSP; declared separately.",
+  "baseline": "models/det_500m.onnx",
+  "created_utc": "2026-11-15T13:16:55Z",
+  "graph_fusion_scan": {
+    "op_counts": {
+      "Conv": 60,
+      "Relu": 41,
+      "Shape": 6,
+      "Gather": 4,
+      "Unsqueeze": 4,
+      "Slice": 2,
+      "Concat": 2,
+      "Resize": 2,
+      "Add": 4,
+      "Transpose": 9,
+      "Reshape": 9,
+      "Sigmoid": 3
+    },
+    "pattern_summary": {
+      "Conv": 60,
+      "Relu": 41,
+      "Clip": 0,
+      "Add": 4,
+      "Resize": 2,
+      "Concat": 2,
+      "Mul": 0,
+      "Sigmoid": 3,
+      "BatchNormalization": 0
+    },
+    "n_add_nodes": 4,
+    "batchnorm_nodes": 0,
+    "fusion_note": "No BatchNormalization nodes in exported ONNX \u2014 BN already folded into Conv weights/biases at export. Residual Adds cannot be eliminated without changing the function. Relu/Clip after Conv are nonlinear \u2014 not exact-linear fusable."
+  },
+  "pw288_effective_rank": {
+    "626": {
+      "shape": [
+        288,
+        288
+      ],
+      "singular_values_top16": [
+        3.6624197959899902,
+        3.119379997253418,
+        2.991537570953369,
+        2.945734739303589,
+        2.772054433822632,
+        2.7398102283477783,
+        2.7126317024230957,
+        2.7029247283935547,
+        2.6238367557525635,
+        2.6180167198181152,
+        2.5658392906188965,
+        2.5329227447509766,
+        2.50370717048645,
+        2.4719631671905518,
+        2.4327945709228516,
+        2.4217467308044434
+      ],
+      "singular_min": 0.0014971370110288262,
+      "condition_number": 2446.2822265625,
+      "stable_rank": 30.91624641418457,
+      "participation_ratio": 94.20391845703125,
+      "rank_for_energy": {
+        "0.9": 115,
+        "0.95": 145,
+        "0.99": 201,
+        "0.999": 247
+      },
+      "nuclear_norm": 267.02947998046875,
+      "frobenius": 20.363922119140625
+    },
+    "634": {
+      "shape": [
+        288,
+        288
+      ],
+      "singular_values_top16": [
+        3.8081142902374268,
+        3.1970808506011963,
+        3.166980028152466,
+        3.054220676422119,
+        2.9960312843322754,
+        2.9496240615844727,
+        2.903303623199463,
+        2.867201089859009,
+        2.807847499847412,
+        2.7715773582458496,
+        2.7067418098449707,
+        2.6718733310699463,
+        2.6594924926757812,
+        2.643327474594116,
+        2.6209652423858643,
+        2.5764451026916504
+      ],
+      "singular_min": 0.0010304474271833897,
+      "condition_number": 3695.593017578125,
+      "stable_rank": 32.41984176635742,
+      "participation_ratio": 95.83556365966797,
+      "rank_for_energy": {
+        "0.9": 116,
+        "0.95": 146,
+        "0.99": 201,
+        "0.999": 248
+      },
+      "nuclear_norm": 285.20391845703125,
+      "frobenius": 21.682804107666016
+    },
+    "642": {
+      "shape": [
+        288,
+        288
+      ],
+      "singular_values_top16": [
+        3.8702986240386963,
+        3.32196307182312,
+        3.2082667350769043,
+        3.125009298324585,
+        3.0735161304473877,
+        3.0633628368377686,
+        3.000786781311035,
+        2.898571491241455,
+        2.882725954055786,
+        2.847304344177246,
+        2.8308756351470947,
+        2.8143904209136963,
+        2.778221607208252,
+        2.699838876724243,
+        2.685883045196533,
+        2.670377016067505
+      ],
+      "singular_min": 0.0025281209964305162,
+      "condition_number": 1530.8992919921875,
+      "stable_rank": 32.41643142700195,
+      "participation_ratio": 93.03044128417969,
+      "rank_for_energy": {
+        "0.9": 113,
+        "0.95": 144,
+        "0.99": 199,
+        "0.999": 246
+      },
+      "nuclear_norm": 287.35516357421875,
+      "frobenius": 22.03571319580078
+    },
+    "650": {
+      "shape": [
+        288,
+        288
+      ],
+      "singular_values_top16": [
+        4.57347297668457,
+        3.9683120250701904,
+        3.5911288261413574,
+        3.461292266845703,
+        3.385308265686035,
+        3.3045713901519775,
+        3.234628200531006,
+        3.2157108783721924,
+        3.1481986045837402,
+        3.1217041015625,
+        3.084589719772339,
+        3.028127431869507,
+        2.9526548385620117,
+        2.9189977645874023,
+        2.8966195583343506,
+        2.822500705718994
+      ],
+      "singular_min": 0.002333108801394701,
+      "condition_number": 1960.24853515625,
+      "stable_rank": 26.1962833404541,
+      "participation_ratio": 85.05198669433594,
+      "rank_for_energy": {
+        "0.9": 112,
+        "0.95": 143,
+        "0.99": 198,
+        "0.999": 245
+      },
+      "nuclear_norm": 302.3272705078125,
+      "frobenius": 23.4080867767334
+    },
+    "658": {
+      "shape": [
+        288,
+        288
+      ],
+      "singular_values_top16": [
+        8.192957878112793,
+        4.892629623413086,
+        4.555781841278076,
+        4.311002254486084,
+        4.250913143157959,
+        4.071570873260498,
+        4.008273124694824,
+        3.964304208755493,
+        3.8997159004211426,
+        3.7740638256073,
+        3.72482967376709,
+        3.694700241088867,
+        3.610475540161133,
+        3.5391361713409424,
+        3.442033529281616,
+        3.424614191055298
+      ],
+      "singular_min": 0.0004959980142302811,
+      "condition_number": 16518.126953125,
+      "stable_rank": 10.883180618286133,
+      "participation_ratio": 50.23456573486328,
+      "rank_for_energy": {
+        "0.9": 92,
+        "0.95": 123,
+        "0.99": 181,
+        "0.999": 234
+      },
+      "nuclear_norm": 322.4775390625,
+      "frobenius": 27.02829360961914
+    }
+  },
+  "pw288_filter_correlation": {
+    "626": {
+      "cout": 288,
+      "corr_mean_offdiag": 0.00826330853029427,
+      "corr_max": 0.538387585575331,
+      "corr_p95": 0.1465447856642092,
+      "corr_p99": 0.21716962854619465,
+      "n_pairs_corr_gt_0.99": 0,
+      "n_pairs_corr_gt_0.95": 0,
+      "n_pairs_corr_gt_0.90": 0,
+      "top_pairs": []
+    },
+    "634": {
+      "cout": 288,
+      "corr_mean_offdiag": 0.00662159387211825,
+      "corr_max": 0.48439139558843,
+      "corr_p95": 0.14197281350852078,
+      "corr_p99": 0.21466377997039354,
+      "n_pairs_corr_gt_0.99": 0,
+      "n_pairs_corr_gt_0.95": 0,
+      "n_pairs_corr_gt_0.90": 0,
+      "top_pairs": []
+    },
+    "642": {
+      "cout": 288,
+      "corr_mean_offdiag": 0.007245500941732038,
+      "corr_max": 0.4757603872403343,
+      "corr_p95": 0.14702723539626247,
+      "corr_p99": 0.21706056282805936,
+      "n_pairs_corr_gt_0.99": 0,
+      "n_pairs_corr_gt_0.95": 0,
+      "n_pairs_corr_gt_0.90": 0,
+      "top_pairs": []
+    },
+    "650": {
+      "cout": 288,
+      "corr_mean_offdiag": 0.011048629172994057,
+      "corr_max": 0.5390543926381015,
+      "corr_p95": 0.15759672312178918,
+      "corr_p99": 0.23497804140325557,
+      "n_pairs_corr_gt_0.99": 0,
+      "n_pairs_corr_gt_0.95": 0,
+      "n_pairs_corr_gt_0.90": 0,
+      "top_pairs": []
+    },
+    "658": {
+      "cout": 288,
+      "corr_mean_offdiag": 0.04865742315878215,
+      "corr_max": 0.8218498040310179,
+      "corr_p95": 0.22913335029258158,
+      "corr_p99": 0.34976863994354046,
+      "n_pairs_corr_gt_0.99": 0,
+      "n_pairs_corr_gt_0.95": 0,
+      "n_pairs_corr_gt_0.90": 0,
+      "top_pairs": []
+    }
+  },
+  "pw288_near_identity": {
+    "626": {
+      "alpha_best": 0.002516956230566494,
+      "rel_err_to_alpha_I": 0.9999978001587916,
+      "offdiag_energy_frac": 0.9964681271219574
+    },
+    "634": {
+      "alpha_best": 0.0006919620955159189,
+      "rel_err_to_alpha_I": 0.9999998533451523,
+      "offdiag_energy_frac": 0.9963769247596292
+    },
+    "642": {
+      "alpha_best": -0.0015200788135795544,
+      "rel_err_to_alpha_I": 0.9999993147631975,
+      "offdiag_energy_frac": 0.9966483364833897
+    },
+    "650": {
+      "alpha_best": 0.0010331228724661894,
+      "rel_err_to_alpha_I": 0.999999719498831,
+      "offdiag_energy_frac": 0.9971454959651253
+    },
+    "658": {
+      "alpha_best": -0.013663595307643087,
+      "rel_err_to_alpha_I": 0.9999631986958805,
+      "offdiag_energy_frac": 0.9958267246833928
+    }
+  },
+  "pw288_linear_dependence": {
+    "626": {
+      "cout": 288,
+      "tol_ratio": 0.001,
+      "n_sv_below_tol": 1,
+      "suggested_keep": 287,
+      "smallest_sv_ratio": 0.00040878356114955626
+    },
+    "634": {
+      "cout": 288,
+      "tol_ratio": 0.001,
+      "n_sv_below_tol": 1,
+      "suggested_keep": 287,
+      "smallest_sv_ratio": 0.00027059255547562974
+    },
+    "642": {
+      "cout": 288,
+      "tol_ratio": 0.001,
+      "n_sv_below_tol": 1,
+      "suggested_keep": 287,
+      "smallest_sv_ratio": 0.0006532108486773984
+    },
+    "650": {
+      "cout": 288,
+      "tol_ratio": 0.001,
+      "n_sv_below_tol": 2,
+      "suggested_keep": 286,
+      "smallest_sv_ratio": 0.0005101394055793964
+    },
+    "658": {
+      "cout": 288,
+      "tol_ratio": 0.001,
+      "n_sv_below_tol": 2,
+      "suggested_keep": 286,
+      "smallest_sv_ratio": 6.053955251264835e-05
+    }
+  },
+  "pw152_effective_rank": {
+    "610": {
+      "shape": [
+        152,
+        152
+      ],
+      "singular_values_top16": [
+        3.8954482078552246,
+        2.83743953704834,
+        2.781543731689453,
+        2.5951087474823,
+        2.460958957672119,
+        2.357006788253784,
+        2.284450054168701,
+        2.2476084232330322,
+        2.1681108474731445,
+        2.1196956634521484,
+        2.1086151599884033,
+        2.046579122543335,
+        2.0148205757141113,
+        1.9724295139312744,
+        1.9384911060333252,
+        1.9275506734848022
+      ],
+      "singular_min": 0.0040168859995901585,
+      "condition_number": 969.7681884765625,
+      "stable_rank": 13.07412052154541,
+      "participation_ratio": 45.988773345947266,
+      "rank_for_energy": {
+        "0.9": 63,
+        "0.95": 79,
+        "0.99": 106,
+        "0.999": 130
+      },
+      "nuclear_norm": 134.74217224121094,
+      "frobenius": 14.085221290588379
+    }
+  },
+  "expand288_filter_correlation": {
+    "cout": 288,
+    "corr_mean_offdiag": 0.005930439806966395,
+    "corr_max": 0.5642204413443763,
+    "corr_p95": 0.19526249382077837,
+    "corr_p99": 0.2827831498789812,
+    "n_pairs_corr_gt_0.99": 0,
+    "n_pairs_corr_gt_0.95": 0,
+    "n_pairs_corr_gt_0.90": 0,
+    "top_pairs": []
+  },
+  "channel_l1_288stage": {
+    "score_min": 169.71139097213745,
+    "score_max": 225.42975616455078,
+    "score_median": 197.13340628147125,
+    "score_p05": 182.00182102918626,
+    "score_p10": 184.78438750505447,
+    "weakest_10_indices": [
+      168,
+      2,
+      281,
+      0,
+      71,
+      157,
+      160,
+      65,
+      89,
+      196
+    ],
+    "weakest_10_scores": [
+      169.71139097213745,
+      171.72112321853638,
+      175.3883615732193,
+      175.65899515151978,
+      175.80872011184692,
+      176.99861001968384,
+      177.90216636657715,
+      178.48551177978516,
+      179.26950335502625,
+      180.97001695632935
+    ],
+    "ratio_p05_to_median": 0.923241902335519,
+    "hypothesis": "If many channels have near-zero L1 across expand/DW/PW, they may be eliminable with analytic slice+compensate. Prior H39 showed L1 top-k width prune to 256/224/192 collapsed Hard AP \u2014 weak L1 alone is insufficient."
+  },
+  "hypotheses": [
+    {
+      "id": "H_S1_exact_bn_fusion",
+      "claim": "Exported ONNX still has unfused BN that can be folded exactly.",
+      "prediction": "If BatchNormalization nodes exist, fold into Conv without AP change.",
+      "weight_evidence": {
+        "op_counts": {
+          "Conv": 60,
+          "Relu": 41,
+          "Shape": 6,
+          "Gather": 4,
+          "Unsqueeze": 4,
+          "Slice": 2,
+          "Concat": 2,
+          "Resize": 2,
+          "Add": 4,
+          "Transpose": 9,
+          "Reshape": 9,
+          "Sigmoid": 3
+        },
+        "pattern_summary": {
+          "Conv": 60,
+          "Relu": 41,
+          "Clip": 0,
+          "Add": 4,
+          "Resize": 2,
+          "Concat": 2,
+          "Mul": 0,
+          "Sigmoid": 3,
+          "BatchNormalization": 0
+        },
+        "n_add_nodes": 4,
+        "batchnorm_nodes": 0,
+        "fusion_note": "No BatchNormalization nodes in exported ONNX \u2014 BN already folded into Conv weights/biases at export. Residual Adds cannot be eliminated without changing the function. Relu/Clip after Conv are nonlinear \u2014 not exact-linear fusable."
+      },
+      "status": "likely_negative_a_priori"
+    },
+    {
+      "id": "H_S2_near_dup_filter_merge",
+      "claim": "Highly correlated PW288 output filters (corr>0.99) can be merged with exact linear compensation of downstream weights.",
+      "prediction": "max_corr=0.8218, n_pairs>0.99 sum=0; if near zero, no merge budget.",
+      "weight_evidence": {
+        "max_corr_per_layer": [
+          0.538387585575331,
+          0.48439139558843,
+          0.4757603872403343,
+          0.5390543926381015,
+          0.8218498040310179
+        ],
+        "n_dup_pairs": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "status": "test_if_pairs_exist"
+    },
+    {
+      "id": "H_S3_effective_rank_channel_slice",
+      "claim": "PW288 matrices have effective rank << 288; dropping trailing singular directions as channel factors (already validated as SVD factor H41b r=96) OR slicing low-energy output channels with compensation may cut params.",
+      "prediction": "mean rank@95% energy=140.2, @99%=196.0; r=96 is below 99% energy \u2014 approximation not exact.",
+      "weight_evidence": {
+        "rank95": [
+          145,
+          146,
+          144,
+          143,
+          123
+        ],
+        "rank99": [
+          201,
+          201,
+          199,
+          198,
+          181
+        ]
+      },
+      "status": "svd_factor_already_validated_as_C; channel_slice_is_different_and_risky"
+    },
+    {
+      "id": "H_S4_pw_near_identity_block_skip",
+      "claim": "Some PW288 blocks \u2248 \u03b1I and can be replaced by scaled Identity (exact if residual path absorbs).",
+      "prediction": "If rel_err_to_alpha_I << 1e-2, try Identity; prior H43 Identity replace failed Hard~-23.",
+      "weight_evidence": {
+        "626": {
+          "alpha_best": 0.002516956230566494,
+          "rel_err_to_alpha_I": 0.9999978001587916,
+          "offdiag_energy_frac": 0.9964681271219574
+        },
+        "634": {
+          "alpha_best": 0.0006919620955159189,
+          "rel_err_to_alpha_I": 0.9999998533451523,
+          "offdiag_energy_frac": 0.9963769247596292
+        },
+        "642": {
+          "alpha_best": -0.0015200788135795544,
+          "rel_err_to_alpha_I": 0.9999993147631975,
+          "offdiag_energy_frac": 0.9966483364833897
+        },
+        "650": {
+          "alpha_best": 0.0010331228724661894,
+          "rel_err_to_alpha_I": 0.999999719498831,
+          "offdiag_energy_frac": 0.9971454959651253
+        },
+        "658": {
+          "alpha_best": -0.013663595307643087,
+          "rel_err_to_alpha_I": 0.9999631986958805,
+          "offdiag_energy_frac": 0.9958267246833928
+        }
+      },
+      "status": "likely_negative"
+    },
+    {
+      "id": "H_S5_weak_l1_channel_elim",
+      "claim": "Lowest-L1 288-stage channels can be removed with analytic reshape of adjacent tensors.",
+      "prediction": "Prior H39 failed for aggressive keep; only try tiny cut (e.g. 288\u2192280) if p05/median is very small.",
+      "weight_evidence": {
+        "score_min": 169.71139097213745,
+        "score_max": 225.42975616455078,
+        "score_median": 197.13340628147125,
+        "score_p05": 182.00182102918626,
+        "score_p10": 184.78438750505447,
+        "weakest_10_indices": [
+          168,
+          2,
+          281,
+          0,
+          71,
+          157,
+          160,
+          65,
+          89,
+          196
+        ],
+        "weakest_10_scores": [
+          169.71139097213745,
+          171.72112321853638,
+          175.3883615732193,
+          175.65899515151978,
+          175.80872011184692,
+          176.99861001968384,
+          177.90216636657715,
+          178.48551177978516,
+          179.26950335502625,
+          180.97001695632935
+        ],
+        "ratio_p05_to_median": 0.923241902335519,
+        "hypothesis": "If many channels have near-zero L1 across expand/DW/PW, they may be eliminable with analytic slice+compensate. Prior H39 showed L1 top-k width prune to 256/224/192 collapsed Hard AP \u2014 weak L1 alone is insufficient."
+      },
+      "status": "cautious_candidate_small_cut_only"
+    },
+    {
+      "id": "H_S6_pw152_svd_factor",
+      "claim": "152\u00d7152 PW also admits low-rank factorization with modest error.",
+      "prediction": "If rank@95% << 152, factor at that rank; expect smaller absolute savings than 288 stage.",
+      "weight_evidence": {
+        "610": {
+          "shape": [
+            152,
+            152
+          ],
+          "singular_values_top16": [
+            3.8954482078552246,
+            2.83743953704834,
+            2.781543731689453,
+            2.5951087474823,
+            2.460958957672119,
+            2.357006788253784,
+            2.284450054168701,
+            2.2476084232330322,
+            2.1681108474731445,
+            2.1196956634521484,
+            2.1086151599884033,
+            2.046579122543335,
+            2.0148205757141113,
+            1.9724295139312744,
+            1.9384911060333252,
+            1.9275506734848022
+          ],
+          "singular_min": 0.0040168859995901585,
+          "condition_number": 969.7681884765625,
+          "stable_rank": 13.07412052154541,
+          "participation_ratio": 45.988773345947266,
+          "rank_for_energy": {
+            "0.9": 63,
+            "0.95": 79,
+            "0.99": 106,
+            "0.999": 130
+          },
+          "nuclear_norm": 134.74217224121094,
+          "frobenius": 14.085221290588379
+        }
+      },
+      "status": "candidate"
+    }
+  ]
+}

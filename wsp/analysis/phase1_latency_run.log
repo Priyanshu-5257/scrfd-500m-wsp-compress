@@ -1,0 +1,12 @@
+Loaded 96 WIDER DEV images; threads=4
+Variant order: ['C_svd_only', 'B_kps_only', 'D_svd_nokps', 'A_baseline']
+=== C_svd_only ===
+  ort_med=8.15 ci=[8.04,8.29] e2e_med=21.48 params=488092 gmacs=0.678
+=== B_kps_only ===
+  ort_med=6.27 ci=[6.26,6.29] e2e_med=19.43 params=591710 gmacs=0.637
+=== D_svd_nokps ===
+  ort_med=5.98 ci=[5.96,6.01] e2e_med=18.74 params=453470 gmacs=0.581
+=== A_baseline ===
+  ort_med=8.12 ci=[8.08,8.16] e2e_med=21.99 params=626332 gmacs=0.734
+Wrote /home/prinshu/exp/weightSpace/scrfd/wsp/analysis/phase1_latency_benchmark.json
+Wrote /home/prinshu/exp/weightSpace/scrfd/PHASE1_LATENCY_BENCHMARK.csv

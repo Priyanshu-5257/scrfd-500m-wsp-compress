@@ -1,0 +1,17 @@
+{
+  "request_id": "r085_S1",
+  "purpose": "structural_S1_152_svd64",
+  "utc": "2026-11-15T13:20:38.573208+00:00",
+  "candidate_hash": "e586bdce8718c8b8e29b59aefb458f3fc7a97d5fb02126a2676f71299fb11cc7",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 259023,
+  "infer_seconds": 21.10858827701304,
+  "ap": {
+    "easy": 87.05615684085201,
+    "medium": 85.00797913837756,
+    "hard": 63.97785348950836
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

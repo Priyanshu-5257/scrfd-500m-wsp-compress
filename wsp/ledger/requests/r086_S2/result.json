@@ -1,0 +1,17 @@
+{
+  "request_id": "r086_S2",
+  "purpose": "structural_S2_expand_svd70",
+  "utc": "2026-11-15T13:21:12.615797+00:00",
+  "candidate_hash": "807a0df4ee896d9ae0fee8e38e54bf2ed92a6acce8b22e523a2eaf89302d6cc0",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 261555,
+  "infer_seconds": 22.606797296000877,
+  "ap": {
+    "easy": 90.92066121329204,
+    "medium": 87.01910597500816,
+    "hard": 66.78809027310291
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

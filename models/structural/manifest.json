@@ -1,0 +1,203 @@
+{
+  "protocol": "structural-candidates-v1",
+  "extension": "structural compression (not strict fixed-architecture WSP)",
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "baseline_params": 626332,
+  "kps_retained": true,
+  "created_utc": "2026-11-15T13:19:04Z",
+  "negatives_not_built": [
+    {
+      "id": "BN_fusion",
+      "reason": "0 BatchNormalization nodes in export; already folded"
+    },
+    {
+      "id": "near_dup_filter_merge",
+      "reason": "0 PW288 filter pairs with corr>0.99"
+    },
+    {
+      "id": "PW_to_Identity",
+      "reason": "rel_err_to_alpha_I\u22481.0; prior H43 Hard~-23"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "S1_152_svd64",
+      "path": "models/structural/S1_152_svd64.onnx",
+      "sha256": "e586bdce8718c8b8e29b59aefb458f3fc7a97d5fb02126a2676f71299fb11cc7",
+      "bytes": 2510399,
+      "params": 622684,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "has_kps": true,
+      "num_outputs": 9,
+      "meta": {
+        "hypothesis": "H_S6",
+        "justification": "PW152 (610) spectrum: rank@90% energy = 63; choose r=64 (pre-registered). r < 152/2 so factorization reduces params. Analytic SVD truncation only.",
+        "layers_changed": [
+          "610"
+        ],
+        "factor": {
+          "weight": "610",
+          "rank": 64,
+          "shape": [
+            152,
+            152
+          ],
+          "rel_frob": 0.30600472432653203,
+          "params_before_layer": 23104,
+          "params_after_layer": 19456
+        },
+        "params_before": 626332,
+        "params_after": 622684
+      }
+    },
+    {
+      "name": "S2_expand_svd70",
+      "path": "models/structural/S2_expand_svd70.onnx",
+      "sha256": "807a0df4ee896d9ae0fee8e38e54bf2ed92a6acce8b22e523a2eaf89302d6cc0",
+      "bytes": 2473095,
+      "params": 613356,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "has_kps": true,
+      "num_outputs": 9,
+      "meta": {
+        "hypothesis": "H_S6_expand",
+        "justification": "Expand 618 (288\u00d7152) rank@90% energy = 70; factor at r=70. Break-even r\u224899; r=70 reduces params. KPS untouched.",
+        "layers_changed": [
+          "618"
+        ],
+        "factor": {
+          "weight": "618",
+          "rank": 70,
+          "shape": [
+            288,
+            152
+          ],
+          "rel_frob": 0.31291034844157783,
+          "params_before_layer": 43776,
+          "params_after_layer": 30800
+        },
+        "params_before": 626332,
+        "params_after": 613356
+      }
+    },
+    {
+      "name": "S3_multi_svd",
+      "path": "models/structural/S3_multi_svd.onnx",
+      "sha256": "b6e722df435aba3a4076cd1103a5f61c9395082b4a6e0bc54424f40db074da25",
+      "bytes": 1906626,
+      "params": 471468,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "has_kps": true,
+      "num_outputs": 9,
+      "meta": {
+        "hypothesis": "H_S3+H_S6 stack",
+        "justification": "Independent spectrum-motivated factorizations stacked: PW288 r=96 (prior H41b), PW152 r=64, expand r=70. No coefficient search; ranks fixed from Phase-2 energy tables / prior.",
+        "layers_changed": [
+          "626",
+          "634",
+          "642",
+          "650",
+          "658",
+          "610",
+          "618"
+        ],
+        "pw288": [
+          {
+            "weight": "626",
+            "rank": 96,
+            "rel_frob": 0.38139993691529117
+          },
+          {
+            "weight": "634",
+            "rank": 96,
+            "rel_frob": 0.3855833036786451
+          },
+          {
+            "weight": "642",
+            "rank": 96,
+            "rel_frob": 0.37704611737377114
+          },
+          {
+            "weight": "650",
+            "rank": 96,
+            "rel_frob": 0.3698768552166017
+          },
+          {
+            "weight": "658",
+            "rank": 96,
+            "rel_frob": 0.30190140042848496
+          }
+        ],
+        "pw152": {
+          "weight": "610",
+          "rank": 64,
+          "shape": [
+            152,
+            152
+          ],
+          "rel_frob": 0.30600472432653203,
+          "params_before_layer": 23104,
+          "params_after_layer": 19456
+        },
+        "expand": {
+          "weight": "618",
+          "rank": 70,
+          "shape": [
+            288,
+            152
+          ],
+          "rel_frob": 0.31291034844157783,
+          "params_before_layer": 43776,
+          "params_after_layer": 30800
+        },
+        "params_before": 626332,
+        "params_after": 471468
+      }
+    },
+    {
+      "name": "S4_ch286",
+      "path": "models/structural/S4_ch286.onnx",
+      "sha256": "52177906277856dece0d504af7c38bc7a06eef549e0a3be7cda03a9e74819eb8",
+      "bytes": 2500065,
+      "params": 620144,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "has_kps": true,
+      "num_outputs": 9,
+      "meta": {
+        "hypothesis": "H_S5",
+        "justification": "Linear-dependence / L1 analysis: only tiny null space; drop 2 weakest L1 channels (288\u2192286) with analytic in/out slicing of expand, DW, PW, and lateral. Prior H39 showed large width cuts fail \u2014 this tests whether a minimal cut is harmless (expected savings <<20%).",
+        "layers_changed": [
+          "618",
+          "622",
+          "630",
+          "638",
+          "646",
+          "654",
+          "626",
+          "634",
+          "642",
+          "650",
+          "658",
+          "neck.lateral_convs.2.conv.weight"
+        ],
+        "channel_slice": {
+          "keep_c": 286,
+          "dropped_channels": [
+            2,
+            168
+          ],
+          "dropped_scores": [
+            172.5885656233877,
+            170.37606497015804
+          ]
+        },
+        "params_before": 626332,
+        "params_after": 620144
+      }
+    }
+  ]
+}

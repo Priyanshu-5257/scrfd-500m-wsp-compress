@@ -1,0 +1,75 @@
+{
+  "name": "S3_multi_svd",
+  "path": "models/structural/S3_multi_svd.onnx",
+  "sha256": "b6e722df435aba3a4076cd1103a5f61c9395082b4a6e0bc54424f40db074da25",
+  "bytes": 1906626,
+  "params": 471468,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "has_kps": true,
+  "num_outputs": 9,
+  "meta": {
+    "hypothesis": "H_S3+H_S6 stack",
+    "justification": "Independent spectrum-motivated factorizations stacked: PW288 r=96 (prior H41b), PW152 r=64, expand r=70. No coefficient search; ranks fixed from Phase-2 energy tables / prior.",
+    "layers_changed": [
+      "626",
+      "634",
+      "642",
+      "650",
+      "658",
+      "610",
+      "618"
+    ],
+    "pw288": [
+      {
+        "weight": "626",
+        "rank": 96,
+        "rel_frob": 0.38139993691529117
+      },
+      {
+        "weight": "634",
+        "rank": 96,
+        "rel_frob": 0.3855833036786451
+      },
+      {
+        "weight": "642",
+        "rank": 96,
+        "rel_frob": 0.37704611737377114
+      },
+      {
+        "weight": "650",
+        "rank": 96,
+        "rel_frob": 0.3698768552166017
+      },
+      {
+        "weight": "658",
+        "rank": 96,
+        "rel_frob": 0.30190140042848496
+      }
+    ],
+    "pw152": {
+      "weight": "610",
+      "rank": 64,
+      "shape": [
+        152,
+        152
+      ],
+      "rel_frob": 0.30600472432653203,
+      "params_before_layer": 23104,
+      "params_after_layer": 19456
+    },
+    "expand": {
+      "weight": "618",
+      "rank": 70,
+      "shape": [
+        288,
+        152
+      ],
+      "rel_frob": 0.31291034844157783,
+      "params_before_layer": 43776,
+      "params_after_layer": 30800
+    },
+    "params_before": 626332,
+    "params_after": 471468
+  }
+}
