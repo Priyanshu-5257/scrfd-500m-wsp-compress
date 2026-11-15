@@ -1,0 +1,17 @@
+{
+  "request_id": "r084_ablD",
+  "purpose": "ablation_D_svd_nokps",
+  "utc": "2026-11-15T11:58:32.369251+00:00",
+  "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 258875,
+  "infer_seconds": 20.62316787499003,
+  "ap": {
+    "easy": 90.34836565513997,
+    "medium": 86.79675834124285,
+    "hard": 66.39331988544397
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

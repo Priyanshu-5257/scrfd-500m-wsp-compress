@@ -1,0 +1,298 @@
+{
+  "protocol": "ablation-svd-vs-kps-v1",
+  "hardware": {
+    "platform": "Linux-7.0.5-arch1-1-x86_64-with-glibc2.43",
+    "processor": "",
+    "python": "3.12.12",
+    "cpu_count_logical": 16,
+    "lscpu_cpus": "16",
+    "cpu_model": "AMD Ryzen 7 5800H with Radeon Graphics",
+    "onnxruntime": "1.24.4"
+  },
+  "counting": {
+    "macs": "Conv MACs = N*Cout*Cin_per_group*kH*kW*Hout*Wout; FLOPs\u22482*MACs if counted that way (we report MACs/GMACs)",
+    "input": "1x3x640x640",
+    "latency_ort": "session.run only (neural forward)",
+    "latency_detect": "SCRFD.detect e2e (preprocess+forward+decode+NMS[+kps])"
+  },
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "variants": [
+    {
+      "variant": "A_baseline",
+      "description": "Original SCRFD-500M KPS checkpoint (immutable baseline copy)",
+      "sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+      "bytes": 2524817,
+      "params_total": 626332,
+      "params_components": {
+        "total": 626332,
+        "backbone_numeric": 549954,
+        "svd_factors": 0,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 34620,
+        "other_constants": 0,
+        "sum_check": 626332
+      },
+      "has_kps_outputs": true,
+      "num_outputs": 9,
+      "gmacs": 0.7335456,
+      "macs": 733545600,
+      "n_conv": 60,
+      "latency_ort_forward_ms": {
+        "mean_ms": 6.767841510591097,
+        "std_ms": 1.1507410842100887,
+        "median_ms": 6.255366490222514,
+        "p95_ms": 9.875831840327008,
+        "n_warmup": 20,
+        "n_run": 100,
+        "n_outputs": 9,
+        "intra_op_num_threads": "ORT_default"
+      },
+      "latency_detect_e2e_ms": {
+        "mean_ms": 53.564488463841066,
+        "std_ms": 4.201009495411841,
+        "median_ms": 51.6289095103275,
+        "p95_ms": 61.009832943091155,
+        "n_warmup": 5,
+        "n_run": 30,
+        "use_kps": true,
+        "pipeline": "detect+landmarks",
+        "note": "Includes preprocess + ORT + decode + NMS + kps decode"
+      },
+      "input_size": [
+        640,
+        640
+      ],
+      "provider": "CPUExecutionProvider",
+      "wider_dev_ap": {
+        "easy": 91.19868061862468,
+        "medium": 87.2692852388514,
+        "hard": 67.05590191954036,
+        "request_id": "r081_ablA",
+        "num_images": 470,
+        "split": "DEV",
+        "source": "measured_this_run"
+      },
+      "wider_confirmation_ap": {
+        "confirmation": {
+          "easy": 90.65,
+          "medium": 88.37,
+          "hard": 68.59
+        },
+        "source": "historical_r041_CONF_baseline",
+        "note": "Prior CONFIRMATION eval of same baseline checkpoint"
+      },
+      "landmark_accuracy": {
+        "available": false,
+        "reason": "WIDER Face official eval mats provide box difficulty flags only; no landmark GT in this workspace",
+        "kps_outputs_present": true
+      }
+    },
+    {
+      "variant": "B_kps_only",
+      "description": "Baseline with keypoint head/outputs stripped; no SVD",
+      "sha256": "9e62c79fa95844496576c2849fcd042754a21ea136c38a37acc77e485c9a197c",
+      "bytes": 2385065,
+      "params_total": 591710,
+      "params_components": {
+        "total": 591710,
+        "backbone_numeric": 549952,
+        "svd_factors": 0,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 0,
+        "other_constants": 0,
+        "sum_check": 591710
+      },
+      "has_kps_outputs": false,
+      "num_outputs": 6,
+      "gmacs": 0.6367776,
+      "macs": 636777600,
+      "n_conv": 57,
+      "latency_ort_forward_ms": {
+        "mean_ms": 5.639126691676211,
+        "std_ms": 1.203751022203005,
+        "median_ms": 5.133950005983934,
+        "p95_ms": 8.283346563985106,
+        "n_warmup": 20,
+        "n_run": 100,
+        "n_outputs": 6,
+        "intra_op_num_threads": "ORT_default"
+      },
+      "latency_detect_e2e_ms": {
+        "mean_ms": 44.75997609940047,
+        "std_ms": 4.27982017472105,
+        "median_ms": 43.8226074911654,
+        "p95_ms": 52.84465469158022,
+        "n_warmup": 5,
+        "n_run": 30,
+        "use_kps": false,
+        "pipeline": "detect_only",
+        "note": "Includes preprocess + ORT + decode + NMS"
+      },
+      "input_size": [
+        640,
+        640
+      ],
+      "provider": "CPUExecutionProvider",
+      "wider_dev_ap": {
+        "easy": 91.19868061862468,
+        "medium": 87.2692852388514,
+        "hard": 67.05590191954036,
+        "request_id": "r082_ablB",
+        "num_images": 470,
+        "split": "DEV",
+        "source": "measured_this_run"
+      },
+      "wider_confirmation_ap": {
+        "confirmation": null,
+        "source": "not_executed",
+        "note": "CONFIRMATION not run for B in this ablation"
+      },
+      "landmark_accuracy": {
+        "available": false,
+        "reason": "WIDER Face official eval mats provide box difficulty flags only; no landmark GT in this workspace",
+        "kps_outputs_present": false
+      }
+    },
+    {
+      "variant": "C_svd_only",
+      "description": "Rank-96 SVD factorization of five late PW layers; KPS retained",
+      "sha256": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f",
+      "bytes": 1972636,
+      "params_total": 488092,
+      "params_components": {
+        "total": 488092,
+        "backbone_numeric": 135234,
+        "svd_factors": 276480,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 34620,
+        "other_constants": 0,
+        "sum_check": 488092
+      },
+      "has_kps_outputs": true,
+      "num_outputs": 9,
+      "gmacs": 0.6782496,
+      "macs": 678249600,
+      "n_conv": 65,
+      "latency_ort_forward_ms": {
+        "mean_ms": 8.609728929586709,
+        "std_ms": 3.3385587382434485,
+        "median_ms": 6.551557002239861,
+        "p95_ms": 15.61211470834678,
+        "n_warmup": 20,
+        "n_run": 100,
+        "n_outputs": 9,
+        "intra_op_num_threads": "ORT_default"
+      },
+      "latency_detect_e2e_ms": {
+        "mean_ms": 15.505794666629905,
+        "std_ms": 4.5489313247356025,
+        "median_ms": 13.19702950422652,
+        "p95_ms": 26.23757573310285,
+        "n_warmup": 5,
+        "n_run": 30,
+        "use_kps": true,
+        "pipeline": "detect+landmarks",
+        "note": "Includes preprocess + ORT + decode + NMS + kps decode"
+      },
+      "input_size": [
+        640,
+        640
+      ],
+      "provider": "CPUExecutionProvider",
+      "wider_dev_ap": {
+        "easy": 90.34836565513997,
+        "medium": 86.79675834124285,
+        "hard": 66.39331988544397,
+        "request_id": "r083_ablC",
+        "num_images": 470,
+        "split": "DEV",
+        "source": "measured_this_run"
+      },
+      "wider_confirmation_ap": {
+        "confirmation": null,
+        "source": "not_executed",
+        "note": "CONFIRMATION not run for C in this ablation"
+      },
+      "landmark_accuracy": {
+        "available": false,
+        "reason": "WIDER Face official eval mats provide box difficulty flags only; no landmark GT in this workspace",
+        "kps_outputs_present": true
+      }
+    },
+    {
+      "variant": "D_svd_nokps",
+      "description": "Rank-96 SVD + KPS strip (combined)",
+      "sha256": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+      "bytes": 1832884,
+      "params_total": 453470,
+      "params_components": {
+        "total": 453470,
+        "backbone_numeric": 135232,
+        "svd_factors": 276480,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 0,
+        "other_constants": 0,
+        "sum_check": 453470
+      },
+      "has_kps_outputs": false,
+      "num_outputs": 6,
+      "gmacs": 0.5814816,
+      "macs": 581481600,
+      "n_conv": 62,
+      "latency_ort_forward_ms": {
+        "mean_ms": 9.759614478098229,
+        "std_ms": 3.0173158580971524,
+        "median_ms": 9.396552995895036,
+        "p95_ms": 15.353526099352166,
+        "n_warmup": 20,
+        "n_run": 100,
+        "n_outputs": 6,
+        "intra_op_num_threads": "ORT_default"
+      },
+      "latency_detect_e2e_ms": {
+        "mean_ms": 12.332652035790185,
+        "std_ms": 1.2417419674373689,
+        "median_ms": 11.996926012216136,
+        "p95_ms": 14.7460167601821,
+        "n_warmup": 5,
+        "n_run": 30,
+        "use_kps": false,
+        "pipeline": "detect_only",
+        "note": "Includes preprocess + ORT + decode + NMS"
+      },
+      "input_size": [
+        640,
+        640
+      ],
+      "provider": "CPUExecutionProvider",
+      "wider_dev_ap": {
+        "easy": 90.34836565513997,
+        "medium": 86.79675834124285,
+        "hard": 66.39331988544397,
+        "request_id": "r084_ablD",
+        "num_images": 470,
+        "split": "DEV",
+        "source": "measured_this_run"
+      },
+      "wider_confirmation_ap": {
+        "confirmation": {
+          "easy": 90.22,
+          "medium": 88.01,
+          "hard": 67.88
+        },
+        "source": "historical_r080_CONF_H44b",
+        "note": "Prior CONFIRMATION of combined SVD+nokps; re-validated as D here on DEV"
+      },
+      "landmark_accuracy": {
+        "available": false,
+        "reason": "WIDER Face official eval mats provide box difficulty flags only; no landmark GT in this workspace",
+        "kps_outputs_present": false
+      }
+    }
+  ],
+  "created_utc": "2026-11-15T11:58:32Z"
+}

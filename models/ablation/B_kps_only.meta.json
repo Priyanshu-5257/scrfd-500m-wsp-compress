@@ -1,0 +1,31 @@
+{
+  "name": "B_kps_only",
+  "path": "models/ablation/B_kps_only.onnx",
+  "description": "Baseline with keypoint head/outputs stripped; no SVD",
+  "sha256": "9e62c79fa95844496576c2849fcd042754a21ea136c38a37acc77e485c9a197c",
+  "bytes": 2385065,
+  "params": 591710,
+  "components": {
+    "total": 591710,
+    "backbone_numeric": 549952,
+    "svd_factors": 0,
+    "neck": 24448,
+    "det_head_cls_reg": 17310,
+    "kps_head": 0,
+    "other_constants": 0,
+    "sum_check": 591710
+  },
+  "num_outputs": 6,
+  "outputs": [
+    "443",
+    "468",
+    "493",
+    "446",
+    "471",
+    "496"
+  ],
+  "has_kps_outputs": false,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+}

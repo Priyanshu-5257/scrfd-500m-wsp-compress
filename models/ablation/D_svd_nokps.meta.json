@@ -1,0 +1,31 @@
+{
+  "name": "D_svd_nokps",
+  "path": "models/ablation/D_svd_nokps.onnx",
+  "description": "Rank-96 SVD + KPS strip (combined)",
+  "sha256": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+  "bytes": 1832884,
+  "params": 453470,
+  "components": {
+    "total": 453470,
+    "backbone_numeric": 135232,
+    "svd_factors": 276480,
+    "neck": 24448,
+    "det_head_cls_reg": 17310,
+    "kps_head": 0,
+    "other_constants": 0,
+    "sum_check": 453470
+  },
+  "num_outputs": 6,
+  "outputs": [
+    "443",
+    "468",
+    "493",
+    "446",
+    "471",
+    "496"
+  ],
+  "has_kps_outputs": false,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+}

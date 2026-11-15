@@ -1,0 +1,17 @@
+{
+  "request_id": "r082_ablB",
+  "purpose": "ablation_B_kps_only",
+  "utc": "2026-11-15T11:57:27.290348+00:00",
+  "candidate_hash": "9e62c79fa95844496576c2849fcd042754a21ea136c38a37acc77e485c9a197c",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 273909,
+  "infer_seconds": 21.257117636007024,
+  "ap": {
+    "easy": 91.19868061862468,
+    "medium": 87.2692852388514,
+    "hard": 67.05590191954036
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

@@ -1,0 +1,34 @@
+{
+  "name": "C_svd_only",
+  "path": "models/ablation/C_svd_only.onnx",
+  "description": "Rank-96 SVD factorization of five late PW layers; KPS retained",
+  "sha256": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f",
+  "bytes": 1972636,
+  "params": 488092,
+  "components": {
+    "total": 488092,
+    "backbone_numeric": 135234,
+    "svd_factors": 276480,
+    "neck": 24448,
+    "det_head_cls_reg": 17310,
+    "kps_head": 34620,
+    "other_constants": 0,
+    "sum_check": 488092
+  },
+  "num_outputs": 9,
+  "outputs": [
+    "443",
+    "468",
+    "493",
+    "446",
+    "471",
+    "496",
+    "449",
+    "474",
+    "499"
+  ],
+  "has_kps_outputs": true,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+}

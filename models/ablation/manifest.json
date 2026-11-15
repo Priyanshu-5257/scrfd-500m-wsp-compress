@@ -1,0 +1,138 @@
+{
+  "protocol": "ablation-svd-vs-kps-v1",
+  "baseline_path": "models/det_500m.onnx",
+  "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "rank": 96,
+  "variants": [
+    {
+      "name": "A_baseline",
+      "path": "models/ablation/A_baseline.onnx",
+      "description": "Original SCRFD-500M KPS checkpoint (immutable baseline copy)",
+      "sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+      "bytes": 2524817,
+      "params": 626332,
+      "components": {
+        "total": 626332,
+        "backbone_numeric": 549954,
+        "svd_factors": 0,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 34620,
+        "other_constants": 0,
+        "sum_check": 626332
+      },
+      "num_outputs": 9,
+      "outputs": [
+        "443",
+        "468",
+        "493",
+        "446",
+        "471",
+        "496",
+        "449",
+        "474",
+        "499"
+      ],
+      "has_kps_outputs": true,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    },
+    {
+      "name": "B_kps_only",
+      "path": "models/ablation/B_kps_only.onnx",
+      "description": "Baseline with keypoint head/outputs stripped; no SVD",
+      "sha256": "9e62c79fa95844496576c2849fcd042754a21ea136c38a37acc77e485c9a197c",
+      "bytes": 2385065,
+      "params": 591710,
+      "components": {
+        "total": 591710,
+        "backbone_numeric": 549952,
+        "svd_factors": 0,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 0,
+        "other_constants": 0,
+        "sum_check": 591710
+      },
+      "num_outputs": 6,
+      "outputs": [
+        "443",
+        "468",
+        "493",
+        "446",
+        "471",
+        "496"
+      ],
+      "has_kps_outputs": false,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    },
+    {
+      "name": "C_svd_only",
+      "path": "models/ablation/C_svd_only.onnx",
+      "description": "Rank-96 SVD factorization of five late PW layers; KPS retained",
+      "sha256": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f",
+      "bytes": 1972636,
+      "params": 488092,
+      "components": {
+        "total": 488092,
+        "backbone_numeric": 135234,
+        "svd_factors": 276480,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 34620,
+        "other_constants": 0,
+        "sum_check": 488092
+      },
+      "num_outputs": 9,
+      "outputs": [
+        "443",
+        "468",
+        "493",
+        "446",
+        "471",
+        "496",
+        "449",
+        "474",
+        "499"
+      ],
+      "has_kps_outputs": true,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    },
+    {
+      "name": "D_svd_nokps",
+      "path": "models/ablation/D_svd_nokps.onnx",
+      "description": "Rank-96 SVD + KPS strip (combined)",
+      "sha256": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+      "bytes": 1832884,
+      "params": 453470,
+      "components": {
+        "total": 453470,
+        "backbone_numeric": 135232,
+        "svd_factors": 276480,
+        "neck": 24448,
+        "det_head_cls_reg": 17310,
+        "kps_head": 0,
+        "other_constants": 0,
+        "sum_check": 453470
+      },
+      "num_outputs": 6,
+      "outputs": [
+        "443",
+        "468",
+        "493",
+        "446",
+        "471",
+        "496"
+      ],
+      "has_kps_outputs": false,
+      "onnx_check_ok": true,
+      "onnx_check_err": null,
+      "baseline_sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    }
+  ]
+}
