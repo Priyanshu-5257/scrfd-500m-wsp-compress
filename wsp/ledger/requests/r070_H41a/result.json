@@ -1,0 +1,17 @@
+{
+  "request_id": "r070_H41a",
+  "purpose": "H41a_svd128",
+  "utc": "2026-11-15T10:00:23.278190+00:00",
+  "candidate_hash": "428c3b7599de85e5c6fcb254296fdb0aac0eecbaff71687e8f6f149e48bf4102",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 263687,
+  "infer_seconds": 20.60937396500958,
+  "ap": {
+    "easy": 90.80563063909601,
+    "medium": 87.02382749225572,
+    "hard": 66.78908973217688
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

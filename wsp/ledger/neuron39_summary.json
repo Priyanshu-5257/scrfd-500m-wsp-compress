@@ -1,0 +1,40 @@
+{
+  "culprit_neuron": 39,
+  "mechanism": "Stride-8 stem feature ch39 is the strongest excitatory classifier input (cls push=+1.45). It raises face scores on clutter; zeroing its cls8 readout cuts Hard FPs. Causal: ablate cls read +0.10 Hard; stem silence alone ~0; control ch47 null.",
+  "fix": "scale_in_channels cls8.weight ch39 -> 0; plus mul_kernel center 1.25 on cls8+reg8 weights",
+  "candidate_hash": "4f6114ebe7968865db22bc6f77f49f87e2a002b2acd7f8397c47a2c679b614dc",
+  "DEV": {
+    "baseline": {
+      "easy": 91.19868061862468,
+      "medium": 87.2692852388514,
+      "hard": 67.05590191954036
+    },
+    "H31": {
+      "easy": 91.50084425307571,
+      "medium": 87.14933686495334,
+      "hard": 67.68434145899106
+    },
+    "delta_hard": 0.6284395394506959
+  },
+  "CONFIRMATION_contaminated": {
+    "note": "Holdout previously unsealed for H27; not independent confirmation",
+    "baseline": {
+      "easy": 90.65106680976643,
+      "medium": 88.36979281073314,
+      "hard": 68.59295799655057
+    },
+    "H31": {
+      "easy": 90.82020709317216,
+      "medium": 87.92658026661374,
+      "hard": 68.31064758139863
+    },
+    "delta_hard": -0.2823104151519402
+  },
+  "ablation_ladder": {
+    "H28_ch10_inhibitor": "falsified as Hard cause (dets up, Hard flat)",
+    "H29_ch39_excitatory": "+0.10 Hard causal",
+    "H30_reg_diffuse": "tiny recall up, Hard down",
+    "H31_stack": "+0.63 Hard best",
+    "H32_stem_silence": "~0 (cls readout is the lesion site, not feature production)"
+  }
+}

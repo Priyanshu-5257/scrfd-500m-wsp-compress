@@ -1,0 +1,36 @@
+{
+  "name": "H4_finest_fpn_gain_1.60",
+  "hypothesis_id": "H4",
+  "ops": [
+    {
+      "tensor": "neck.lateral_convs.0.conv.weight",
+      "op": "mul_scalar",
+      "value": 1.6
+    },
+    {
+      "tensor": "neck.lateral_convs.0.conv.bias",
+      "op": "mul_scalar",
+      "value": 1.6
+    },
+    {
+      "tensor": "neck.fpn_convs.0.conv.weight",
+      "op": "mul_scalar",
+      "value": 1.6
+    },
+    {
+      "tensor": "neck.fpn_convs.0.conv.bias",
+      "op": "mul_scalar",
+      "value": 1.6
+    },
+    {
+      "tensor": "neck.pafpn_convs.0.conv.weight",
+      "op": "mul_scalar",
+      "value": 1.6
+    },
+    {
+      "tensor": "neck.pafpn_convs.0.conv.bias",
+      "op": "mul_scalar",
+      "value": 1.6
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "selected": "H27_H23_plus_H3",
+  "candidate_hash": "2e2ccbc4fe40632dd8eb3a92814135ad2185160433f6c33aa7efc791ff8bf51f",
+  "edit": "mul_kernel center 1.25 on cls8+reg8 weights; add_vector H3 equalize on cls8 bias",
+  "DEV": {
+    "baseline": {
+      "easy": 91.19868061862468,
+      "medium": 87.2692852388514,
+      "hard": 67.05590191954036
+    },
+    "H27": {
+      "easy": 91.14619636935473,
+      "medium": 87.57690958837749,
+      "hard": 67.57147000059277
+    },
+    "delta_hard": 0.5155680810524075
+  },
+  "CONFIRMATION": {
+    "baseline": {
+      "easy": 90.65106680976643,
+      "medium": 88.36979281073314,
+      "hard": 68.59295799655057
+    },
+    "H27": {
+      "easy": 90.8317125020032,
+      "medium": 88.48343028079853,
+      "hard": 68.28881413272737
+    },
+    "delta_hard": -0.30414386382319947
+  },
+  "gate_DEV_hard_ge_0.5": true,
+  "preservation_DEV": {
+    "easy_drop": 0.05248424926995199,
+    "medium_drop": -0.30762434952609397
+  }
+}

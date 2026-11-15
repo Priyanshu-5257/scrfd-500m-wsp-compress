@@ -1,0 +1,17 @@
+{
+  "request_id": "r057_H32_stem39_035",
+  "purpose": "H32_stem39_0.35",
+  "utc": "2026-11-15T07:27:13.303770+00:00",
+  "candidate_hash": "3ecebac724c386e624115c8b3beebbe8f3a219576c8a0d2ebd4e9ec498656201",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 272541,
+  "infer_seconds": 22.182602503016824,
+  "ap": {
+    "easy": 91.36013470969274,
+    "medium": 86.99490443047408,
+    "hard": 67.09390382251325
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

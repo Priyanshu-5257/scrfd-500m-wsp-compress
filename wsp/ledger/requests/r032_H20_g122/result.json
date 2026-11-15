@@ -1,0 +1,17 @@
+{
+  "request_id": "r032_H20_g122",
+  "purpose": "H20_stem8_1.22",
+  "utc": "2026-11-15T06:55:46.075406+00:00",
+  "candidate_hash": "f9b0f7b5f4d46709823b2b2b340bbc91cc00d44f9eeefd18307bba0e14ab04d3",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 404094,
+  "infer_seconds": 28.93770872600726,
+  "ap": {
+    "easy": 76.79944680250068,
+    "medium": 79.74649608148846,
+    "hard": 57.867300591662364
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

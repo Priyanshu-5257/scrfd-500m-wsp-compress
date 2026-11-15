@@ -1,0 +1,17 @@
+{
+  "request_id": "r006_H3_eq",
+  "purpose": "H3_equalize_anchors",
+  "utc": "2026-11-15T06:26:35.509714+00:00",
+  "candidate_hash": "fdd72ad985ccffd0cfd7a180df226cfe07d7dd822768b6b79f2fc49985e67846",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 294583,
+  "infer_seconds": 23.787617331021465,
+  "ap": {
+    "easy": 91.61602457064224,
+    "medium": 87.65887279988522,
+    "hard": 66.96317598738703
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

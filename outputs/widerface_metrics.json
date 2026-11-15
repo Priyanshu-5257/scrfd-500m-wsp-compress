@@ -1,0 +1,35 @@
+{
+  "num_images": 3226,
+  "num_detections": 1703642,
+  "infer_seconds": 129.24947063901345,
+  "images_per_sec": 24.959483269452125,
+  "input_size": [
+    640,
+    640
+  ],
+  "score_thresh": 0.02,
+  "nms_thresh": 0.45,
+  "model": "models/compressed/det_500m_svd96_nokps.onnx",
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "use_kps": false,
+  "ap": {
+    "easy": 90.23544375606735,
+    "medium": 87.84136367346518,
+    "hard": 67.67473340672974
+  },
+  "published_reference_percent": {
+    "SCRFD_500M": {
+      "easy": 90.57,
+      "medium": 88.12,
+      "hard": 68.51
+    },
+    "SCRFD_500M_KPS": {
+      "easy": 90.97,
+      "medium": 88.44,
+      "hard": 69.49
+    }
+  },
+  "note": "buffalo_s/sc det_500m.onnx is the KPS variant; compare primarily to SCRFD_500M_KPS. This harness uses letterboxed input (default 640x640), score_thr=0.02, nms=0.45, IoU=0.5."
+}

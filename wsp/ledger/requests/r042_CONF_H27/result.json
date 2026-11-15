@@ -1,0 +1,16 @@
+{
+  "request_id": "r042_CONF_H27",
+  "purpose": "CONFIRMATION_H27",
+  "utc": "2026-11-15T07:08:30.280460+00:00",
+  "candidate_hash": "2e2ccbc4fe40632dd8eb3a92814135ad2185160433f6c33aa7efc791ff8bf51f",
+  "split": "CONFIRMATION",
+  "confirmation_manifest_sha256": "295ca7e86158a4748699410a7546a2b86f8d90845b8890e95f959d9f12055d52",
+  "num_images": 2756,
+  "num_detections": 1311323,
+  "infer_seconds": 118.13809102599043,
+  "ap": {
+    "easy": 90.8317125020032,
+    "medium": 88.48343028079853,
+    "hard": 68.28881413272737
+  }
+}

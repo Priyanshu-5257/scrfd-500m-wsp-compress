@@ -1,0 +1,16 @@
+{
+  "request_id": "r060_CONF_H31_contaminated",
+  "purpose": "CONFIRMATION_H31_after_prior_unseal",
+  "utc": "2026-11-15T07:31:50.250042+00:00",
+  "candidate_hash": "4f6114ebe7968865db22bc6f77f49f87e2a002b2acd7f8397c47a2c679b614dc",
+  "split": "CONFIRMATION",
+  "confirmation_manifest_sha256": "295ca7e86158a4748699410a7546a2b86f8d90845b8890e95f959d9f12055d52",
+  "num_images": 2756,
+  "num_detections": 1423162,
+  "infer_seconds": 122.2993151609844,
+  "ap": {
+    "easy": 90.82020709317216,
+    "medium": 87.92658026661374,
+    "hard": 68.31064758139863
+  }
+}

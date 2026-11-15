@@ -1,0 +1,17 @@
+{
+  "request_id": "r046_H28ctrl_ch47",
+  "purpose": "H28ctrl_ch47_beta_0",
+  "utc": "2026-11-15T07:18:49.472529+00:00",
+  "candidate_hash": "c601b0f86474445f20ed37ce4e00ebbdc177527eb85bffc6c0bb9ee42e03de7e",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 278446,
+  "infer_seconds": 23.016532459994778,
+  "ap": {
+    "easy": 91.20901513145247,
+    "medium": 87.2788174222334,
+    "hard": 67.03309117080065
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

@@ -1,0 +1,73 @@
+{
+  "outcome": "negative_result",
+  "selected": "baseline",
+  "selected_hash": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "reason": "No manual edit met minimum Hard AP gain 0.5 on DEV; H1-H3 falsified or negligible.",
+  "requests_used": 7,
+  "confirmation_consumed": false,
+  "rows": [
+    {
+      "request_id": "r000_baseline",
+      "ap": {
+        "easy": 91.19868061862468,
+        "medium": 87.2692852388514,
+        "hard": 67.05590191954036
+      },
+      "candidate_hash": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    },
+    {
+      "request_id": "r001_H1_a015",
+      "ap": {
+        "easy": 90.90471467228268,
+        "medium": 87.18235789364117,
+        "hard": 67.06766200776373
+      },
+      "candidate_hash": "e6a873f9810830c6b46f99615e9c6620d85dd4ff0b84ebfdd274c0e3b883e37f"
+    },
+    {
+      "request_id": "r002_H1_a030",
+      "ap": {
+        "easy": 90.43297643573158,
+        "medium": 86.99255895865579,
+        "hard": 67.0194702112514
+      },
+      "candidate_hash": "692ce5a2d6a2a1caaa7d8102014edd9c1891251dbe01c90774289b8576f1edd3"
+    },
+    {
+      "request_id": "r003_H1_a045",
+      "ap": {
+        "easy": 89.91884108310725,
+        "medium": 86.80737231077212,
+        "hard": 66.97334698780232
+      },
+      "candidate_hash": "5eb9629b3089112b461cdd6a1a8f003cef0585a5690b3ef78cf77fc0978d65a1"
+    },
+    {
+      "request_id": "r004_H2_b110",
+      "ap": {
+        "easy": 91.14819980724717,
+        "medium": 87.24026366964024,
+        "hard": 67.00512061904999
+      },
+      "candidate_hash": "30b9c11f2b42ff1f6592017715fde62bf7a6dd5395ff622b790920df8ba9b40e"
+    },
+    {
+      "request_id": "r005_H2_b120",
+      "ap": {
+        "easy": 91.13222971123305,
+        "medium": 87.2679377586598,
+        "hard": 66.98345719839433
+      },
+      "candidate_hash": "a7f0279e8ff8253480fd0c688e5693e4f13ee04077dff7b4588a399237025b6d"
+    },
+    {
+      "request_id": "r006_H3_eq",
+      "ap": {
+        "easy": 91.61602457064224,
+        "medium": 87.65887279988522,
+        "hard": 66.96317598738703
+      },
+      "candidate_hash": "fdd72ad985ccffd0cfd7a180df226cfe07d7dd822768b6b79f2fc49985e67846"
+    }
+  ]
+}

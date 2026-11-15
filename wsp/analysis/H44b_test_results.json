@@ -1,0 +1,57 @@
+{
+  "model": "models/compressed/det_500m_svd96_nokps.onnx",
+  "params": 453470,
+  "params_vs_base": {
+    "base": 626332,
+    "frac_saved": 0.276
+  },
+  "note": "Official WIDER Face test GT is not public; scored CONFIRMATION holdout + full WIDER val.",
+  "confirmation_holdout": {
+    "n_images": 2756,
+    "baseline_det500m": {
+      "easy": 90.65,
+      "medium": 88.37,
+      "hard": 68.59
+    },
+    "H44b": {
+      "easy": 90.22,
+      "medium": 88.01,
+      "hard": 67.88
+    },
+    "drop": {
+      "easy": 0.43,
+      "medium": 0.36,
+      "hard": 0.71
+    }
+  },
+  "full_wider_val": {
+    "n_images": 3226,
+    "H44b": {
+      "easy": 90.24,
+      "medium": 87.84,
+      "hard": 67.67
+    },
+    "published_SCRFD_500M_KPS": {
+      "easy": 90.97,
+      "medium": 88.44,
+      "hard": 69.49
+    },
+    "local_base_approx": {
+      "easy": 90.72,
+      "medium": 88.21,
+      "hard": 68.38
+    }
+  },
+  "dev": {
+    "baseline": {
+      "easy": 91.2,
+      "medium": 87.27,
+      "hard": 67.06
+    },
+    "H44b": {
+      "easy": 90.35,
+      "medium": 86.8,
+      "hard": 66.39
+    }
+  }
+}

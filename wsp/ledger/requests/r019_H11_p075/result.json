@@ -1,0 +1,17 @@
+{
+  "request_id": "r019_H11_p075",
+  "purpose": "H11_pafpn0_gamma_0.75",
+  "utc": "2026-11-15T06:44:07.891621+00:00",
+  "candidate_hash": "68e6ee52d026b00239bb727de9c15f939655df022efdea07fb396e2eb4ca7fa6",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 271883,
+  "infer_seconds": 22.486063749995083,
+  "ap": {
+    "easy": 89.81329265553715,
+    "medium": 86.74830458422265,
+    "hard": 66.95620807205746
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

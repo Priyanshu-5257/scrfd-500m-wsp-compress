@@ -1,0 +1,17 @@
+{
+  "tag": "H44b_svd96_nokps",
+  "params": 453470,
+  "frac_saved": 0.276,
+  "ap": {
+    "easy": 90.35,
+    "medium": 86.8,
+    "hard": 66.39
+  },
+  "drop": {
+    "easy": 0.85,
+    "medium": 0.47,
+    "hard": 0.67
+  },
+  "compress_success": true,
+  "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55"
+}

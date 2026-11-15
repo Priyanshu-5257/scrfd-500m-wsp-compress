@@ -1,0 +1,11 @@
+{
+  "name": "H2_cls8_weight_mul_1.20",
+  "hypothesis_id": "H2",
+  "ops": [
+    {
+      "tensor": "bbox_head.stride_cls.(8, 8).weight",
+      "op": "mul_scalar",
+      "value": 1.2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# Notices
+
+## SCRFD / InsightFace weights
+
+`models/det_500m.onnx` is the InsightFace buffalo_s SCRFD-500M (KPS) detector.
+Upstream: https://github.com/deepinsight/insightface
+
+Use of those weights is subject to InsightFace’s license and terms. This
+repository’s compression scripts and derived `models/compressed/*` weights are
+provided for research; redistribute upstream weights only as allowed by
+InsightFace.
+
+## WIDER Face
+
+Evaluation uses the WIDER Face validation set and official eval mats.
+Dataset: http://shuoyang1213.me/WIDERFACE/
+Not redistributed in this repo (`data/` is gitignored).

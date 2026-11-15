@@ -1,0 +1,17 @@
+{
+  "request_id": "r021_H9_g125",
+  "purpose": "H9_bb72_gamma_1.25",
+  "utc": "2026-11-15T06:46:56.772280+00:00",
+  "candidate_hash": "184c3bf4fb062f332f4e5df2747fde23a5d516570598e0b68a0e6dfeb50f5b71",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 1246355,
+  "infer_seconds": 79.55996447900543,
+  "ap": {
+    "easy": 62.94756797192221,
+    "medium": 65.41153952807593,
+    "hard": 41.63816119131911
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

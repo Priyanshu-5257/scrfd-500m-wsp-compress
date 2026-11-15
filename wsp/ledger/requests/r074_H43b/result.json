@@ -1,0 +1,17 @@
+{
+  "request_id": "r074_H43b",
+  "purpose": "H43b_id_b1",
+  "utc": "2026-11-15T10:07:57.440356+00:00",
+  "candidate_hash": "aeaea34cc9dfeee2479235b2f818c2dab6e31c435429a26e6046f53001666bed",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 409458,
+  "infer_seconds": 28.38220408599591,
+  "ap": {
+    "easy": 62.575422213661994,
+    "medium": 64.32821148283213,
+    "hard": 42.10812452505874
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

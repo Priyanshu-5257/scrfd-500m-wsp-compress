@@ -1,0 +1,17 @@
+{
+  "request_id": "r007_H4_g120",
+  "purpose": "H4_gamma_1.20",
+  "utc": "2026-11-15T06:29:41.968662+00:00",
+  "candidate_hash": "f20fafd7e300862539d908c9d892bd4ae34ac0b47b5a99df0793cdf5e5c194e8",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 328424,
+  "infer_seconds": 26.371845490008127,
+  "ap": {
+    "easy": 90.9063702217004,
+    "medium": 87.35285790278462,
+    "hard": 66.11875355058537
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

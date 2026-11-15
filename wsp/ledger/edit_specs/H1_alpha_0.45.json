@@ -1,0 +1,11 @@
+{
+  "name": "H1_cls8_bias_add_0.45",
+  "hypothesis_id": "H1",
+  "ops": [
+    {
+      "tensor": "bbox_head.stride_cls.(8, 8).bias",
+      "op": "add_scalar",
+      "value": 0.45
+    }
+  ]
+}

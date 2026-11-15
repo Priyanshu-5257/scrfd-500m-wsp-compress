@@ -1,0 +1,17 @@
+{
+  "request_id": "r072_H41c",
+  "purpose": "H41c_svd64",
+  "utc": "2026-11-15T10:01:44.671780+00:00",
+  "candidate_hash": "87d7abaf9ba48e2efa9e5f15893a38bf155d33418352f3a89956ebd131d187d9",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 228695,
+  "infer_seconds": 20.48550122298184,
+  "ap": {
+    "easy": 87.8421742187153,
+    "medium": 85.46942560059763,
+    "hard": 64.6390558490306
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

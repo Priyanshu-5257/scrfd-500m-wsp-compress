@@ -1,0 +1,16 @@
+{
+  "name": "H6_reg8_16_bias_expand_0.16",
+  "hypothesis_id": "H6",
+  "ops": [
+    {
+      "tensor": "bbox_head.stride_reg.(8, 8).bias",
+      "op": "add_scalar",
+      "value": 0.16
+    },
+    {
+      "tensor": "bbox_head.stride_reg.(16, 16).bias",
+      "op": "add_scalar",
+      "value": 0.1
+    }
+  ]
+}

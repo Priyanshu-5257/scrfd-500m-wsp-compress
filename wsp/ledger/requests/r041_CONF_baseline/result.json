@@ -1,0 +1,16 @@
+{
+  "request_id": "r041_CONF_baseline",
+  "purpose": "CONFIRMATION_baseline",
+  "utc": "2026-11-15T07:05:30.274618+00:00",
+  "candidate_hash": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "split": "CONFIRMATION",
+  "confirmation_manifest_sha256": "295ca7e86158a4748699410a7546a2b86f8d90845b8890e95f959d9f12055d52",
+  "num_images": 2756,
+  "num_detections": 1508292,
+  "infer_seconds": 126.94560227700276,
+  "ap": {
+    "easy": 90.65106680976643,
+    "medium": 88.36979281073314,
+    "hard": 68.59295799655057
+  }
+}

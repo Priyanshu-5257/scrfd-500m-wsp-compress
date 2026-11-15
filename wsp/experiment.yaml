@@ -1,0 +1,172 @@
+protocol: strict-wsp-v1
+task: COMPRESS
+observation_profile: bounded-behavior
+run_id: scrfd500m-compress-width-001
+editor:
+  model: cursor-composer
+  settings: instruction-only-compliance
+base:
+  model_id: insightface-buffalo_s-det_500m.onnx
+  revision: file-sha256:5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a
+  hashes: wsp/analysis/base_tensor_manifest.json
+  tensor_manifest_sha256: 71f856ff57dfad6aa9bf87a338769c1d449744cf181731dfbc3cfa46aac7690e
+architecture:
+  code_revision: local-onnx-scrfd500m-kps
+  family: MobileNetV1-PAFPN-SCRFDHead
+  dtype: float32
+  frozen_graph: false
+  architecture_change: structured-width-prune-late-backbone-288
+  note: Separate from failed REPAIR run; graph shapes may change via channel slice.
+inference:
+  engine: onnxruntime-CPUExecutionProvider
+  hardware: local-cpu
+  input_size:
+  - 640
+  - 640
+  score_thresh: 0.02
+  nms_thresh: 0.45
+  iou_thresh: 0.5
+  grader: widerface-easy-medium-hard-ap-v1
+editable_tensors:
+- bbox_head.stride_cls.(8, 8).bias
+- bbox_head.stride_cls.(8, 8).weight
+- bbox_head.stride_cls.(16, 16).bias
+- bbox_head.stride_cls.(16, 16).weight
+- bbox_head.stride_cls.(32, 32).bias
+- bbox_head.stride_cls.(32, 32).weight
+- bbox_head.stride_reg.(8, 8).bias
+- bbox_head.stride_reg.(8, 8).weight
+- bbox_head.stride_reg.(16, 16).bias
+- bbox_head.stride_reg.(16, 16).weight
+- bbox_head.stride_reg.(32, 32).bias
+- bbox_head.stride_reg.(32, 32).weight
+- neck.lateral_convs.0.conv.weight
+- neck.lateral_convs.0.conv.bias
+- neck.fpn_convs.0.conv.weight
+- neck.fpn_convs.0.conv.bias
+- neck.pafpn_convs.0.conv.weight
+- neck.pafpn_convs.0.conv.bias
+- neck.lateral_convs.1.conv.weight
+- neck.lateral_convs.1.conv.bias
+- neck.fpn_convs.1.conv.weight
+- neck.pafpn_convs.1.conv.weight
+- neck.pafpn_convs.1.conv.bias
+- neck.lateral_convs.2.conv.weight
+- neck.lateral_convs.2.conv.bias
+- neck.fpn_convs.2.conv.weight
+- neck.downsample_convs.0.conv.weight
+- neck.downsample_convs.0.conv.bias
+- '578'
+- '580'
+- '582'
+- '584'
+- '586'
+- '588'
+- '590'
+- '592'
+- '594'
+- '596'
+- '598'
+- '600'
+- '662'
+- '664'
+- '666'
+- '668'
+- '670'
+- '672'
+- '674'
+- '676'
+protected_state:
+- backbone-except-72ch-stage-578to600
+- bbox_head.stride_kps.*
+- graph-structure
+- input-preprocessing
+- nms-and-decode-hyperparameters
+- neck-tensors-not-in-allowlist
+data:
+  development: wsp/splits/dev.json
+  confirmation: wsp/splits/confirmation.json
+  confirmation_seal: wsp/splits/CONFIRMATION_SEALED.txt
+  external_test: unavailable-widerface-test-server
+  split_rule: sha256('widerface-val-v1|' + event) % 5 == 0 -> DEV else CONFIRMATION
+objective:
+  primary_metric: parameter_count
+  minimum_param_reduction_frac: 0.15
+  secondary_metric: hard_ap_percent_on_DEV
+  preservation_limits:
+    easy_ap_drop_max: 2.0
+    medium_ap_drop_max: 2.0
+    hard_ap_drop_max: 2.0
+  baseline_ap_dev:
+    easy: 91.2
+    medium: 87.27
+    hard: 67.06
+  baseline_params: 626332
+budget:
+  successful_requests: 90
+  reserved_confirmation_requests: 3
+  code_runs: 320
+  candidate_variants: 6
+  wall_time_hours: 6
+budget_amendment_compress:
+  reason: New COMPRESS experiment after REPAIR Hard-AP transfer failure; structured
+    288-ch width prune H39a/b/c (256/224/192).
+  previous_successful_requests: 68
+observation_fields:
+- easy_ap
+- medium_ap
+- hard_ap
+- num_images
+- num_detections
+- infer_seconds
+tools:
+  analysis: wsp/harness.py
+  evaluator: wsp/harness.py::evaluate_candidate
+  network_during_run: false
+  delegation: false
+enforcement: instruction-only
+baseline_hash: 5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a
+current_candidate_hash: ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55
+selected_candidate_hash: ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55
+requests_used: 84
+confirmation_consumed: true
+notes:
+- No gradients, training, distillation, or automated weight search.
+- Manual algebraic edits only; predeclare variant strengths before scoring.
+- CONFIRMATION remains sealed until freeze_submission.
+- 'Allowlist amendment: 72ch MobileNet stage (578-600) feeds neck.lateral0 for stride-8
+  tiny faces.'
+- 'Allowlist amendment: stride-8 head stem 662-676 (16dw->64pw->64dw->64pw) feeds
+  only cls8/reg8.'
+- 'COMPRESS selected H41b_svd96: 488092 params (22.1% saved); DEV AP {''easy'': 90.35,
+  ''medium'': 86.8, ''hard'': 66.39}'
+budget_amendment:
+  reason: Continue after negative head-only pilot; Hard misses are tiny faces needing
+    FPN/high-res pathway edits.
+  previous_successful_requests: 10
+budget_amendment_2:
+  reason: Continue exploration after H7; near-misses are miscentered+oversized tiny
+    faces; try anchor-selective reg, pafpn attenuate, 72ch amplify
+  previous_successful_requests: 16
+budget_amendment_3:
+  reason: H9-H11 exhausted pilot budget without Hard gain; continue with localization/ranking
+    hypotheses (reg-weight dampen, small-anchor cls, mild lateral0). Reserve 3 for
+    confirmation.
+  previous_successful_requests: 24
+budget_amendment_4:
+  reason: H20 stem amplify failed; try precision-oriented edits (cls suppress, stem
+    attenuate, center-focused cls kernels)
+  previous_successful_requests: 35
+freeze_note: "COMPRESS H44b: SVD r=96 PW factor + strip KPS; DEV \u221227.6% params,\
+  \ AP within \xB12"
+budget_amendment_5:
+  reason: 'Neuron-level H28: ablate cls8 input ch10 (max-stem, diffuse inhibitor)
+    with ch47 control'
+  previous_successful_requests: 45
+budget_amendment_6:
+  reason: H31 neuron+center win (+0.63 Hard); finish H33/H34 and freeze
+  previous: 60
+budget_amendment_7:
+  reason: 'Frontier council: drop fragile H23; surgical ch39 variants (a0-only, mild
+    attenuate, cls-only center)'
+  previous: 63

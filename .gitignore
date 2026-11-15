@@ -1,0 +1,24 @@
+# Local datasets (WIDER Face — download separately)
+data/
+
+# Predictions / temp outputs
+outputs/**
+!outputs/.gitkeep
+!outputs/widerface_metrics.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Harness temps
+wsp/candidates/_tmp*
+*.onnx.tmp

@@ -1,0 +1,16 @@
+{
+  "request_id": "r080_CONF_H44b",
+  "purpose": "CONFIRMATION_H44b_svd96_nokps",
+  "utc": "2026-11-15T10:17:33.947326+00:00",
+  "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+  "split": "CONFIRMATION",
+  "confirmation_manifest_sha256": "295ca7e86158a4748699410a7546a2b86f8d90845b8890e95f959d9f12055d52",
+  "num_images": 2756,
+  "num_detections": 1444767,
+  "infer_seconds": 107.87991963600507,
+  "ap": {
+    "easy": 90.22292768697756,
+    "medium": 88.01465613155503,
+    "hard": 67.87852156718095
+  }
+}

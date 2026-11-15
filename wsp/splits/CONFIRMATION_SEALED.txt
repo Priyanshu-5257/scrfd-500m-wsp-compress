@@ -1,0 +1,4 @@
+CONFIRMATION unsealed after freeze_submission.
+selected_candidate_hash=ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55
+frozen_utc=2026-11-15T10:14:42.022804+00:00
+note=COMPRESS H44b: SVD r=96 PW factor + strip KPS; DEV −27.6% params, AP within ±2

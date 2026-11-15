@@ -1,0 +1,17 @@
+{
+  "request_id": "r049_H29_ch39_060",
+  "purpose": "H29_ch39_0.6",
+  "utc": "2026-11-15T07:21:26.014979+00:00",
+  "candidate_hash": "7fbfc4eab64ba4cbf21c7e3ec7290cd94b1087570508b663b5b96323a90470cc",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 272630,
+  "infer_seconds": 22.62742992301355,
+  "ap": {
+    "easy": 91.313838515834,
+    "medium": 87.16410906078889,
+    "hard": 67.1253749813678
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

@@ -1,0 +1,170 @@
+{
+  "experiment": "COMPRESS-scrfd500m-001",
+  "baseline": {
+    "easy": 91.2,
+    "medium": 87.27,
+    "hard": 67.06,
+    "params": 626332
+  },
+  "preservation_limits": {
+    "easy": 2.0,
+    "medium": 2.0,
+    "hard": 2.0
+  },
+  "minimum_param_reduction_frac": 0.15,
+  "variants": [
+    {
+      "request_id": "r066_H39a",
+      "tag": "H39a_width256",
+      "candidate_hash": "d2c18f5cfcc36230f753ab30b3ccab2f5a7187862ea5a63113e4f393e01e67ac",
+      "params": 532124,
+      "frac_saved": 0.1504,
+      "ap": {
+        "easy": 88.28,
+        "medium": 85.21,
+        "hard": 62.59
+      },
+      "drop": {
+        "easy": 2.92,
+        "medium": 2.06,
+        "hard": 4.47
+      },
+      "preserve_ok": false,
+      "compress_success": false
+    },
+    {
+      "request_id": "r067_H39b",
+      "tag": "H39b_width224",
+      "candidate_hash": "e17003d58b19000c8403e99d796d2cd2cb59a9a5255b288ec2c9c9bffbba2541",
+      "params": 448156,
+      "frac_saved": 0.2845,
+      "ap": {
+        "easy": 82.95,
+        "medium": 81.64,
+        "hard": 56.29
+      },
+      "drop": {
+        "easy": 8.25,
+        "medium": 5.63,
+        "hard": 10.77
+      },
+      "preserve_ok": false,
+      "compress_success": false
+    },
+    {
+      "request_id": "r068_H39c",
+      "tag": "H39c_width192",
+      "candidate_hash": "8cc55f3cb070c7c40b5ca1d07769c2ffee35e31390a8db031c235861cf825503",
+      "params": 374428,
+      "frac_saved": 0.4022,
+      "ap": {
+        "easy": 74.47,
+        "medium": 76.32,
+        "hard": 49.36
+      },
+      "drop": {
+        "easy": 16.73,
+        "medium": 10.95,
+        "hard": 17.7
+      },
+      "preserve_ok": false,
+      "compress_success": false
+    },
+    {
+      "request_id": "r069_H40a",
+      "tag": "H40a_depth1",
+      "candidate_hash": "e8d99833569dc79ec9a52deef084a48de790fdc679bf710f1479d26c8e8b626f",
+      "params": 540220,
+      "frac_saved": 0.1375,
+      "ap": {
+        "easy": 72.57,
+        "medium": 74.72,
+        "hard": 50.54
+      },
+      "drop": {
+        "easy": 18.63,
+        "medium": 12.55,
+        "hard": 16.52
+      },
+      "preserve_ok": false,
+      "compress_success": false
+    },
+    {
+      "request_id": "r070_H41a",
+      "tag": "H41a_svd128",
+      "candidate_hash": "428c3b7599de85e5c6fcb254296fdb0aac0eecbaff71687e8f6f149e48bf4102",
+      "params": 580252,
+      "frac_saved": 0.0736,
+      "ap": {
+        "easy": 90.81,
+        "medium": 87.02,
+        "hard": 66.79
+      },
+      "drop": {
+        "easy": 0.39,
+        "medium": 0.25,
+        "hard": 0.27
+      },
+      "preserve_ok": true,
+      "compress_success": false
+    },
+    {
+      "request_id": "r071_H41b",
+      "tag": "H41b_svd96",
+      "candidate_hash": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f",
+      "params": 488092,
+      "frac_saved": 0.2207,
+      "ap": {
+        "easy": 90.35,
+        "medium": 86.8,
+        "hard": 66.39
+      },
+      "drop": {
+        "easy": 0.85,
+        "medium": 0.47,
+        "hard": 0.67
+      },
+      "preserve_ok": true,
+      "compress_success": true
+    },
+    {
+      "request_id": "r072_H41c",
+      "tag": "H41c_svd64",
+      "candidate_hash": "87d7abaf9ba48e2efa9e5f15893a38bf155d33418352f3a89956ebd131d187d9",
+      "params": 395932,
+      "frac_saved": 0.3679,
+      "ap": {
+        "easy": 87.84,
+        "medium": 85.47,
+        "hard": 64.64
+      },
+      "drop": {
+        "easy": 3.36,
+        "medium": 1.8,
+        "hard": 2.42
+      },
+      "preserve_ok": false,
+      "compress_success": false
+    }
+  ],
+  "selected": {
+    "request_id": "r071_H41b",
+    "tag": "H41b_svd96",
+    "candidate_hash": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f",
+    "params": 488092,
+    "frac_saved": 0.2207,
+    "ap": {
+      "easy": 90.35,
+      "medium": 86.8,
+      "hard": 66.39
+    },
+    "drop": {
+      "easy": 0.85,
+      "medium": 0.47,
+      "hard": 0.67
+    },
+    "preserve_ok": true,
+    "compress_success": true
+  },
+  "verdict": "SUCCESS: H41b_svd96 saves 22.1% params with DEV AP drops E/M/H=0.85/0.47/0.67"
+}

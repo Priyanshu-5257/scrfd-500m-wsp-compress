@@ -1,0 +1,14 @@
+{
+  "name": "H3_cls8_bias_equalize_anchors",
+  "hypothesis_id": "H3",
+  "ops": [
+    {
+      "tensor": "bbox_head.stride_cls.(8, 8).bias",
+      "op": "add_vector",
+      "value": [
+        0.0,
+        0.16641056537628174
+      ]
+    }
+  ]
+}

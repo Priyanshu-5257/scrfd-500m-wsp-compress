@@ -1,0 +1,18 @@
+{
+  "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55",
+  "tag": "H44b_svd96_nokps",
+  "parent": "wsp/candidates/f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f/model.onnx",
+  "params_before": 488092,
+  "params_after": 453470,
+  "params_saved": 34622,
+  "onnx_check_ok": true,
+  "onnx_check_err": null,
+  "outputs": [
+    "443",
+    "468",
+    "493",
+    "446",
+    "471",
+    "496"
+  ]
+}

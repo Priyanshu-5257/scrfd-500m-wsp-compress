@@ -1,0 +1,17 @@
+{
+  "request_id": "r016_H10_a1_010",
+  "purpose": "H10_anchor1_eps_-0.1",
+  "utc": "2026-11-15T06:40:50.840128+00:00",
+  "candidate_hash": "d197a1f5905b92a7d4bdbc94cb684d576cef6312e807e733813261c81c88a89d",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 266639,
+  "infer_seconds": 22.223528886999702,
+  "ap": {
+    "easy": 90.73660673231893,
+    "medium": 86.95631310626342,
+    "hard": 66.87700102708433
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

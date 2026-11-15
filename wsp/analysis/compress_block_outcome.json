@@ -1,0 +1,163 @@
+{
+  "manual_block_check": {
+    "s288_b1_b4": "each 86112 params; none near-identity; removing any collapses Hard ~-22",
+    "pw_to_identity": "same collapse",
+    "kps_head": "34620 params unused by WIDER AP; strip is free (H44a AP==baseline)"
+  },
+  "variants": [
+    {
+      "tag": "H42b_rm_b2",
+      "params": 540220,
+      "frac_saved": 0.1375,
+      "ap": {
+        "easy": 64.71,
+        "medium": 66.07,
+        "hard": 42.79
+      },
+      "drop": {
+        "easy": 26.49,
+        "medium": 21.2,
+        "hard": 24.27
+      },
+      "compress_success": false,
+      "candidate_hash": "66dcaf5ff24a7ade68956ea2b799d93af492f55c19d9b13bdaa36e7a245145e7"
+    },
+    {
+      "tag": "H43b_id_b1",
+      "params": 543100,
+      "frac_saved": 0.1329,
+      "ap": {
+        "easy": 62.58,
+        "medium": 64.33,
+        "hard": 42.11
+      },
+      "drop": {
+        "easy": 28.62,
+        "medium": 22.94,
+        "hard": 24.95
+      },
+      "compress_success": false,
+      "candidate_hash": "aeaea34cc9dfeee2479235b2f818c2dab6e31c435429a26e6046f53001666bed"
+    },
+    {
+      "tag": "H42a_rm_b1",
+      "params": 540220,
+      "frac_saved": 0.1375,
+      "ap": {
+        "easy": 69.23,
+        "medium": 70.64,
+        "hard": 45.84
+      },
+      "drop": {
+        "easy": 21.97,
+        "medium": 16.63,
+        "hard": 21.22
+      },
+      "compress_success": false,
+      "candidate_hash": "07e84ca3a638c94ccdd748c8539d2805543a67877251ea7eead6df2e6c0cb3f3"
+    },
+    {
+      "tag": "H42c_rm_b3",
+      "params": 540220,
+      "frac_saved": 0.1375,
+      "ap": {
+        "easy": 70.77,
+        "medium": 69.92,
+        "hard": 44.02
+      },
+      "drop": {
+        "easy": 20.43,
+        "medium": 17.35,
+        "hard": 23.04
+      },
+      "compress_success": false,
+      "candidate_hash": "62b29b0a1028b9a88844bae8785a02d722f7c4b502751abfeec985b2a77c20c8"
+    },
+    {
+      "tag": "H43a_id_b2",
+      "params": 543100,
+      "frac_saved": 0.1329,
+      "ap": {
+        "easy": 71.08,
+        "medium": 70.47,
+        "hard": 43.66
+      },
+      "drop": {
+        "easy": 20.12,
+        "medium": 16.8,
+        "hard": 23.4
+      },
+      "compress_success": false,
+      "candidate_hash": "a5d10b44621d935e87713fb58aea14a7df9601d9bda0e818d1831d7a8dd308a9"
+    },
+    {
+      "tag": "H44a_strip_kps",
+      "params": 591710,
+      "frac_saved": 0.0553,
+      "ap": {
+        "easy": 91.2,
+        "medium": 87.27,
+        "hard": 67.06
+      },
+      "drop": {
+        "easy": 0.0,
+        "medium": 0.0,
+        "hard": 0.0
+      },
+      "compress_success": false,
+      "candidate_hash": "9e62c79fa95844496576c2849fcd042754a21ea136c38a37acc77e485c9a197c"
+    },
+    {
+      "tag": "H44b_svd96_nokps",
+      "params": 453470,
+      "frac_saved": 0.276,
+      "ap": {
+        "easy": 90.35,
+        "medium": 86.8,
+        "hard": 66.39
+      },
+      "drop": {
+        "easy": 0.85,
+        "medium": 0.47,
+        "hard": 0.67
+      },
+      "compress_success": true,
+      "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55"
+    },
+    {
+      "tag": "H41b_svd96",
+      "params": 488092,
+      "frac_saved": 0.2207,
+      "ap": {
+        "easy": 90.35,
+        "medium": 86.8,
+        "hard": 66.39
+      },
+      "drop": {
+        "easy": 0.85,
+        "medium": 0.47,
+        "hard": 0.67
+      },
+      "compress_success": true,
+      "candidate_hash": "f1ac6ab864d347f5257f8e03682efd6713418262f5a9804b7eb47e3f26b4fb9f"
+    }
+  ],
+  "selected": {
+    "tag": "H44b_svd96_nokps",
+    "params": 453470,
+    "frac_saved": 0.276,
+    "ap": {
+      "easy": 90.35,
+      "medium": 86.8,
+      "hard": 66.39
+    },
+    "drop": {
+      "easy": 0.85,
+      "medium": 0.47,
+      "hard": 0.67
+    },
+    "compress_success": true,
+    "candidate_hash": "ebcf9b9ffaf41d338df65867ab99ce87ede7c5b87d01217e6c1e3235b3866a55"
+  },
+  "verdict": "Best: H44b_svd96_nokps 453470 params (\u221227.6%), DEV drops {'easy': 0.85, 'medium': 0.47, 'hard': 0.67}"
+}

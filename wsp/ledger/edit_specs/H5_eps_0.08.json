@@ -1,0 +1,11 @@
+{
+  "name": "H5_reg8_bias_expand_0.08",
+  "hypothesis_id": "H5",
+  "ops": [
+    {
+      "tensor": "bbox_head.stride_reg.(8, 8).bias",
+      "op": "add_scalar",
+      "value": 0.08
+    }
+  ]
+}

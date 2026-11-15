@@ -1,0 +1,17 @@
+{
+  "request_id": "r004_H2_b110",
+  "purpose": "H2_beta_1.10",
+  "utc": "2026-11-15T06:25:03.361277+00:00",
+  "candidate_hash": "30b9c11f2b42ff1f6592017715fde62bf7a6dd5395ff622b790920df8ba9b40e",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 200104,
+  "infer_seconds": 19.40239035600098,
+  "ap": {
+    "easy": 91.14819980724717,
+    "medium": 87.24026366964024,
+    "hard": 67.00512061904999
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

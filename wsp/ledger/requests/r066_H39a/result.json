@@ -1,0 +1,17 @@
+{
+  "request_id": "r066_H39a",
+  "purpose": "H39a_C256",
+  "utc": "2026-11-15T09:54:21.272127+00:00",
+  "candidate_hash": "d2c18f5cfcc36230f753ab30b3ccab2f5a7187862ea5a63113e4f393e01e67ac",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 205172,
+  "infer_seconds": 17.318320957012475,
+  "ap": {
+    "easy": 88.28286883041491,
+    "medium": 85.21160598385016,
+    "hard": 62.5939564341508
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}

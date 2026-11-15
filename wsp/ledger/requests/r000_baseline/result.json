@@ -1,0 +1,17 @@
+{
+  "request_id": "r000_baseline",
+  "purpose": "DEV_baseline",
+  "utc": "2026-11-15T06:21:10.819075+00:00",
+  "candidate_hash": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a",
+  "split": "DEV",
+  "dev_manifest_sha256": "b3bfa05dfe817ec213235324a6497ca3923b8bf3488730047657df120810408c",
+  "num_images": 470,
+  "num_detections": 273909,
+  "infer_seconds": 23.058078336995095,
+  "ap": {
+    "easy": 91.19868061862468,
+    "medium": 87.2692852388514,
+    "hard": 67.05590191954036
+  },
+  "count_face_hard_proxy_note": "per-setting face counts used inside AP"
+}
